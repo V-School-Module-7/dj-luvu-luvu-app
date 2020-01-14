@@ -19,7 +19,7 @@ showRouter.route('/')
                 res.status(500)
                 return next(err)
             }
-            return res.status(201).send(newOutline)
+            return res.status(201).send(newShow)
         })
     })
 
