@@ -27,6 +27,7 @@
     "mongoose": "^5.8.6",
     "morgan": "^1.9.1",
     "node-sass": "^4.13.0",
+    "react-instafeed": "^1.0.0",
     "react-router-dom": "^5.1.2"
   }
 }
