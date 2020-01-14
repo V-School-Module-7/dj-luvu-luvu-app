@@ -1,6 +1,10 @@
 import React, { useContext } from 'react';
-import './StylesFolder/GlobalStyles.scss';
 import { Route, Switch, Redirect } from 'react-router-dom'
+import { ShowContext } from './Components/Provider'
+
+import './StylesFolder/GlobalStyles.scss';
+import './StylesFolder/NavHomeAboutStyles.scss';
+
 import Navbar from './Components/Navbar'
 import Login from './AuthFolder/Login'
 import Home from './Components/Home';
@@ -10,7 +14,6 @@ import About from './Components/About'
 import Social from './Components/Social'
 import Booking from './Components/Booking'
 import Contact from './Components/Contact'
-import { ShowContext } from './Components/Provider'
 
 function App() {
   const { token } = useContext(ShowContext)
