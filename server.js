@@ -11,7 +11,7 @@ app.use(morgan('dev'))
 
 app.use('/api', expressJwt({ secret: process.env.SECRET }))
 app.use('/auth', require('./routes/auth'))
-app.use('/api/schedule', require('./routes/schedule'))
+app.use('/api/schedule', require('./routes/show'))
 
 app.use((err, res) => {
     console.error(err);
