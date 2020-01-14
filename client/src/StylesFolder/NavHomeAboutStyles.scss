@@ -1,0 +1,25 @@
+@import 'GlobalStyles.scss';
+
+// .app {
+//     display: grid;   
+// }
+.nav {
+    display: flex;
+    background-color: $black;
+    height: 45px;
+}
+.navbarLogo {
+    height: 35px;
+    margin: 5px 300px 5px 50px;
+}
+.navbarLink {
+    top: 0px;
+    width: 100vw;
+    // justify-content: space-around;
+    font-family: $primaryHeaderFont;
+    font-size: 18px;
+    color: $white;
+    text-decoration: none;
+    line-height: 45px;
+    // margin: 20px 0px;
+}
