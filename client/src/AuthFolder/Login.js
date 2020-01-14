@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 // import { Context } from '..Provider';
 import { ShowContext } from '../Components/Provider'
 
-import { logoOrange } from '../Images/DJ-Luva-Luva-Orange.png';
+import { logoOrange } from '../Images/DJ-Luva-Luva_Dan-orange.png';
 
 function Login(props) {
     const { login } = useContext(ShowContext)
