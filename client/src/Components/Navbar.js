@@ -6,7 +6,7 @@ export default function Navbar() {
     return(
         <div>
             <Link exact to='/' className='navbarLink'>
-                <img src='./Images/DJ-Luva-Luva_Dan-orange.png' />
+                <img src='./Images/DJ-Luva-Luva_Dan-orange.png' alt='DJ Luva Luva Logo'/>
             </Link>
             <Link to='/booking' className='navbarLink'>BOOKING</Link>
             <Link to='/music' className='navbarLink'>MUSIC</Link>

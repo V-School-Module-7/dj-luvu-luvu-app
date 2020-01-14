@@ -1,9 +1,11 @@
 import React, { useState, useContext } from 'react';
-import { Context } from '..Provider';
+// import { Context } from '..Provider';
+import { ShowContext } from '../Components/Provider'
+
 import { logoOrange } from '../Images/DJ-Luva-Luva-Orange.png';
 
 function Login(props) {
-    const { login } = useContext(Context)
+    const { login } = useContext(ShowContext)
 
     const [ username, setUsername ] = useState('')
     const [ password, setPassword ] = useState('')
