@@ -7,6 +7,7 @@ import Social from './Social'
 export default function Home() {
     return(
         <div>
+            <img src='./Images/Luva-1c.jpg' alt='DJ Luva Luva' className='homeImage'/>
             <Soundcloud />
             <UpcomingShows />
             <About />
