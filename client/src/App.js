@@ -23,7 +23,7 @@ function App() {
       <Navbar />
       <Switch>
         <Route path='/luvaluvaonly' render={() => token ? <Redirect to='/djhome'/> : <Login/> } />
-        <Route path='/home' component={Home}></Route>
+        <Route exact path='/' component={Home}></Route>
         <Route path='/booking' component={Booking}></Route>
         <Route path='/contact' component={Contact}></Route>
       </Switch>

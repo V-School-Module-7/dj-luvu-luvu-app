@@ -9,7 +9,7 @@ export default function Home() {
         <div className='homeContainer'>
             <img src='./Images/Luva-1c.jpg' alt='DJ Luva Luva' className='homeImage'/>
             <Soundcloud />
-            <UpcomingShows />
+            {/* <UpcomingShows /> */}
             <About />
             <Social />
         </div>
