@@ -1,0 +1,67 @@
+@import 'GlobalStyles.scss';
+
+.social {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    text-align: center;
+    h2 {
+        grid-column: 1/-1;
+        grid-row: 1/2;
+    }
+}
+.socialLogos {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    a {
+        img {
+            height: 30px;
+            width: auto;
+            padding: 0px 10px;
+        }
+    }
+}
+.instaImages {
+    grid-column: 1/-1;
+    grid-row: 3/4;
+    justify-items: center;
+    display: grid;
+    margin: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, fr);
+    grid-gap: 20px;
+    a {
+        grid-gap: 20px;
+        display: inline-block;
+        height: 100px;
+        width: 100px;
+        img {
+            height: 100px;
+            width: auto;
+        }
+    }
+}
+.instaOne {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+.instaTwo {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+.instaThree {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+.instaFour {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+.instaFive {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+.instaSix {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
