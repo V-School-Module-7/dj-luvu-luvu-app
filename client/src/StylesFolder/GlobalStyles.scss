@@ -11,3 +11,13 @@ $black: #08090a;
     margin: 0;
     padding: 0;
 }
+
+.header {
+    font-family: $primaryHeaderFont;
+    text-align: center;
+    margin: 25px 0px 25px 0px;
+    font-size: 18px;
+    @media (min-width: 700px) {
+        font-size: 24px;
+    }
+}
