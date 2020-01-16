@@ -6,13 +6,13 @@ export default function Navbar() {
 
     return(
         <div className='nav'>
-            <Link exact to='/' className='navbarLink'>
+            <Link exact to='/' >
                 <img src={logoDanOrange} alt='DJ Luva Luva Logo' className='navbarLogo' />
             </Link>
-            <Link to='/booking' className='navbarLink'>BOOKING</Link>
-            <Link to='/music' className='navbarLink'>MUSIC</Link>
-            <Link to='/contact' className='navbarLink'>CONTACT</Link>
-            <Link to='/about' className='navbarLink'>ABOUT</Link>
+            <Link to='/booking' >BOOKING</Link>
+            <Link to='/music' >MUSIC</Link>
+            <Link to='/contact' >CONTACT</Link>
+            <Link to='/about' >ABOUT</Link>
         </div>
     )
 }

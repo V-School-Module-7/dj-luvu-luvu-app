@@ -5,27 +5,81 @@
 // }
 .nav {
     display: flex;
+    position: fixed;
     background-color: $black;
-    height: 45px;
+    top: 0;
+    height: 50px;
+    width: 100vw;
+    a {
+        top: 0px;
+        font-family: $primaryHeaderFont;
+        font-size: 18px;
+        color: $white;
+        text-decoration: none;
+        line-height: 50px;
+        // margin: 20px 0px;
+        z-index: 1;
+        width: 100vw;
+    }
 }
 .navbarLogo {
     height: 35px;
-    margin: 5px 300px 5px 50px;
+    margin: 5px 600px 5px 50px;
 }
-.navbarLink {
-    top: 0px;
-    width: 100vw;
-    // justify-content: space-around;
-    font-family: $primaryHeaderFont;
-    font-size: 18px;
-    color: $white;
-    text-decoration: none;
-    line-height: 45px;
-    // margin: 20px 0px;
+.homeContainer {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-rows: 5 (300px);
+    grid-gap: 25px;
+    margin: 50px 25px;
+    @media (min-width: 700px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 3 (300px);
+    }
 }
 .homeImage {
     width: 100%;
+    height: auto;
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    display: block;
 }
 .imageSquare {
     width: 50%;
+}
+.soundCloud {
+    display: flex;
+    grid-column: 1/-1;
+    grid-row: 2/3; 
+    @media (min-width: 700px) {
+        grid-column: 1/2;
+        grid-row: 2/3; 
+    }
+}
+.upcomingShows {
+    display: flex;
+    grid-column: 1/-1;
+    grid-row: 3/4; 
+    @media (min-width: 700px) {
+        grid-column: 2/3;
+        grid-row: 2/3; 
+    }
+}
+.about {
+    display: flex;
+    grid-column: 1/-1;
+    grid-row: 4/5;
+    @media (min-width: 700px) {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+}
+.social {
+    display: flex;
+    grid-column: 1/-1;
+    grid-row: 5/6;
+    @media (min-width: 700px) {
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
 }
