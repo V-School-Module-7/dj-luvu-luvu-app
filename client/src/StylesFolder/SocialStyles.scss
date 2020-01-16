@@ -5,10 +5,10 @@
     grid-template-columns: 1fr;
     grid-gap: 20px;
     text-align: center;
-    h2 {
-        grid-column: 1/-1;
-        grid-row: 1/2;
-    }
+}
+.header {
+    grid-column: 1/-1;
+    grid-row: 1/2;
 }
 .socialLogos {
     grid-column: 1/-1;
@@ -44,24 +44,48 @@
 .instaOne {
     grid-column: 1/2;
     grid-row: 1/2;
+    background-image: url('../Images/instagram_image_one.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .instaTwo {
     grid-column: 2/3;
     grid-row: 1/2;
+    background-image: url('../Images/instagram_image_2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .instaThree {
     grid-column: 3/4;
     grid-row: 1/2;
+    background-image: url('../Images/instagram_image_3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .instaFour {
     grid-column: 1/2;
     grid-row: 2/3;
+    background-image: url('../Images/instagram_image_4.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .instaFive {
     grid-column: 2/3;
     grid-row: 2/3;
+    background-image: url('../Images/instagram_image_5.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .instaSix {
     grid-column: 3/4;
     grid-row: 2/3;
+    background-image: url('../Images/instagram_image_6.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
