@@ -7,7 +7,8 @@ const showSchema = new Schema({
     location: String,
     time: String,
     date: Date, 
-    price: Number
+    price: Number,
+    url: String
 })
 
 module.exports = mongoose.model('Show', showSchema)
