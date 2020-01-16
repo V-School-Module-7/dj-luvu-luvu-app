@@ -9,10 +9,10 @@ export default function Home() {
     return(
         <div className='homeContainer'>
             <img src={LuvaHomeImage} alt='DJ Luva Luva' className='homeImage'/>
-            <Soundcloud />
-            {/* <UpcomingShows /> */}
-            <About />
-            <Social />
+            <Soundcloud className='soundCloud'/>
+            <UpcomingShows className='upcomingShows'/>
+            <About className='about'/>
+            <Social className='social'/>
         </div>
     )
 }
