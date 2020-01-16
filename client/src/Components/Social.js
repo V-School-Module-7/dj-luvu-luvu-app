@@ -1,15 +1,16 @@
 import React from 'react'
+import '../StylesFolder/SocialStyles.scss'
 import instaLogoB from '../Images/SocialLogos-IGb.png'
 import fBB from '../Images/SocialLogos-FBb.png'
 import tB from '../Images/SocialLogos-Tb.png'
 import mCB from '../Images/SocialLogos-MCb.png'
 import yTB from '../Images/SocialLogos-YTb.png'
-import instaOne from '../Images/instagram_image_one'
-import instaTwo from '../Images/instagram_image_2'
-import instaThree from '../Images/instagram_image_3'
-import instaFour from '../Images/instagram_image_4'
-import instaFive from '../Images/instagram_image_5'
-import instaSix from '../Images/instagram_image_6'
+import instaOne from '../Images/instagram_image_one.jpg'
+import instaTwo from '../Images/instagram_image_2.jpg'
+import instaThree from '../Images/instagram_image_3.jpg'
+import instaFour from '../Images/instagram_image_4.jpg'
+import instaFive from '../Images/instagram_image_5.jpg'
+import instaSix from '../Images/instagram_image_6.jpg'
 
 function Social() {
     return(
@@ -23,12 +24,12 @@ function Social() {
                 <a href="https://www.youtube.com/user/dJluvaluva26"><img src={yTB} alt="blah"/></a>
             </div>
             <div className='instaImages'>
-                <a href="https://www.instagram.com/djluvaluva/"><img src={instaOne} alt=""/></a>
-                <a href="https://www.instagram.com/djluvaluva/"><img src={instaTwo} alt=""/></a>
-                <a href="https://www.instagram.com/djluvaluva/"><img src={instaThree} alt=""/></a>
-                <a href="https://www.instagram.com/djluvaluva/"><img src={instaFour} alt=""/></a>
-                <a href="https://www.instagram.com/djluvaluva/"><img src={instaFive} alt=""/></a>
-                <a href="https://www.instagram.com/djluvaluva/"><img src={instaSix} alt=""/></a>
+                <a className='instaOne' href="https://www.instagram.com/djluvaluva/"><img src={instaOne} alt=""/></a>
+                <a className='instaTwo' href="https://www.instagram.com/djluvaluva/"><img src={instaTwo} alt=""/></a>
+                <a className='instaThree' href="https://www.instagram.com/djluvaluva/"><img src={instaThree} alt=""/></a>
+                <a className='instaFour' href="https://www.instagram.com/djluvaluva/"><img src={instaFour} alt=""/></a>
+                <a className='instaFive' href="https://www.instagram.com/djluvaluva/"><img src={instaFive} alt=""/></a>
+                <a className='instaSix' href="https://www.instagram.com/djluvaluva/"><img src={instaSix} alt=""/></a>
             </div>
         </div>
     )
