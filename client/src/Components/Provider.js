@@ -39,8 +39,9 @@ function ContextProvider(props) {
                     const updatedShows = prev.map(show => {
                         return show._id === res.data._id ? res.data : show
                     })
-                    return (updatedShows)
+                    setShows(updatedShows)
                 })
+                return res
             })
     }
     const deleteShow = (showId) => {
