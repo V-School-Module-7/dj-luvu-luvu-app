@@ -10,16 +10,24 @@
     top: 0;
     height: 50px;
     width: 100vw;
-    a {
-        top: 0px;
-        font-family: $primaryHeaderFont;
-        font-size: 18px;
+}
+$animate: all 0.2s ease-in-out;
+
+.navLinks {
+    top: 0px;
+    font-family: $primaryHeaderFont;
+    font-size: 18px;
+    color: $grey;
+    text-decoration: none;
+    line-height: 50px;
+    // margin: 20px 0px;
+    z-index: 1;
+    width: 100vw;
+    // display: flex;
+    // position: relative;
+
+    &:hover {
         color: $white;
-        text-decoration: none;
-        line-height: 50px;
-        // margin: 20px 0px;
-        z-index: 1;
-        width: 100vw;
     }
 }
 .navbarLogo {
