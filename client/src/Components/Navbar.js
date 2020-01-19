@@ -9,10 +9,10 @@ export default function Navbar() {
             <Link exact to='/' >
                 <img src={logoDanOrange} alt='DJ Luva Luva Logo' className='navbarLogo' />
             </Link>
-            <Link to='/booking' >BOOKING</Link>
-            <Link to='/music' >MUSIC</Link>
-            <Link to='/contact' >CONTACT</Link>
-            <Link to='/about' >ABOUT</Link>
+            <Link to='/booking' className='navLinks'>BOOKING</Link>
+            <Link to='/music' className='navLinks'>MUSIC</Link>
+            <Link to='/contact' className='navLinks'>CONTACT</Link>
+            <Link to='/about' className='navLinks'>ABOUT</Link>
         </div>
     )
 }
