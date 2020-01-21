@@ -4,6 +4,8 @@ import { ShowContext } from './Components/Provider'
 
 import './StylesFolder/GlobalStyles.scss';
 import './StylesFolder/NavHomeAboutStyles.scss';
+import './StylesFolder/ContactForm.scss';
+
 
 import Navbar from './Components/Navbar'
 import Login from './AuthFolder/Login'
@@ -13,7 +15,7 @@ import UpcomingShows from './Components/UpcomingShows'
 import About from './Components/About'
 import Social from './Components/Social'
 import Booking from './Components/Booking'
-import Contact from './Components/Contact'
+import ContactForm from './Components/ContactForm'
 
 function App() {
   const { token } = useContext(ShowContext)
@@ -25,7 +27,7 @@ function App() {
         <Route path='/luvaluvaonly' render={() => token ? <Redirect to='/djhome'/> : <Login/> } />
         <Route exact path='/' component={Home}></Route>
         <Route path='/booking' component={Booking}></Route>
-        <Route path='/contact' component={Contact}></Route>
+        <Route path='/contact' component={ContactForm}></Route>
       </Switch>
     </div>
   );
