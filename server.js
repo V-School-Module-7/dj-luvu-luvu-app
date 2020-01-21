@@ -9,6 +9,8 @@ const PORT = process.env.PORT || 7000
 app.use(express.json())
 app.use(morgan('dev'))
 
+app.use("/send", require("./routes/contactRouter"));
+
 app.use('/api', expressJwt({ secret: process.env.SECRET }))
 app.use('/auth', require('./routes/auth'))
 app.use('/api/schedule', require('./routes/show'))

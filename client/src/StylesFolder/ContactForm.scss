@@ -1,0 +1,38 @@
+@import 'GlobalStyles.scss';
+
+$formwidth: 400px;
+
+.contactForm {
+    margin: 60px 50px;
+    width: $formwidth;
+    text-align: center;
+}
+.formIntro {
+    font-family: $primaryHeaderFont;
+    margin: 80px 10px 25px 10px;
+}
+.formInput {
+    display: block;
+    margin: 10px 0px;
+    width: $formwidth;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.formInputBody {
+    display: block;
+    margin: 10px 0px;
+    width: $formwidth;
+    height: 100px;
+    padding: 5px;
+    box-sizing: border-box;
+
+}
+.formButton {
+    margin: 5px 0px;
+    background-color: $orange;
+    color: white;
+    width: $formwidth;
+    padding: 10px 5px;
+    box-sizing: border-box;
+    font-family: $primaryMainFont;
+}
