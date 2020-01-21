@@ -1,0 +1,80 @@
+import React, { useState } from 'react'
+import axios from 'axios'
+
+export default function ContactForm() {
+
+    const [ fullName, setFullname ] = useState('')
+    const [ email, setEmail ] = useState('')
+    const [ phone, setPhone ] = useState('')
+    const [ emailBody, setEmailbody ] = useState('')
+
+    
+    const inputs = {
+        fullName,
+        email,
+        phone,
+        emailBody,
+    }
+    const sendMessage = () => {
+        console.log(inputs)
+        axios
+            .post('/send', inputs)
+            .then(res => {
+                if (res.data.status === 'success') {
+                    alert("Message sent, DJ Luva Luva will get back to you as soon as possible.")
+                } else if (res.data.status === 'fail') {
+                    alert("Message failed to send, please try again.")
+                }
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+    const clearInputs = () => {
+        setFullname('')
+        setEmail('')
+        setPhone('')
+        setEmailbody('')
+    }
+    const handleSubmit = e => {
+        e.preventDefault();
+        sendMessage();
+        // clearInputs();
+    }
+
+return(
+    <div >
+        <form className='contactForm' onSubmit={handleSubmit}>
+            {/* <h3 className='formIntro'>Please fill out the form below to contact me!</h3> */}
+            <h3 className='formIntro'>PLEASE FILL OUT THE FORM BELOW TO CONTACT ME</h3>
+            <input type='text'
+                    placeholder='Full Name'
+                    name='fullName'
+                    className='formInput'
+                    required='required'
+            />
+            <input type='email'
+                    placeholder='E-mail'
+                    name='email'
+                    className='formInput'
+                    required='required'
+            />
+            <input type='phone'
+                    placeholder='Phone Number'
+                    name='phone'
+                    className='formInput'
+                    required='required'
+            />
+            <textarea type='text'
+                    placeholder='Please Fill Out With Contact Info'
+                    name='emailBody'
+                    className='formInputBody'
+                    required='required'
+            />
+            <button type='submit' className='formButton'>
+                Submit
+            </button>
+        </form>
+    </div>
+    )
+}
