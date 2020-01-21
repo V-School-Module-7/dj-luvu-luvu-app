@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react'
-import { ShowContext } from '../Components/Provider'
+import { ShowContext } from './Provider'
+import Shows from './Shows'
 
 function ShowsList() {
     const { shows, getShows } = useContext(ShowContext)
@@ -9,7 +10,8 @@ function ShowsList() {
     }, [])
 
     const mappedShows = shows.map(show => {
-        <Show key={show.name}
+        return(
+        <Shows key={show.name}
             name={show.name}
             venue={show.venue}
             location={show.location}
@@ -17,6 +19,7 @@ function ShowsList() {
             price={show.price}
             url={show.url}
         />
+        )
     })
     return(
         <div className='showsList'>

@@ -6,12 +6,12 @@ export default function Shows(props) {
     const { day, setDay } = useState()
     const { month, setMonth } = useState()
 
-    const day = () => {
+    const handleDay = () => {
         const dateString = props.date.toString()
         const dayString = dateString.slice(8, 10)
         return setDay(dayString)
     }
-    const month = () => {
+    const handleMonth = () => {
         const dateString = props.date.toString()
 
         const monthString = dateString.slice(5, 7)
