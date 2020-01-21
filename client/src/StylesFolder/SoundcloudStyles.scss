@@ -1,0 +1,39 @@
+@import './GlobalStyles.scss';
+
+.songIframe {
+    padding: 20px;
+    text-align: center;
+}
+.allSongsDiv {
+    max-height: 350px;
+    overflow-y: scroll;
+    display: grid;
+}
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+.songDiv {
+    font-family: $primaryMainFont;
+    padding: 15px;
+    border-top: 1px $orange solid;
+    img {
+        display: inline-block;
+        height: 80px;
+        width: 80px;
+    }
+    p{
+        display: inline-block;
+        padding-bottom: 30px;
+        padding-left: 30px;
+        width: 70%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
