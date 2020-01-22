@@ -126,6 +126,12 @@ $animate: all 0.2s ease-in-out;
         grid-row: 2/3; 
     }
 }
+.upcomingShows {
+    background-image: url('../Images/Luva-14.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .aboutContainer {
     display: flex;
     grid-column: 1/-1;
