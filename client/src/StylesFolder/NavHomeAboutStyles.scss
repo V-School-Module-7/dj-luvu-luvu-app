@@ -13,22 +13,74 @@
 }
 $animate: all 0.2s ease-in-out;
 
-.navLinks {
+.navLinks1 {
     top: 0px;
     font-family: $primaryHeaderFont;
     font-size: 18px;
     color: $grey;
     text-decoration: none;
     line-height: 50px;
-    // margin: 20px 0px;
     z-index: 1;
     width: 100vw;
-    // display: flex;
-    // position: relative;
-
     &:hover {
         color: $white;
+        // text-decoration: underline;
+        // text-decoration-color: $orange;  
     }
+    &:before {
+        content: "";
+        position: absolute;
+        width: 5%;
+        height: 2px;
+        bottom: 25%;
+        left: 60;
+        background-color: $orange;
+        visibility: hidden;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+      }
+      &:hover:before {
+        visibility: visible;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+}
+.navLinks2 {
+    top: 0px;
+    font-family: $primaryHeaderFont;
+    font-size: 18px;
+    color: $grey;
+    text-decoration: none;
+    line-height: 50px;
+    z-index: 1;
+    width: 100vw;
+    &:hover {
+        color: $white;
+        // text-decoration: underline;
+        // text-decoration-color: $orange;  
+        // text-decoration: 2px;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        width: 3.8%;
+        height: 2px;
+        bottom: 25%;
+        left: 60;
+        background-color: $orange;
+        visibility: hidden;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+      }
+      &:hover:before {
+        visibility: visible;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+      }
 }
 .navbarLogo {
     height: 35px;
