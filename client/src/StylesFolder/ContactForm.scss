@@ -9,6 +9,7 @@ $formwidth: 400px;
 }
 .formIntro {
     font-family: $primaryHeaderFont;
+    color: black;
     margin: 80px 10px 25px 10px;
 }
 .formInput {
@@ -29,10 +30,13 @@ $formwidth: 400px;
 }
 .formButton {
     margin: 5px 0px;
-    background-color: $orange;
+    background-color: $grey;
     color: white;
     width: $formwidth;
     padding: 10px 5px;
     box-sizing: border-box;
     font-family: $primaryMainFont;
+    &:hover {
+        background-color: $orange;
+    }
 }
