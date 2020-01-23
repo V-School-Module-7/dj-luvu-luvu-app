@@ -1,16 +1,39 @@
 @import 'GlobalStyles.scss';
 
-$formwidth: 400px;
+$formwidth: 250px;
+$formwidthMedium: 300px;
+$formwidthLarge: 400px;
+$formwidthXLarge: 500px;
 
+.contactContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    @media (min-width: 1000px) {
+        grid-template-columns: 1fr 1fr;  
+    }
+}
 .contactForm {
-    margin: 60px 50px;
+    margin: 60px 35px 0px 35px;
     width: $formwidth;
     text-align: center;
+    grid-column: 1/-1;
+    @media (min-width: 400px) {
+        width: $formwidthMedium;
+        margin: 60px 50px 0px 50px;
+    }
+    @media (min-width: 600px) {
+        width: $formwidthXLarge;
+    }
+    @media (min-width: 1000px) {
+        width: $formwidthLarge;
+        grid-column: 1/2;
+    }
 }
 .formIntro {
     font-family: $primaryHeaderFont;
     color: black;
-    margin: 80px 10px 25px 10px;
+    margin: 70px 10px 25px 10px;
 }
 .formInput {
     display: block;
@@ -18,6 +41,15 @@ $formwidth: 400px;
     width: $formwidth;
     padding: 5px;
     box-sizing: border-box;
+    @media (min-width: 400px) {
+        width: $formwidthMedium;
+    }
+    @media (min-width: 600px) {
+        width: $formwidthXLarge;
+    }
+    @media (min-width: 1000px) {
+        width: $formwidthLarge;
+    }
 }
 .formInputBody {
     display: block;
@@ -26,6 +58,15 @@ $formwidth: 400px;
     height: 100px;
     padding: 5px;
     box-sizing: border-box;
+    @media (min-width: 400px) {
+        width: $formwidthMedium;
+    }
+    @media (min-width: 600px) {
+        width: $formwidthXLarge;
+    }
+    @media (min-width: 1000px) {
+        width: $formwidthLarge;
+    }
 
 }
 .formButton {
@@ -38,5 +79,27 @@ $formwidth: 400px;
     font-family: $primaryMainFont;
     &:hover {
         background-color: $orange;
+    }
+    @media (min-width: 400px) {
+        width: $formwidthMedium;
+    }
+    @media (min-width: 600px) {
+        width: $formwidthXLarge;
+    }
+    @media (min-width: 1000px) {
+        width: $formwidthLarge;
+    }
+}
+.contactImage {
+    grid-column: 2/3;
+    img {
+        position: relative;
+        top: 20px;
+        height: 0;
+        width: 0;
+        @media (min-width: 1000px) {
+            height: auto;
+            width: 100%;
+        }
     }
 }

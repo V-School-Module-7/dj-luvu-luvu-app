@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import bookingImage from '../Images/Luva-6cropped.jpg'
 
 export default function BookingForm() {
 
@@ -65,10 +66,10 @@ export default function BookingForm() {
     }
 
 return(
-    <div >
+    <div className='contactContainer'>
         <form className='contactForm' onSubmit={handleSubmit}>
             {/* <h3 className='formIntro'>Please fill out the form below to contact me!</h3> */}
-            <h3 className='formIntro'>BOOKING FORM: PLEASE FILL OUT TO CONTACT</h3>
+            <h3 className='formIntro'>PLEASE FILL OUT <br/> TO BOOK EVENT</h3>
             <input type='text'
                     placeholder='Full Name'
                     name='fullName'
@@ -122,6 +123,9 @@ return(
                 Submit
             </button>
         </form>
+        <div className='contactImage'>
+            <img src={bookingImage} alt="Booking Image"/>
+        </div>
     </div>
     )
 }
