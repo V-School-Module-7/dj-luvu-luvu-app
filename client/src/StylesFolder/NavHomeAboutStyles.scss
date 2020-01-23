@@ -8,8 +8,15 @@
     position: fixed;
     background-color: $black;
     top: 0;
-    height: 50px;
+    height: 70px;
     width: 100%;
+    justify-content: flex-end;
+    padding-right: 5px;
+    box-sizing: border-box;
+    z-index: 1;
+    @media (min-width: 450px) {
+        padding-right: 10px;
+    }
 }
 $animate: all 0.2s ease-in-out;
 
@@ -17,14 +24,19 @@ $animate: all 0.2s ease-in-out;
     top: 0px;
     font-family: $primaryHeaderFont;
     font-size: 15px;
+    position: relative;
     color: $grey;
     text-decoration: none;
-    line-height: 50px;
+    line-height: 70px;
     z-index: 1;
-    padding: 0px 10px;
-    // width: 100vw;
+    padding: 0px 5px;
+    @media (min-width: 500px) {
+        font-size: 18px;
+        padding: 0px 10px;
+    }
     @media (min-width: 700px) {
         font-size: 18px;
+        padding: 0px 30px;
     }
     &:hover {
         color: $white;
@@ -32,7 +44,7 @@ $animate: all 0.2s ease-in-out;
     &:before {
         content: "";
         position: absolute;
-        width: 5%;
+        width: 50px;
         height: 2px;
         bottom: 25%;
         left: 60;
@@ -42,6 +54,9 @@ $animate: all 0.2s ease-in-out;
         transform: scaleX(0);
         -webkit-transition: all 0.3s ease-in-out 0s;
         transition: all 0.3s ease-in-out 0s;
+        @media (min-width: 700px) {
+            width: 60px;
+        }
       }
       &:hover:before {
         visibility: visible;
@@ -55,11 +70,18 @@ $animate: all 0.2s ease-in-out;
     font-size: 15px;
     color: $grey;
     text-decoration: none;
-    line-height: 50px;
+    line-height: 70px;
+    position: relative;
     z-index: 1;
-    // width: 100vw;
+    padding: 0px 5px;
+    justify-self: flex-end;
+    @media (min-width: 500px) {
+        font-size: 18px;
+        padding: 0px 10px;
+    }
     @media (min-width: 700px) {
         font-size: 18px;
+        padding: 0px 30px;
     }
     &:hover {
         color: $white;
@@ -67,7 +89,7 @@ $animate: all 0.2s ease-in-out;
     &:before {
         content: "";
         position: absolute;
-        width: 3.8%;
+        width: 38px;
         height: 2px;
         bottom: 25%;
         left: 60;
@@ -77,6 +99,9 @@ $animate: all 0.2s ease-in-out;
         transform: scaleX(0);
         -webkit-transition: all 0.3s ease-in-out 0s;
         transition: all 0.3s ease-in-out 0s;
+        @media (min-width: 700px) {
+            width: 45px;
+        }
       }
       &:hover:before {
         visibility: visible;
@@ -86,19 +111,31 @@ $animate: all 0.2s ease-in-out;
 }
 .navbarLogo {
     height: 35px;
-    margin: 7px 80px 5px 20px;
-    @media (min-width: 700px) {
-        margin: 5px 300px 5px 50px;
+    // margin: 20px 25px 5px 20px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+
+    @media (min-width: 500px) {
+        height: 45px;
+        top: 12px;
+        // margin: 13px 100px 5px 50px;
     }
-    @media (min-width: 1100px) {
-        margin: 5px 600px 5px 50px;
+    @media (min-width: 700px) {
+        // margin: 13px 150px 5px 50px;
+    }
+    @media (min-width: 850px) {
+        // margin: 13px 300px 5px 50px;
+    }
+    @media (min-width: 1000px) {
+        // margin: 13px 450px 5px 50px;
     }
 }
 .homeContainer {
     display: grid;
     grid-auto-columns: 1fr;
     grid-template-rows: 5 (300px);
-    grid-gap: 2px;
+    // grid-gap: 2px;
     margin-top: 50px;
     @media (min-width: 1100px) {
         grid-template-columns: 1fr 1fr;
@@ -128,6 +165,8 @@ $animate: all 0.2s ease-in-out;
     display: flex;
     grid-column: 1/-1;
     grid-row: 3/4; 
+    // z-index: 0;
+    // position: relative;
     @media (min-width: 1100px) {
         grid-column: 2/3;
         grid-row: 2/3; 
@@ -138,6 +177,71 @@ $animate: all 0.2s ease-in-out;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 400px;
+    position: relative;
+}
+.quoteDiv {
+    position: absolute;
+    text-align: center;
+    bottom: 25px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+}
+.quote {
+    color: white;
+    font-family: $primaryHeaderFont;
+    font-size: 22px;
+    font-weight: 500;
+    // position: absolute;
+    // bottom: 0px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-shadow: #333333 3px 3px 5px;
+    @media (min-width: 500px) {
+        font-size: 30px;
+        // bottom: 50px;
+    }
+    @media (min-width: 750px) {
+        font-size: 36px;
+        // bottom: 55px;
+        text-shadow: #333333 3px 3px 7px;
+    }
+    @media (min-width: 1000px) {
+        font-size: 40px;
+        // bottom: 0px;
+    }
+    @media (min-width: 1500px) {
+        font-size: 60px;
+        // bottom: 100px;
+    }
+}
+.quoteLuva {
+    color: white;
+    font-family: $primaryHeaderFont;
+    font-size: 22px;
+    font-weight: 500;
+    // position: absolute;
+    // bottom: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-shadow: #333333 3px 3px 5px;
+    @media (min-width: 500px) {
+        font-size: 30px;
+    }
+    @media (min-width: 750px) {
+        font-size: 36px;
+        text-shadow: #333333 3px 3px 7px;
+    }
+    @media (min-width: 1000px) {
+        font-size: 40px;
+        // bottom: 40px;
+    }
+    @media (min-width: 1500px) {
+        font-size: 60px;
+    }
 }
 .aboutContainer {
     display: flex;
@@ -170,7 +274,15 @@ $animate: all 0.2s ease-in-out;
         font-size: 16px;
         padding: 0px 50px 30px 50px;
     }
-    @media (min-width: 1100px) {
+    @media (min-width: 1300px) {
         font-size: 18px;
+        padding: 0px 80px 30px 80px;
+    }
+    @media (min-width: 1400px) {
+        font-size: 19px;
+        padding: 0px 100px 30px 100px;
+    }
+    @media (min-width: 1400px) {
+        padding: 20px 120px 30px 120px;
     }
 }
