@@ -3,7 +3,7 @@
 .social {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 20px;
+    grid-gap: 10px;
     text-align: center;
 }
 .header {
@@ -26,12 +26,12 @@
     grid-row: 3/4;
     justify-items: center;
     display: grid;
-    margin: 20px;
+    margin: px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, fr);
-    grid-gap: 20px;
+    grid-gap: 20px 10px;
     a {
-        grid-gap: 20px;
+        // grid-gap: 20px;
         display: inline-block;
         height: 100px;
         width: 100px;

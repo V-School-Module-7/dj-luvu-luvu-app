@@ -9,23 +9,25 @@
     background-color: $black;
     top: 0;
     height: 50px;
-    width: 100vw;
+    width: 100%;
 }
 $animate: all 0.2s ease-in-out;
 
 .navLinks1 {
     top: 0px;
     font-family: $primaryHeaderFont;
-    font-size: 18px;
+    font-size: 15px;
     color: $grey;
     text-decoration: none;
     line-height: 50px;
     z-index: 1;
-    width: 100vw;
+    padding: 0px 10px;
+    // width: 100vw;
+    @media (min-width: 700px) {
+        font-size: 18px;
+    }
     &:hover {
         color: $white;
-        // text-decoration: underline;
-        // text-decoration-color: $orange;  
     }
     &:before {
         content: "";
@@ -50,17 +52,17 @@ $animate: all 0.2s ease-in-out;
 .navLinks2 {
     top: 0px;
     font-family: $primaryHeaderFont;
-    font-size: 18px;
+    font-size: 15px;
     color: $grey;
     text-decoration: none;
     line-height: 50px;
     z-index: 1;
-    width: 100vw;
+    // width: 100vw;
+    @media (min-width: 700px) {
+        font-size: 18px;
+    }
     &:hover {
         color: $white;
-        // text-decoration: underline;
-        // text-decoration-color: $orange;  
-        // text-decoration: 2px;
     }
     &:before {
         content: "";
@@ -84,7 +86,13 @@ $animate: all 0.2s ease-in-out;
 }
 .navbarLogo {
     height: 35px;
-    margin: 5px 600px 5px 50px;
+    margin: 7px 80px 5px 20px;
+    @media (min-width: 700px) {
+        margin: 5px 300px 5px 50px;
+    }
+    @media (min-width: 1100px) {
+        margin: 5px 600px 5px 50px;
+    }
 }
 .homeContainer {
     display: grid;
@@ -92,8 +100,7 @@ $animate: all 0.2s ease-in-out;
     grid-template-rows: 5 (300px);
     grid-gap: 2px;
     margin-top: 50px;
-    // padding: 25px;
-    @media (min-width: 700px) {
+    @media (min-width: 1100px) {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 3 (300px);
     }
@@ -112,7 +119,7 @@ $animate: all 0.2s ease-in-out;
     display: flex;
     grid-column: 1/-1;
     grid-row: 2/3; 
-    @media (min-width: 700px) {
+    @media (min-width: 1100px) {
         grid-column: 1/2;
         grid-row: 2/3; 
     }
@@ -121,7 +128,7 @@ $animate: all 0.2s ease-in-out;
     display: flex;
     grid-column: 1/-1;
     grid-row: 3/4; 
-    @media (min-width: 700px) {
+    @media (min-width: 1100px) {
         grid-column: 2/3;
         grid-row: 2/3; 
     }
@@ -136,7 +143,7 @@ $animate: all 0.2s ease-in-out;
     display: flex;
     grid-column: 1/-1;
     grid-row: 4/5;
-    @media (min-width: 700px) {
+    @media (min-width: 1100px) {
         grid-column: 1/2;
         grid-row: 3/4;
     }
@@ -145,7 +152,7 @@ $animate: all 0.2s ease-in-out;
     display: flex;
     grid-column: 1/-1;
     grid-row: 5/6;
-    @media (min-width: 700px) {
+    @media (min-width: 1100px) {
         grid-column: 2/3;
         grid-row: 3/4;
     }
@@ -156,10 +163,14 @@ $animate: all 0.2s ease-in-out;
 .aboutMe {
     font-family: $primaryMainFont;
     text-align: center;
-    padding: 0px 50px 50px 50px;
+    padding: 0px 40px 30px 40px;
     line-height: 1.8;
     font-size: 15px;
     @media (min-width: 700px) {
-        font-size: 20px;
+        font-size: 16px;
+        padding: 0px 50px 30px 50px;
+    }
+    @media (min-width: 1100px) {
+        font-size: 18px;
     }
 }
