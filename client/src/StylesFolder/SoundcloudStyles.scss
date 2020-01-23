@@ -23,6 +23,16 @@
     max-height: 350px;
     overflow-y: scroll;
     display: grid;
+    width: 313px;
+    @media (min-width: 375px) {
+        width: 368px;
+    }
+    @media (min-width: 400px) {
+        width: 393px;
+    }
+    @media (min-width: 450px) {
+        width: 100%;
+    }
 }
 ::-webkit-scrollbar {
     -webkit-appearance: none;
@@ -36,7 +46,7 @@
 }
 .songDiv {
     font-family: $primaryMainFont;
-    padding: 15px;
+    padding: 15px 0 15px 15px;
     width: 85%;
     // border-top: 1px $orange solid;
     img {
@@ -44,7 +54,7 @@
         height: 80px;
         width: 80px;
     }
-    p {
+    div {
         display: inline-block;
         padding-bottom: 30px;
         padding-left: 30px;
