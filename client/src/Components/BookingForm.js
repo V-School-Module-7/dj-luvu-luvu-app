@@ -1,19 +1,22 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-export default function ContactForm() {
+export default function BookingForm() {
 
     const [ fullName, setFullname ] = useState('')
     const [ email, setEmail ] = useState('')
     const [ phone, setPhone ] = useState('')
     const [ emailBody, setEmailbody ] = useState('')
-
+    const [ showDate, setShowDate ] = useState('')
+    const [ showPrice, setShowPrice ] = useState('')
     
     const inputs = {
         fullName,
         email,
         phone,
         emailBody,
+        showDate,
+        showPrice
     }
     const sendMessage = () => {
         console.log(inputs)
@@ -35,6 +38,8 @@ export default function ContactForm() {
         setEmail('')
         setPhone('')
         setEmailbody('')
+        setShowDate('')
+        setShowPrice('')
     }
     const handleSubmit = e => {
         e.preventDefault();
@@ -49,6 +54,10 @@ export default function ContactForm() {
                 setEmail(value)
             } else if ( name === 'phone' ){
                 setPhone(value)
+            } else if ( name === 'showDate' ){
+                setShowDate(value)
+            } else if ( name === 'showPrice' ){
+                setShowPrice(value)
             } else if ( name === 'emailBody' ){
                 setEmailbody(value)
         console.log(value)
@@ -59,7 +68,7 @@ return(
     <div >
         <form className='contactForm' onSubmit={handleSubmit}>
             {/* <h3 className='formIntro'>Please fill out the form below to contact me!</h3> */}
-            <h3 className='formIntro'>PLEASE FILL OUT THE FORM BELOW TO CONTACT ME</h3>
+            <h3 className='formIntro'>BOOKING FORM: PLEASE FILL OUT TO CONTACT</h3>
             <input type='text'
                     placeholder='Full Name'
                     name='fullName'
@@ -85,8 +94,24 @@ return(
                     value={phone}
                     onChange={handleChange}
             />
+            <input type='date'
+                    placeholder='Date of Show'
+                    name='showDate'
+                    className='formInput'
+                    required='required'
+                    value={showDate}
+                    onChange={handleChange}
+            />
+            <input type='text'
+                    placeholder='Offer Price'
+                    name='showPrice'
+                    className='formInput'
+                    required='required'
+                    value={showPrice}
+                    onChange={handleChange}
+            />
             <textarea type='text'
-                    placeholder='Please Fill Out With Contact Info'
+                    placeholder='Please Fill Out With Any Other Helpful Info Regarding the Potential Show'
                     name='emailBody'
                     className='formInputBody'
                     required='required'
