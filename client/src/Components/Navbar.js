@@ -10,7 +10,7 @@ export default function Navbar() {
             <Link exact to='/' >
                 <img src={logoDanOrange} alt='DJ Luva Luva Logo' className='navbarLogo' />
             </Link>
-            <Link to='/booking' className='navLinks'>BOOKING</Link>
+            <Link to='/booking' className='navLinks1'>BOOKING</Link>
             <Link
                 activeClass='active'
                 to='soundcloud'
@@ -18,8 +18,8 @@ export default function Navbar() {
                 smooth={true}
                 offset={-50}
                 duration={500}
-                className='navLinks'>MUSIC</Link>
-            <Link to='/contact' className='navLinks'>CONTACT</Link>
+                className='navLinks2'>MUSIC</Link>
+            <Link to='/contact' className='navLinks1'>CONTACT</Link>
             <Link 
                 activeClass='active'
                 to='about'
@@ -27,7 +27,7 @@ export default function Navbar() {
                 smooth={true}
                 offset={-50}
                 duration={500}
-                className='navLinks'>ABOUT</Link>
+                className='navLinks2'>ABOUT</Link>
         </div>
     )
 }
