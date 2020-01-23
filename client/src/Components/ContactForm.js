@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import contactImage from '../Images/Luva-5cropped.jpg'
 
 export default function ContactForm() {
 
@@ -56,10 +57,10 @@ export default function ContactForm() {
     }
 
 return(
-    <div >
+    <div className='contactContainer'>
         <form className='contactForm' onSubmit={handleSubmit}>
             {/* <h3 className='formIntro'>Please fill out the form below to contact me!</h3> */}
-            <h3 className='formIntro'>PLEASE FILL OUT THE FORM BELOW TO CONTACT ME</h3>
+            <h3 className='formIntro'>PLEASE FILL OUT <br/> TO CONTACT ME</h3>
             <input type='text'
                     placeholder='Full Name'
                     name='fullName'
@@ -97,6 +98,9 @@ return(
                 Submit
             </button>
         </form>
+        <div className='contactImage'>
+            <img src={contactImage} alt="Contact Image"/>
+        </div>
     </div>
     )
 }
