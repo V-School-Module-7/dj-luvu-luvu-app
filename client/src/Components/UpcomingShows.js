@@ -9,7 +9,7 @@ export default function UpcomingShows() {
                 <h1 className='quote'>"WORK HARD, PLAY HARD"</h1>
                 <h1 className='quoteLuva'>-DJ LUVA LUVA</h1>
             </div>
-            <ShowsList />
+            {/* <ShowsList /> */}
         </div>
     )
 }
