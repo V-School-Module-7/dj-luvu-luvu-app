@@ -92,9 +92,34 @@ $formwidthXLarge: 500px;
 }
 .contactImage {
     grid-column: 2/3;
+    background-image: url('../Images/Luva-5cropped.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 400px;
+    position: relative;
+    height: 100vh;
+    width: 100%;
     img {
-        position: relative;
-        top: 20px;
+        height: 0;
+        width: 0;
+        @media (min-width: 1000px) {
+            height: auto;
+            width: 100%;
+        }
+    }
+}
+.bookingImage {
+    grid-column: 2/3;
+    background-image: url('../Images/Luva-6cropped.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 400px;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    img {
         height: 0;
         width: 0;
         @media (min-width: 1000px) {
