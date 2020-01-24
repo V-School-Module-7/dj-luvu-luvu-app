@@ -31,14 +31,14 @@
         width: 393px;
     }
     @media (min-width: 450px) {
-        width: 100%;
+        width: 99%;
     }
 }
-::-webkit-scrollbar {
+.allSongsDiv::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 7px;
 }
-::-webkit-scrollbar-thumb {
+.allSongsDiv::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background-color: rgba(0, 0, 0, .5);
     box-shadow: 0 0 1px rgba(255, 255, 255, .5);
@@ -56,7 +56,7 @@
     }
     div {
         display: inline-block;
-        padding-bottom: 30px;
+        line-height: 80px;
         padding-left: 30px;
         width: 50%;
         white-space: nowrap;

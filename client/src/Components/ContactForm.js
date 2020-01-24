@@ -99,7 +99,6 @@ return(
             </button>
         </form>
         <div className='contactImage'>
-            <img src={contactImage} alt="Contact Image"/>
         </div>
     </div>
     )

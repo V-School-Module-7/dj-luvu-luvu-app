@@ -123,8 +123,7 @@ return(
                 Submit
             </button>
         </form>
-        <div className='contactImage'>
-            <img src={bookingImage} alt="Booking Image"/>
+        <div className='bookingImage'>
         </div>
     </div>
     )
