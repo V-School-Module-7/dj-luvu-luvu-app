@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
 import { ShowContext } from './Components/Provider'
 
 import './StylesFolder/GlobalStyles.scss';
@@ -13,7 +13,7 @@ import Home from './Components/Home';
 import BookingForm from './Components/BookingForm'
 import ContactForm from './Components/ContactForm'
 
-function App() {
+function App(props) {
   const { token } = useContext(ShowContext)
 
   return (
@@ -29,4 +29,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);

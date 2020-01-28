@@ -31,6 +31,7 @@ function Navbar(props) {
                 </ScrollLink>
                 :
                 <Link to='/' className='navLinks2' >MUSIC</Link>
+                //<Link to={{ pathname: "/", state: { section: "soundcloud"}}} className='navLinks2' >MUSIC</Link>
             }
             <Link to='/contact' className='navLinks1'>CONTACT</Link>
             { path === '/' ?
@@ -46,6 +47,7 @@ function Navbar(props) {
                 </ScrollLink>
                 :
                 <Link to='/' className='navLinks2' >ABOUT</Link>
+                // <Link to={{ pathname: "/", state: { section: "about"}}} className='navLinks2' >ABOUT</Link>
             }
         </div>
     )
