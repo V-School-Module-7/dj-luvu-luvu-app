@@ -6,7 +6,7 @@ import video from '../Images/IMG_0076.mp4'
 export default function UpcomingShows() {   
     return(
         <div className='upcomingShows'>
-            <video loop="true" autoplay="autoplay" controls="controls" muted id='video'>
+            <video loop={true} autoPlay="autoplay" controls="controls" muted id='video'>
                 
                 <source src={video} type='video/mp4' codecs="avc1.4d002a, mp4a.40.2"></source>
             </video>
