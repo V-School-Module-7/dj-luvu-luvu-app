@@ -140,6 +140,7 @@ $animate: all 0.2s ease-in-out;
     grid-column: 1/-1;
     grid-row: 1/2;
     display: block;
+    background-color: $grey;
     @media (min-width: 1100px) {
         border-bottom: $orange 5px solid;
     }
