@@ -8,6 +8,10 @@ import LuvaHomeImage2 from '../Images/Luva-14-c.jpg'
 
 
 export default function Home() {
+    // useEffect(() => {
+    //     document.documentElement.scrollTop = (scrollVariable)
+    // })
+    
     return(
         <div className='homeContainer'>
             <img src={LuvaHomeImage2} alt='DJ Luva Luva' className='homeImage'/>
