@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -31,5 +33,6 @@
     "nodemailer": "^6.4.2",
     "react-instafeed": "^1.0.0",
     "react-router-dom": "^5.1.2"
-  }
+  },
+  "node": "10.16.3"
 }

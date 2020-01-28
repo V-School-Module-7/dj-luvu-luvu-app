@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const expressJwt = require('express-jwt')
 const PORT = process.env.PORT || 7000
+const path = require("path")
 
 app.use(express.json())
 app.use(morgan('dev'))
@@ -14,6 +15,7 @@ app.use("/send", require("./routes/contactRouter"));
 app.use('/api', expressJwt({ secret: process.env.SECRET }))
 app.use('/auth', require('./routes/auth'))
 app.use('/api/schedule', require('./routes/show'))
+app.use(express.static(path.join(__dirname, "client", "build")))
 
 app.use((err, res) => {
     console.error(err);
@@ -35,6 +37,13 @@ mongoose.connect('mongodb://localhost:27017/dj-luva-luva',
         console.log('Connected to the database');
     }
 );
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/todos")
+
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 app.listen(PORT, () => {
     console.log(`[+} Starting server on port ${PORT}`)
