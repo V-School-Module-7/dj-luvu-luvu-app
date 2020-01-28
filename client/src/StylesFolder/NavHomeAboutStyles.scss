@@ -1,8 +1,5 @@
 @import 'GlobalStyles.scss';
 
-// .app {
-//     display: grid;   
-// }
 .nav {
     display: flex;
     position: fixed;
@@ -111,7 +108,6 @@ $animate: all 0.2s ease-in-out;
 }
 .navbarLogo {
     height: 35px;
-    // margin: 20px 25px 5px 20px;
     position: absolute;
     left: 20px;
     top: 20px;
@@ -119,17 +115,13 @@ $animate: all 0.2s ease-in-out;
     @media (min-width: 500px) {
         height: 45px;
         top: 12px;
-        // margin: 13px 100px 5px 50px;
     }
-    @media (min-width: 700px) {
-        // margin: 13px 150px 5px 50px;
-    }
-    @media (min-width: 850px) {
-        // margin: 13px 300px 5px 50px;
-    }
-    @media (min-width: 1000px) {
-        // margin: 13px 450px 5px 50px;
-    }
+    // @media (min-width: 700px) {
+    // }
+    // @media (min-width: 850px) {
+    // }
+    // @media (min-width: 1000px) {
+    // }
 }
 .homeContainer {
     display: grid;
@@ -168,56 +160,41 @@ $animate: all 0.2s ease-in-out;
     display: flex;
     grid-column: 1/-1;
     grid-row: 3/4; 
-    // z-index: 0;
-    // position: relative;
     @media (min-width: 1100px) {
         grid-column: 2/3;
         grid-row: 2/3; 
     }
 }
-.upcomingShows {
-    background-image: url('../Images/Luva-14.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 400px;
-    position: relative;
-}
 .quoteDiv {
     position: absolute;
     text-align: center;
-    bottom: 25px;
+    bottom: 60px;
     left: 0px;
     right: 0px;
     margin: auto;
+    width: 80%;
 }
 .quote {
     color: white;
     font-family: $primaryHeaderFont;
     font-size: 22px;
     font-weight: 500;
-    // position: absolute;
-    // bottom: 0px;
     left: 0;
     right: 0;
     margin: auto;
     text-shadow: #333333 3px 3px 5px;
     @media (min-width: 500px) {
         font-size: 30px;
-        // bottom: 50px;
     }
     @media (min-width: 750px) {
         font-size: 36px;
-        // bottom: 55px;
         text-shadow: #333333 3px 3px 7px;
     }
     @media (min-width: 1000px) {
         font-size: 40px;
-        // bottom: 0px;
     }
     @media (min-width: 1500px) {
         font-size: 60px;
-        // bottom: 100px;
     }
 }
 .quoteLuva {
@@ -225,8 +202,6 @@ $animate: all 0.2s ease-in-out;
     font-family: $primaryHeaderFont;
     font-size: 22px;
     font-weight: 500;
-    // position: absolute;
-    // bottom: 20px;
     left: 0;
     right: 0;
     margin: auto;
@@ -240,7 +215,6 @@ $animate: all 0.2s ease-in-out;
     }
     @media (min-width: 1000px) {
         font-size: 40px;
-        // bottom: 40px;
     }
     @media (min-width: 1500px) {
         font-size: 60px;
