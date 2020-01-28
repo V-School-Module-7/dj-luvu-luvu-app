@@ -92,6 +92,7 @@ $formwidthXLarge: 500px;
 }
 .contactImage {
     grid-column: 2/3;
+    background-color: $grey;
     background-image: url('../Images/Luva-5cropped.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -111,6 +112,7 @@ $formwidthXLarge: 500px;
 }
 .bookingImage {
     grid-column: 2/3;
+    background-color: $grey;
     background-image: url('../Images/Luva-6cropped.jpg');
     background-position: center;
     background-repeat: no-repeat;
