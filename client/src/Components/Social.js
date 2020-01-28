@@ -7,13 +7,6 @@ import mCB from '../Images/SocialLogos-MCb.png'
 import yTB from '../Images/SocialLogos-YTb.png'
 import sCB from '../Images/SocialLogos-SCb.png'
 
-import instaOne from '../Images/instagram_image_one.jpg'
-import instaTwo from '../Images/instagram_image_2.jpg'
-import instaThree from '../Images/instagram_image_3.jpg'
-import instaFour from '../Images/instagram_image_4.jpg'
-import instaFive from '../Images/instagram_image_5.jpg'
-import instaSix from '../Images/instagram_image_6.jpg'
-
 function Social() {
     return(
         <div className='social'>
@@ -27,12 +20,12 @@ function Social() {
                 <a href="https://www.youtube.com/user/dJluvaluva26"><img src={yTB} alt="YouTube Logo"/></a>
             </div>
             <div className='instaImages'>
-                <a className='instaOne' href="https://www.instagram.com/djluvaluva/"></a>
-                <a className='instaTwo' href="https://www.instagram.com/djluvaluva/"></a>
-                <a className='instaThree' href="https://www.instagram.com/djluvaluva/"></a>
-                <a className='instaFour' href="https://www.instagram.com/djluvaluva/"></a>
-                <a className='instaFive' href="https://www.instagram.com/djluvaluva/"></a>
-                <a className='instaSix' href="https://www.instagram.com/djluvaluva/"></a>
+                <a className='instaOne' href="https://www.instagram.com/djluvaluva/"> </a>
+                <a className='instaTwo' href="https://www.instagram.com/djluvaluva/"> </a>
+                <a className='instaThree' href="https://www.instagram.com/djluvaluva/"> </a>
+                <a className='instaFour' href="https://www.instagram.com/djluvaluva/"> </a>
+                <a className='instaFive' href="https://www.instagram.com/djluvaluva/"> </a>
+                <a className='instaSix' href="https://www.instagram.com/djluvaluva/"> </a>
             </div>
         </div>
     )
