@@ -16,6 +16,7 @@ $black: #08090a;
 .header {
     font-family: $primaryHeaderFont;
     text-align: center;
+    font-weight: 500;
     margin: 25px 0px 25px 0px;
     font-size: 18px;
     @media (min-width: 700px) {

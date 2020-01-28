@@ -5,6 +5,7 @@ import { ShowContext } from './Components/Provider'
 import './StylesFolder/GlobalStyles.scss';
 import './StylesFolder/NavHomeAboutStyles.scss';
 import './StylesFolder/ContactForm.scss';
+import './StylesFolder/UpcomingShows.scss';
 
 import Navbar from './Components/Navbar'
 import Login from './AuthFolder/Login'
