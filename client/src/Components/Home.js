@@ -13,6 +13,7 @@ var scroller = Scroll.scroller;
 function Home(props) {
 
     useLayoutEffect(() => {
+        
         scroller.scrollTo(props.location.state && props.location.state.section)
     }, [])
     // console.log(props.location)

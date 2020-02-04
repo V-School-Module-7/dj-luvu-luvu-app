@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import bookingImage from '../Images/Luva-6cropped.jpg'
+import Booking from './Booking.js'
 
 export default function BookingForm() {
 
@@ -124,6 +125,7 @@ return(
             </button>
         </form>
         <div className='bookingImage'>
+            {/* <Booking /> */}
         </div>
     </div>
     )
