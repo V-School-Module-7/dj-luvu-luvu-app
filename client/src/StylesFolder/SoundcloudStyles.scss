@@ -66,7 +66,9 @@
     }
 }
 .songSpacer {
-    border-top: 1px $orange solid;
+    // height: 1px;
+    // background-color: $orange;
+    border: 0.5px $orange solid;
     width: 90%;
     margin: auto;
     @media (min-width: 700px) {
