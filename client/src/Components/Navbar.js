@@ -8,16 +8,19 @@ function Navbar(props) {
 
     return(
         <div className='nav'>
-            {/* <Link exact to='/' >
-                <img src={logoDanOrange} alt='DJ Luva Luva Logo' className='navbarLogo' />
-            </Link> */}
-                    <a onClick={() => window.scrollTo({
-                        top: 0,
-                        left: 0,
-                        behavior: 'smooth'
-                        })}>
-                        <img src={logoDanOrange} alt='DJ Luva Luva Logo' className='navbarLogo' />
-                    </a>
+            { path === '/' ?
+                <a onClick={() => window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: 'smooth'
+                    })}>
+                    <img src={logoDanOrange} alt='DJ Luva Luva Logo' className='navbarLogo' />
+                </a>
+                :
+                <Link exact to='/' >
+                    <img src={logoDanOrange} alt='DJ Luva Luva Logo' className='navbarLogo' />
+                </Link>
+            }
             <Link to='/booking' className='navLinks1'>BOOKING</Link>
 
             {/* <div className='bookingDropdown'> 
