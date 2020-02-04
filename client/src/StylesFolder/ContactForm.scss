@@ -111,15 +111,15 @@ $formwidthXLarge: 500px;
     }
 }
 .bookingImage {
+    margin-top: 4vh;
     grid-column: 2/3;
-    background-color: $grey;
     background-image: url('../Images/Luva-6cropped.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 400px;
     position: relative;
-    height: 100vh;
+    height: 96vh;
     width: 100%;
     img {
         height: 0;
