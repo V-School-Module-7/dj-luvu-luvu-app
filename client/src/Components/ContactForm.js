@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import contactImage from '../Images/Luva-5cropped.jpg'
+// import contactImage from '../Images/Luva-5cropped.jpg'
 
 export default function ContactForm() {
 

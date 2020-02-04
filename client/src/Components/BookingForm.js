@@ -10,7 +10,7 @@ export default function BookingForm() {
     const [ phone, setPhone ] = useState('')
     const [ emailBody, setEmailbody ] = useState('')
     const [ showDate, setShowDate ] = useState('')
-    const [ showPrice, setShowPrice ] = useState('')
+    // const [ showPrice, setShowPrice ] = useState('')
     
     const inputs = {
         fullName,
@@ -18,7 +18,7 @@ export default function BookingForm() {
         phone,
         emailBody,
         showDate,
-        showPrice
+        // showPrice
     }
     const sendMessage = () => {
         console.log(inputs)
@@ -41,7 +41,7 @@ export default function BookingForm() {
         setPhone('')
         setEmailbody('')
         setShowDate('')
-        setShowPrice('')
+        // setShowPrice('')
     }
     const handleSubmit = e => {
         e.preventDefault();
@@ -58,8 +58,8 @@ export default function BookingForm() {
                 setPhone(value)
             } else if ( name === 'showDate' ){
                 setShowDate(value)
-            } else if ( name === 'showPrice' ){
-                setShowPrice(value)
+            // } else if ( name === 'showPrice' ){
+            //     setShowPrice(value)
             } else if ( name === 'emailBody' ){
                 setEmailbody(value)
         console.log(value)
@@ -104,14 +104,14 @@ return(
                     value={showDate}
                     onChange={handleChange}
             />
-            <input type='text'
+            {/* <input type='text'
                     placeholder='Offer Price'
                     name='showPrice'
                     className='formInput'
                     required='required'
                     value={showPrice}
                     onChange={handleChange}
-            />
+            /> */}
             <textarea type='text'
                     placeholder='Please Fill Out With Any Other Helpful Info Regarding the Potential Show'
                     name='emailBody'

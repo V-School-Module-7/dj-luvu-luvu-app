@@ -1,6 +1,6 @@
 import React from 'react'
-import SCPlaceholder from '../Images/Luva-14.jpg'
-import ShowsList from './ShowsList'
+// import SCPlaceholder from '../Images/Luva-14.jpg'
+// import ShowsList from './ShowsList'
 import video from '../Images/IMG_0076.mp4'
 
 export default function UpcomingShows() {   

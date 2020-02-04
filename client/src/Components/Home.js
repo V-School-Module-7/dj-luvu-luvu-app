@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useLayoutEffect } from 'react'
 import { withRouter } from 'react-router-dom'
 import Soundcloud from './Soundcloud'
 import UpcomingShows from './UpcomingShows'
@@ -11,14 +11,12 @@ var scroller = Scroll.scroller;
 
 
 function Home(props) {
-    // useEffect(() => {
-    //     document.documentElement.scrollTop = (scrollVariable)
-    // })
 
-    // useEffect(() => {
-    //     scroller.scrollTo(props.location.state.section)
-    // })
+    useLayoutEffect(() => {
+        scroller.scrollTo(props.location.state && props.location.state.section)
+    }, [])
     // console.log(props.location)
+    // console.log(props.location.state)
     
     return(
         <div className='homeContainer'>
