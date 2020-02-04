@@ -17,7 +17,7 @@ function Social() {
                 <a href="https://twitter.com/djluvaluva?lang=en"><img src={tB} alt="Twitter Logo"/></a>
                 <a href="https://www.mixcloud.com/djluvaluva/"><img src={mCB} alt="MixCloud Logo"/></a>
                 <a href="https://soundcloud.com/djluvaluva/tracks"><img src={sCB} alt="SoundCloud Logo"/></a>
-                <a href="https://www.youtube.com/user/dJluvaluva26"><img src={yTB} alt="YouTube Logo"/></a>
+                <a href="https://www.youtube.com/channel/UC6zPAY1Cp5aPYkvo90WILew"><img src={yTB} alt="YouTube Logo"/></a>
             </div>
             <div className='instaImages'>
                 <a className='instaOne' href="https://www.instagram.com/djluvaluva/"> </a>
