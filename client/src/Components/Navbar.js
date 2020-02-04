@@ -19,6 +19,16 @@ function Navbar(props) {
                         <img src={logoDanOrange} alt='DJ Luva Luva Logo' className='navbarLogo' />
                     </a>
             <Link to='/booking' className='navLinks1'>BOOKING</Link>
+
+            {/* <div className='bookingDropdown'> 
+                <div className='navLinkDropDown'>BOOKING 
+                    <div className='dropdownContent'>
+                        <Link to='/booking' className='navLinks1'>PRIVATE</Link>
+                        <Link to='/booking' className='navLinks1'>CORPORATE</Link>
+                    </div>   
+                </div>
+            </div> */}
+
             { path === '/' ?
                 <ScrollLink
                     activeClass='active'
