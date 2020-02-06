@@ -10,9 +10,14 @@ export default function BookingForm() {
     const [ fullName, setFullname ] = useState('')
     const [ email, setEmail ] = useState('')
     const [ phone, setPhone ] = useState('')
+    const [ venue, setVenue ] = useState('')
+    const [ location, setLocation ] = useState('')
+    const [ time, setTime ] = useState('')
     const [ emailBody, setEmailbody ] = useState('')
+
+
     const [ events, setEvents ] = useState('')
-    // const [ showDate, setShowDate ] = useState('')
+    const [ showDate, setShowDate ] = useState('')
     // const [ showPrice, setShowPrice ] = useState('')
 
     // useEffect(() => {
@@ -25,15 +30,19 @@ export default function BookingForm() {
         phone,
         emailBody,
         events,
+        venue,
+        location,
+        time,
+        showDate
         // showPrice
     }
     const sendMessage = () => {
         console.log(inputs)
         axios
-            .post('/send', inputs)
+            .post('/sendBooking', inputs)
             .then(res => {
                 if (res.data.status === 'success') {
-                    alert("Message sent, DJ Luva Luva will get back to you as soon as possible.")
+                    alert("Message sent, DJ Luva Luva will get back to you as soon as possible regarding your event.")
                 } else if (res.data.status === 'fail') {
                     alert("Message failed to send, please try again.")
                 }
@@ -48,6 +57,10 @@ export default function BookingForm() {
         setPhone('')
         setEmailbody('')
         setEvents('')
+        setVenue('')
+        setLocation('')
+        setTime('')
+        setShowDate('')
         // setShowPrice('')
     }
     const handleSubmit = e => {
@@ -65,6 +78,14 @@ export default function BookingForm() {
                 setPhone(value)
             } else if ( name === 'events' ){
                 setEvents(value)
+            } else if ( name === 'venue' ){
+                setVenue(value)
+            } else if ( name === 'location' ){
+                setLocation(value)
+            } else if ( name === 'time' ){
+                setTime(value)
+            } else if ( name === 'date' ){
+                setShowDate(value)
             // } else if ( name === 'showPrice' ){
             //     setShowPrice(value)
             } else if ( name === 'emailBody' ){
@@ -89,8 +110,8 @@ export default function BookingForm() {
     var testDate = '2020-02-03'
 
 return(
-    <div className='contactContainer'>
-        <form className='contactForm' onSubmit={handleSubmit}>
+    <div className='bookingContainer'>
+        <form className='bookingForm' onSubmit={handleSubmit}>
             {/* <h3 className='formIntro'>Please fill out the form below to contact me!</h3> */}
             <h3 className='formIntro'>PLEASE FILL OUT FORM TO<br/>REQUEST TO BOOK AN EVENT</h3>
             <input type='text'
@@ -114,18 +135,44 @@ return(
                     name='phone'
                     pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
                     className='formInput'
-                    required='required'
+                    //required='required'
                     value={phone}
                     onChange={handleChange}
             />
             <input type='text'
                     placeholder='Date of Show'
                     name='events'
-                    className='formInput'
+                    className='formInputDate'
                     required='required'
-                    value={events}
-                    onChange={dateChange}
+                    value={events ? events : showDate}
+                    onChange={handleChange}
+                    //onChange={dateChange}
             />
+            <input type='text'
+                    placeholder='Time of Show (7:00pm-10:30 pm)'
+                    name='time'
+                    className='formInputTime'
+                    //required='required'
+                    value={time}
+                    onChange={handleChange}
+            />
+            <input type='text'
+                    placeholder='Venue Name'
+                    name='venue'
+                    className='formInput'
+                    //required='required'
+                    value={venue}
+                    onChange={handleChange}
+            />
+            <input type='text'
+                    placeholder='Location of Show'
+                    name='location'
+                    className='formInput'
+                    //required='required'
+                    value={location}
+                    onChange={handleChange}
+            />
+            
             {/* <input type='text'
                     placeholder='Offer Price'
                     name='showPrice'
@@ -138,7 +185,7 @@ return(
                     placeholder='Please Fill Out With Any Other Helpful Info Regarding the Potential Show'
                     name='emailBody'
                     className='formInputBody'
-                    required='required'
+                    //required='required'
                     value={emailBody}
                     onChange={handleChange}
             />
