@@ -11,6 +11,7 @@ app.use(express.json())
 app.use(morgan('dev'))
 
 app.use("/send", require("./routes/contactRouter"));
+app.use("/sendBooking", require("./routes/contactRouter"));
 
 app.use('/api', expressJwt({ secret: process.env.SECRET }))
 app.use('/auth', require('./routes/auth'))

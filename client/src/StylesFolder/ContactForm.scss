@@ -5,6 +5,11 @@ $formwidthMedium: 300px;
 $formwidthLarge: 400px;
 $formwidthXLarge: 500px;
 
+$halfformwidth: 120px;
+$halfformwidthMedium: 145px;
+$halfformwidthLarge: 195px;
+$halfformwidthXLarge: 245px;
+
 .contactContainer {
     display: grid;
     grid-template-columns: 1fr;
@@ -30,9 +35,34 @@ $formwidthXLarge: 500px;
         grid-column: 1/2;
     }
 }
+.bookingContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    @media (min-width: 1000px) {
+        grid-template-columns: 1fr 1fr;  
+    }
+}
+.bookingForm {
+    margin: 60px 35px 0px 35px;
+    width: $formwidth;
+    text-align: center;
+    grid-column: 1/-1;
+    @media (min-width: 400px) {
+        width: $formwidthMedium;
+        margin: 60px 50px 0px 50px;
+    }
+    @media (min-width: 600px) {
+        width: $formwidthXLarge;
+    }
+    @media (min-width: 1000px) {
+        width: $formwidthLarge;
+        grid-column: 1/2;
+    }
+}
 .formIntro {
     font-family: $primaryHeaderFont;
-    color: black;
+    color: $orange;
     margin: 70px 10px 25px 10px;
 }
 .formInput {
@@ -41,6 +71,10 @@ $formwidthXLarge: 500px;
     width: $formwidth;
     padding: 5px;
     box-sizing: border-box;
+    border-top-style: hidden;
+    border-left-style: hidden;
+    border-right-style: hidden;
+    border-bottom: 1px $grey solid;
     @media (min-width: 400px) {
         width: $formwidthMedium;
     }
@@ -51,9 +85,51 @@ $formwidthXLarge: 500px;
         width: $formwidthLarge;
     }
 }
+.formInputDate {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 5px;
+    width: $halfformwidth;
+    padding: 5px;
+    box-sizing: border-box;
+    border-top-style: hidden;
+    border-left-style: hidden;
+    border-right-style: hidden;
+    border-bottom: 1px $grey solid;
+    @media (min-width: 400px) {
+        width: $halfformwidthMedium;
+    }
+    @media (min-width: 600px) {
+        width: $halfformwidthXLarge;
+    }
+    @media (min-width: 1000px) {
+        width: $halfformwidthLarge;
+    }
+}
+.formInputTime {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 5px;
+    width: $halfformwidth;
+    padding: 5px;
+    box-sizing: border-box;
+    border-top-style: hidden;
+    border-left-style: hidden;
+    border-right-style: hidden;
+    border-bottom: 1px $grey solid;
+    @media (min-width: 400px) {
+        width: $halfformwidthMedium;
+    }
+    @media (min-width: 600px) {
+        width: $halfformwidthXLarge;
+    }
+    @media (min-width: 1000px) {
+        width: $halfformwidthLarge;
+    }
+}
 .formInputBody {
     display: block;
-    margin: 10px 0px;
+    margin: 30px 0px 10px 0px;
     width: $formwidth;
     height: 100px;
     padding: 5px;
