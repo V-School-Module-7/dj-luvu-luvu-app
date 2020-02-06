@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import axios from 'axios'
 import bookingImage from '../Images/Luva-6cropped.jpg'
 import { Calendar } from 'react-calendar'
+import Booking from './Booking'
+import { ShowContext } from './Provider'
 
 export default function BookingForm() {
-
+    const { shows, getShows } = useContext(ShowContext)
     const [ fullName, setFullname ] = useState('')
     const [ email, setEmail ] = useState('')
     const [ phone, setPhone ] = useState('')
@@ -12,6 +14,10 @@ export default function BookingForm() {
     const [ events, setEvents ] = useState('')
     // const [ showDate, setShowDate ] = useState('')
     // const [ showPrice, setShowPrice ] = useState('')
+
+    // useEffect(() => {
+    //     getShows()
+    // }, [])
     
     const inputs = {
         fullName,
@@ -79,6 +85,8 @@ export default function BookingForm() {
     //     const shortDate = date.slice(0, 14)
     //     return shortDate
     // }
+    const result = shows && shows.map(dates => (dates.date))
+    var testDate = '2020-02-03'
 
 return(
     <div className='contactContainer'>
@@ -142,7 +150,10 @@ return(
             <Calendar
                 onChange={dateChange}
                 value={events.date}
+                //tileDisabled={() => testDate}
+                calendarType="US"
             />
+            {/* <Booking /> */}
         </div>
     </div>
     )
