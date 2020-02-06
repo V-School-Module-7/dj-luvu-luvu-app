@@ -6,8 +6,7 @@ const showSchema = new Schema({
     venue: String,
     location: String,
     time: String,
-    startDate: Date,
-    endDate: Date, 
+    date: Date,
     // price: Number,
     url: String
 })
