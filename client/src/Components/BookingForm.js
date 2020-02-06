@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import bookingImage from '../Images/Luva-6cropped.jpg'
-import Booking from './Booking.js'
+import { Calendar } from 'react-calendar'
 
 export default function BookingForm() {
 
@@ -9,7 +9,8 @@ export default function BookingForm() {
     const [ email, setEmail ] = useState('')
     const [ phone, setPhone ] = useState('')
     const [ emailBody, setEmailbody ] = useState('')
-    const [ showDate, setShowDate ] = useState('')
+    const [ events, setEvents ] = useState('')
+    // const [ showDate, setShowDate ] = useState('')
     // const [ showPrice, setShowPrice ] = useState('')
     
     const inputs = {
@@ -17,7 +18,7 @@ export default function BookingForm() {
         email,
         phone,
         emailBody,
-        showDate,
+        events,
         // showPrice
     }
     const sendMessage = () => {
@@ -40,7 +41,7 @@ export default function BookingForm() {
         setEmail('')
         setPhone('')
         setEmailbody('')
-        setShowDate('')
+        setEvents('')
         // setShowPrice('')
     }
     const handleSubmit = e => {
@@ -56,8 +57,8 @@ export default function BookingForm() {
                 setEmail(value)
             } else if ( name === 'phone' ){
                 setPhone(value)
-            } else if ( name === 'showDate' ){
-                setShowDate(value)
+            } else if ( name === 'events' ){
+                setEvents(value)
             // } else if ( name === 'showPrice' ){
             //     setShowPrice(value)
             } else if ( name === 'emailBody' ){
@@ -66,11 +67,24 @@ export default function BookingForm() {
         }
     }
 
+    const dateChange = (date) => {
+
+        const dateString = date.toString()
+        const shortDate = dateString.slice(0, 15)
+        setEvents(shortDate)
+        console.log(shortDate)
+    }
+
+    // const alterDate = (date) => {
+    //     const shortDate = date.slice(0, 14)
+    //     return shortDate
+    // }
+
 return(
     <div className='contactContainer'>
         <form className='contactForm' onSubmit={handleSubmit}>
             {/* <h3 className='formIntro'>Please fill out the form below to contact me!</h3> */}
-            <h3 className='formIntro'>PLEASE FILL OUT <br/> TO BOOK EVENT</h3>
+            <h3 className='formIntro'>PLEASE FILL OUT FORM TO<br/>REQUEST TO BOOK AN EVENT</h3>
             <input type='text'
                     placeholder='Full Name'
                     name='fullName'
@@ -96,13 +110,13 @@ return(
                     value={phone}
                     onChange={handleChange}
             />
-            <input type='date'
+            <input type='text'
                     placeholder='Date of Show'
-                    name='showDate'
+                    name='events'
                     className='formInput'
                     required='required'
-                    value={showDate}
-                    onChange={handleChange}
+                    value={events}
+                    onChange={dateChange}
             />
             {/* <input type='text'
                     placeholder='Offer Price'
@@ -125,7 +139,10 @@ return(
             </button>
         </form>
         <div className='bookingImage'>
-            {/* <Booking /> */}
+            <Calendar
+                onChange={dateChange}
+                value={events.date}
+            />
         </div>
     </div>
     )
