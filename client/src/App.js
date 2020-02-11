@@ -7,6 +7,9 @@ import './StylesFolder/NavHomeAboutStyles.scss';
 import './StylesFolder/ContactForm.scss';
 import './StylesFolder/UpcomingShows.scss';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 import Navbar from './Components/Navbar'
 import Login from './AuthFolder/Login'
 import Home from './Components/Home';

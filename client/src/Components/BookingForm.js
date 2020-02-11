@@ -149,7 +149,7 @@ return(
                     //onChange={dateChange}
             />
             <input type='text'
-                    placeholder='Time of Show (7:00pm-10:30 pm)'
+                    placeholder='Time (7:00pm-10:30 pm)'
                     name='time'
                     className='formInputTime'
                     //required='required'
