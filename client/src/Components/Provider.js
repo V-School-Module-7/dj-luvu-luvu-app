@@ -12,12 +12,14 @@ showAxios.interceptors.request.use((config) => {
 const ShowContext = React.createContext()
 
 function ContextProvider(props) {
-    const [userState, setUserState] = useState({
+    const [ userState, setUserState ] = useState({
         user: JSON.parse(localStorage.getItem('user')) || {},
         token: localStorage.getItem('token') || ''
     })
-    const [shows, setShows] = useState([])
+    const [ shows, setShows ] = useState([])
+    const [ potentialShows, setPotentialShows ] = useState([])
 
+// CRUD for new shows for Dan to enter
     const getShows = () => {
         return showAxios.get('/api/schedule')
             .then(res => {
@@ -52,6 +54,46 @@ function ContextProvider(props) {
                         return show._id !== showId
                     })
                     return (updatedShows)
+                })
+                return res
+            })
+    }
+    
+// CRUD for potential shows for Dan to approve or edit
+    const getPotentialShow = () => {
+        return showAxios.get('/api/potential')
+            .then(res => {
+                setPotentialShows(res.data)
+                return res
+        })
+    }
+    const addPotentialShow = (newPotentialShow) => {
+        return showAxios.post('/api/potential', newPotentialShow)
+            .then(res => {
+                getPotentialShow()
+                return res
+            })
+    }
+    const editPotentialShow = (potentialShowId, potentialShow) => {
+        return showAxios.put(`/api/potential/${potentialShowId}`, potentialShow)
+            .then(res => {
+                setPotentialShows(prev => {
+                    const updatedPotentialShows = prev.map(potentialShow => {
+                        return potentialShowId._id === res.data._id ? res.data : potentialShow
+                    })
+                    setPotentialShows(updatedPotentialShows)
+                })
+                return res
+            })
+    }
+    const deletePotentialShow = (potentialShowId) => {
+        return showAxios.delete(`/api/potential/${potentialShowId}`)
+            .then(res => {
+                setPotentialShows(prev => {
+                    const updatedPotentialShows = prev.filter(potentialShow => {
+                        return potentialShow._id !== potentialShowId
+                    })
+                    return (updatedPotentialShows)
                 })
                 return res
             })
@@ -102,7 +144,13 @@ function ContextProvider(props) {
                 deleteShow,
                 signup,
                 login,
-                logout
+                logout,
+                potentialShows,
+                setPotentialShows,
+                getPotentialShow,
+                addPotentialShow,
+                editPotentialShow,
+                deletePotentialShow
             }} >
             { props.children }
         </ShowContext.Provider>
