@@ -96,10 +96,10 @@ export default function BookingForm() {
     }
 
     const dateChange = (date) => {
-        // const dateString = date.toString()
-        // const shortDate = dateString.slice(0, 15)
-        // setEvents(shortDate)
-        // console.log(shortDate)
+        const dateString = date.toString()
+        const shortDate = dateString.slice(0, 15)
+        setEvents(shortDate)
+        console.log(shortDate)
         setDate(date)
     }
 
@@ -201,11 +201,11 @@ return(
         <div className='bookingImage'>
             <Calendar
                 onChange={dateChange}
-                value={blah}
+                value={events.date}
                 tileDisabled={checkDateDisable}
                 calendarType="US"
             />
-            <Booking />
+            {/* <Booking /> */}
         </div>
     </div>
     )
