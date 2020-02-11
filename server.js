@@ -14,8 +14,8 @@ app.use("/send", require("./routes/contactRouter"));
 app.use("/sendBooking", require("./routes/contactRouter"));
 
 // app.use('/api', require('./routes/auth'))
-app.use('/potential', require('./routes/potentialShow'))
 app.use('/auth', require('./routes/auth'))
+app.use('/api/potential', require('./routes/potentialShow'))
 app.use('/api/schedule', require('./routes/show'), expressJwt({ secret: process.env.SECRET }))
 app.use(express.static(path.join(__dirname, "client", "build")))
 
