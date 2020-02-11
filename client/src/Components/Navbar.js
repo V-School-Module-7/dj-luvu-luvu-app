@@ -23,13 +23,16 @@ function Navbar(props) {
             }
             <Link to='/booking' className='navLinks1'>BOOKING</Link>
 
-            {/* <div className='bookingDropdown'> 
-                <div className='navLinkDropDown'>BOOKING 
-                    <div className='dropdownContent'>
-                        <Link to='/booking' className='navLinks1'>PRIVATE</Link>
-                        <Link to='/booking' className='navLinks1'>CORPORATE</Link>
-                    </div>   
-                </div>
+            {/* <div class='container'>
+                <nav class='dropdown '>
+                    <button class='btn navnewcolor navLinks1' data-toggle='collapse' data-target='#navbarCollapse' className='bookingbutton'>
+                        BOOK ME
+                    </button>
+                    <div class='dropdown-menu' aria-labelledby="dropdownMenuButton">
+                        <a href='#' class='dropdown-item navlinkcolor'>CORPORATE EVENT</a>
+                        <a href='#' class='dropdown-item navlinkcolor'>PRIVATE EVENT</a>
+                    </div>
+                </nav>
             </div> */}
 
             { path === '/' ?

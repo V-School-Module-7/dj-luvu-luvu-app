@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const showSchema = new Schema({
+const potentialShowSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -23,4 +23,4 @@ const showSchema = new Schema({
     url: String
 })
 
-module.exports = mongoose.model('Show', showSchema)
+module.exports = mongoose.model('PotentialShow', potentialShowSchema)
