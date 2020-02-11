@@ -14,8 +14,7 @@ export default function BookingForm() {
     const [ location, setLocation ] = useState('')
     const [ time, setTime ] = useState('')
     const [ emailBody, setEmailbody ] = useState('')
-    const [ blah, setDate ] = useState(new Date())
-
+    const [ newDate, setDate ] = useState(new Date())
 
     const [ events, setEvents ] = useState('')
     const [ showDate, setShowDate ] = useState('')
