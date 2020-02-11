@@ -88,8 +88,10 @@ export default function BookingForm() {
     })
     const { addPotentialShow } = useContext(ShowContext)
     
-    const newPotentialShowFunction = (e) => {
-        e.preventDefault();
+    const newPotentialShowFunction = () => {
+        console.log('newPotentialShowFunction is being called')
+        console.log(newPotentialShowInfo)
+        // e.preventDefault()
         addPotentialShow(newPotentialShowInfo)
             .then(() => {
                 clearInputs()
@@ -104,6 +106,10 @@ export default function BookingForm() {
     }
     const handleChange = e => {
         const { name, value } = e.target
+        setNewPotentialShowInfo(prevPotentialShow => ({
+            ...prevPotentialShow,
+            [name]: value
+        }))
             if( name === 'name' ){
                 setName(value)
             } else if ( name === 'email' ){
@@ -124,12 +130,7 @@ export default function BookingForm() {
             //     setShowPrice(value)
             } else if ( name === 'emailBody' ){
                 setEmailbody(value)
-                setNewPotentialShowInfo(prevPotentialShow => ({
-                    ...prevPotentialShow,
-                    [name]: value
-                }))
-        console.log(value)
-        }
+            }
     }
 
     const dateChange = (date) => {
@@ -145,13 +146,12 @@ export default function BookingForm() {
     //     return shortDate
     // }
     const result = shows && shows.map(dates => (dates.date))
-    var testDate = '2020-02-03'
     console.log(result)
     const checkDateDisable = (data) => {
         return result.includes(new Date(data.date).toISOString())
     }
 
-    console.log(setNewPotentialShowInfo)
+    // console.log(setNewPotentialShowInfo)
 
 return(
     <div className='bookingContainer'>

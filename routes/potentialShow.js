@@ -1,10 +1,10 @@
 const express = require('express')
 const potentialRouter = express.Router()
-const Show = require('../models/PotentialShow')
+const PotentialShow = require('../models/PotentialShow')
 
-potentialRouter.route('/potential')
+potentialRouter.route('/')
     .get((req, res, next) => {
-        Show.find((err, show) => {
+        PotentialShow.find((err, show) => {
             if(err) {
                 res.status(500)
                 return next(err)
@@ -13,7 +13,7 @@ potentialRouter.route('/potential')
         })
     })
     .post((req, res, next) => {
-        const show = new Show(req.body)
+        const show = new PotentialShow(req.body)
         show.save(function(err, newShow) {
             if(err) {
                 res.status(500)
@@ -23,9 +23,9 @@ potentialRouter.route('/potential')
         })
     })
 
-potentialRouter.route('/potential/:showId')
+potentialRouter.route('/:showId')
     .get((req, res, next) => {
-        Show.findOne({ _id: req.params.showId }, (err, show) => {
+        PotentialShow.findOne({ _id: req.params.showId }, (err, show) => {
             if(err) {
                 res.status(500)
                 return next(err)
@@ -37,7 +37,7 @@ potentialRouter.route('/potential/:showId')
         })
     })
     .put((req, res, next) => {
-        Show.findOneAndUpdate(
+        PotentialShow.findOneAndUpdate(
             { _id: req.params.showId },
             req.body,
             { new: true },
@@ -52,7 +52,7 @@ potentialRouter.route('/potential/:showId')
         )
     })
     .delete((req, res, next) => {
-        Show.findOneAndRemove({ _id: req.params.showId }, (err, show) => {
+        PotentialShow.findOneAndRemove({ _id: req.params.showId }, (err, show) => {
             if(err) {
                 res.status(500)
                 return next(err)
