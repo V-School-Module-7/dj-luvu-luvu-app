@@ -19,7 +19,7 @@ function Booking(props) {
     // console.log(events.date)
 
     const result = shows && shows.map(dates => (dates.date))
-    console.log(result)
+    // console.log(result)
 
     return(
         <div style={{height: '800px', width: '600px'}}>
