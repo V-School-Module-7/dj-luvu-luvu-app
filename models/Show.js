@@ -4,12 +4,12 @@ const Schema = mongoose.Schema
 const showSchema = new Schema({
     name: {
         type: String,
-        required: true
+        // required: true
     },
     phone: String,
     email: {
         type: String,
-        required: true
+        // required: true
     },
     venue: String,
     location: String,
