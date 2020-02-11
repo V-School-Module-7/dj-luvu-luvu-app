@@ -14,15 +14,16 @@ export default function BookingForm() {
     const [ location, setLocation ] = useState('')
     const [ time, setTime ] = useState('')
     const [ emailBody, setEmailbody ] = useState('')
+    const [ blah, setDate ] = useState(new Date())
 
 
     const [ events, setEvents ] = useState('')
     const [ showDate, setShowDate ] = useState('')
     // const [ showPrice, setShowPrice ] = useState('')
 
-    // useEffect(() => {
-    //     getShows()
-    // }, [])
+    useEffect(() => {
+        getShows()
+    }, [])
     
     const inputs = {
         fullName,
@@ -95,11 +96,11 @@ export default function BookingForm() {
     }
 
     const dateChange = (date) => {
-
         const dateString = date.toString()
         const shortDate = dateString.slice(0, 15)
         setEvents(shortDate)
         console.log(shortDate)
+        setDate(date)
     }
 
     // const alterDate = (date) => {
@@ -108,6 +109,10 @@ export default function BookingForm() {
     // }
     const result = shows && shows.map(dates => (dates.date))
     var testDate = '2020-02-03'
+    console.log(result)
+    const checkDateDisable = (data) => {
+        return result.includes(new Date(data.date).toISOString())
+    }
 
 return(
     <div className='bookingContainer'>
@@ -197,7 +202,7 @@ return(
             <Calendar
                 onChange={dateChange}
                 value={events.date}
-                //tileDisabled={() => testDate}
+                tileDisabled={checkDateDisable}
                 calendarType="US"
             />
             {/* <Booking /> */}
