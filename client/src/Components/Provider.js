@@ -68,6 +68,7 @@ function ContextProvider(props) {
         })
     }
     const addPotentialShow = (newPotentialShow) => {
+        console.log(newPotentialShow)
         return showAxios.post('/api/potential', newPotentialShow)
             .then(res => {
                 getPotentialShow()
