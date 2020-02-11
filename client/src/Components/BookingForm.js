@@ -7,15 +7,14 @@ import { ShowContext } from './Provider'
 
 export default function BookingForm() {
     const { shows, getShows } = useContext(ShowContext)
-    const [ fullName, setFullname ] = useState('')
+    const [ name, setName ] = useState('')
     const [ email, setEmail ] = useState('')
     const [ phone, setPhone ] = useState('')
     const [ venue, setVenue ] = useState('')
     const [ location, setLocation ] = useState('')
     const [ time, setTime ] = useState('')
     const [ emailBody, setEmailbody ] = useState('')
-    const [ blah, setDate ] = useState(new Date())
-
+    const [ newDate, setDate ] = useState(new Date())
 
     const [ events, setEvents ] = useState('')
     const [ showDate, setShowDate ] = useState('')
@@ -26,7 +25,7 @@ export default function BookingForm() {
     }, [])
     
     const inputs = {
-        fullName,
+        name,
         email,
         phone,
         emailBody,
@@ -53,7 +52,7 @@ export default function BookingForm() {
             })
     }
     const clearInputs = () => {
-        setFullname('')
+        setName('')
         setEmail('')
         setPhone('')
         setEmailbody('')
@@ -63,21 +62,55 @@ export default function BookingForm() {
         setTime('')
         setShowDate('')
         // setShowPrice('')
+
+        setNewPotentialShowInfo({
+            name: '',
+            phone: '',
+            email: '',
+            venue: '',
+            location: '',
+            time: '',
+            date: '',
+            type: '',
+            url: ''
+        })
+    }
+    const [ newPotentialShowInfo, setNewPotentialShowInfo ] = useState({
+            name: '',
+            phone: '',
+            email: '',
+            venue: '',
+            location: '',
+            time: '',
+            date: '',
+            type: '',
+            url: ''
+    })
+    const { addPotentialShow } = useContext(ShowContext)
+    
+    const newPotentialShowFunction = (e) => {
+        e.preventDefault();
+        addPotentialShow(newPotentialShowInfo)
+            .then(() => {
+                clearInputs()
+            })
+            .catch(err => console.error(err.response.data.message))
     }
     const handleSubmit = e => {
         e.preventDefault();
         sendMessage();
         clearInputs();
+        newPotentialShowFunction()
     }
     const handleChange = e => {
         const { name, value } = e.target
-            if( name === 'fullName' ){
-                setFullname(value)
+            if( name === 'name' ){
+                setName(value)
             } else if ( name === 'email' ){
                 setEmail(value)
             } else if ( name === 'phone' ){
                 setPhone(value)
-            } else if ( name === 'events' ){
+            } else if ( name === 'date' ){
                 setEvents(value)
             } else if ( name === 'venue' ){
                 setVenue(value)
@@ -85,12 +118,16 @@ export default function BookingForm() {
                 setLocation(value)
             } else if ( name === 'time' ){
                 setTime(value)
-            } else if ( name === 'date' ){
-                setShowDate(value)
+            // } else if ( name === 'date' ){
+            //     setShowDate(value)
             // } else if ( name === 'showPrice' ){
             //     setShowPrice(value)
             } else if ( name === 'emailBody' ){
                 setEmailbody(value)
+                setNewPotentialShowInfo(prevPotentialShow => ({
+                    ...prevPotentialShow,
+                    [name]: value
+                }))
         console.log(value)
         }
     }
@@ -114,6 +151,8 @@ export default function BookingForm() {
         return result.includes(new Date(data.date).toISOString())
     }
 
+    console.log(setNewPotentialShowInfo)
+
 return(
     <div className='bookingContainer'>
         <form className='bookingForm' onSubmit={handleSubmit}>
@@ -121,10 +160,10 @@ return(
             <h3 className='formIntro'>PLEASE FILL OUT FORM TO<br/>REQUEST TO BOOK AN EVENT</h3>
             <input type='text'
                     placeholder='Full Name'
-                    name='fullName'
+                    name='name'
                     className='formInput'
                     required='required'
-                    value={fullName}
+                    value={name}
                     onChange={handleChange}
             />
             <input type='email'
@@ -146,7 +185,7 @@ return(
             />
             <input type='text'
                     placeholder='Date of Show'
-                    name='events'
+                    name='date'
                     className='formInputDate'
                     required='required'
                     value={events ? events : showDate}
@@ -154,7 +193,7 @@ return(
                     //onChange={dateChange}
             />
             <input type='text'
-                    placeholder='Time (7:00pm-10:30 pm)'
+                    placeholder='Time (7:00pm-10:30pm)'
                     name='time'
                     className='formInputTime'
                     //required='required'
