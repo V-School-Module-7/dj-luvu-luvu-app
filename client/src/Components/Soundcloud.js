@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../StylesFolder/SoundcloudStyles.scss'
 // import Player from 'react-soundcloud-player'
 
-export default function Soundcloud() {
+export default function Soundcloud() { 
     const [song, setSong] = useState('')
+    // useEffect(() => {
+        // window.onbeforeunload = function(){return};
+    // }, [song])
 
     const handleChange = (source) => {
         setSong(source)
