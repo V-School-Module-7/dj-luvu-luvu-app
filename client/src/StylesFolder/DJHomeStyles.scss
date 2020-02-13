@@ -1,1 +1,143 @@
 @import 'GlobalStyles.scss';
+@import 'ContactForm.scss';
+
+.DjHomeContainer {
+    margin: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.formIntroDJ {
+    font-family: $primaryHeaderFont;
+    color: $orange;
+    margin: 70px 10px 25px 10px;
+    text-align: center;
+}
+.formInputDJ {
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: $formwidth;
+    padding: 5px;
+    box-sizing: border-box;
+    border-top-style: hidden;
+    border-left-style: hidden;
+    border-right-style: hidden;
+    border-bottom: 1px $grey solid;
+    @media (min-width: 400px) {
+        width: $formwidthMedium;
+    }
+    @media (min-width: 600px) {
+        width: $formwidthXLarge;
+    }
+    @media (min-width: 1000px) {
+        width: $formwidthLarge;
+    }
+}
+.addShowForm {
+    margin: 40px 15px 0px 15px;
+    // width: 250px;
+    text-align: center;
+    @media (min-width: 400px) {
+        // width: 300px;
+        margin: 40px 30px 0px 30px;
+    }
+    @media (min-width: 600px) {
+        // width: 400px;
+        margin: 40px 50px 0px 50px;
+    }
+    @media (min-width: 1000px) {
+        // width: 500px;;
+    }
+}
+.potentialShowsContainer {
+    margin: 0px 15px;
+    // text-align: center;
+    @media (min-width: 400px) {
+        margin: 0px 30px;
+    }
+    @media (min-width: 600px) {
+        margin: 0px 50px;
+    }
+}
+.potentialShowDiv {
+    margin-bottom: 50px;
+    background: $lightGrey;
+    padding: 15px;
+}
+.potentialShowsMap {
+    width: 500px;
+    margin: auto;
+
+    p {
+       text-align: left; 
+       font-family: $primaryMainFont;
+       font-size: 16px;
+    }
+}
+
+.currentShowsContainer {
+    margin: 0px 15px;
+    text-align: center;
+    @media (min-width: 400px) {
+        margin: 0px 30px;
+    }
+    @media (min-width: 600px) {
+        margin: 0px 50px;
+    }
+    @media (min-width: 1000px) {
+    }
+}
+.DjPageBreak {
+    width: 70%;
+    margin: auto;
+    margin-top: 70px;
+    border: 1px solid black;
+}
+.noShows {
+    font-family: $primaryHeaderFont;
+    font-size: 25px;
+    color: $grey;
+    font-style: oblique;
+}
+.djButton {
+    margin: 10px 15px;
+    background-color: $grey;
+    color: white;
+    width: $halfformwidth;
+    padding: 10px 5px;
+    box-sizing: border-box;
+    font-family: $primaryMainFont;
+    &:hover {
+        background-color: $orange;
+    }
+    @media (min-width: 400px) {
+        width: $halfformwidthMedium;
+    }
+    @media (min-width: 600px) {
+        width: $halfformwidthXLarge;
+    }
+    @media (min-width: 1000px) {
+        width: $halfformwidthLarge;
+    }
+}
+// .showInfoDJ {
+//     p {
+//         text-align: left; 
+//         font-family: $primaryMainFont;
+//         font-size: 16px;
+//      }
+// }
+.UpcomingShowsDJ {
+    width: 500px;
+    margin: auto;
+    margin-bottom: 50px;
+    background: $lightGrey;
+    padding: 15px;
+    p {
+        text-align: left; 
+        font-family: $primaryMainFont;
+        font-size: 16px;
+     }
+}

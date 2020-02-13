@@ -14,6 +14,7 @@ export default function BookingForm() {
     const [ venue, setVenue ] = useState('')
     const [ location, setLocation ] = useState('')
     const [ time, setTime ] = useState('')
+    const [ url, setUrl ] = useState('')
     const [ emailBody, setEmailbody ] = useState('')
     const [ newDate, setDate ] = useState(new Date())
 
@@ -34,7 +35,8 @@ export default function BookingForm() {
         venue,
         location,
         time,
-        showDate
+        showDate,
+        url
         // showPrice
     }
     const sendMessage = () => {
@@ -62,6 +64,7 @@ export default function BookingForm() {
         setLocation('')
         setTime('')
         setShowDate('')
+        setUrl('')
         // setShowPrice('')
 
         setNewPotentialShowInfo({
@@ -135,6 +138,8 @@ export default function BookingForm() {
             //     setShowPrice(value)
             } else if ( name === 'emailBody' ){
                 setEmailbody(value)
+            } else if ( name === 'url' ){
+                setUrl(value)
             }
     }
 
@@ -221,15 +226,14 @@ return(
                     value={location}
                     onChange={handleChange}
             />
-            
-            {/* <input type='text'
-                    placeholder='Offer Price'
-                    name='showPrice'
+            <input type='text'
+                    placeholder='Venue Website'
+                    name='url'
                     className='formInput'
-                    required='required'
-                    value={showPrice}
+                    //required='required'
+                    value={url}
                     onChange={handleChange}
-            /> */}
+            />
             <textarea type='text'
                     placeholder='Please Fill Out With Any Other Helpful Info Regarding the Potential Show'
                     name='emailBody'
