@@ -86,93 +86,94 @@ function DjHome() {
     }
 
     return (
-        <div>
+        <div className='DjHomeContainer'>
             <div className='potentialShowsContainer'>
-                <h1 className='header'>POTENTIAL SHOWS:</h1>
-                <PotentialShowsMap />
+                <h1 className='formIntroDJ'>POTENTIAL SHOWS:</h1>
+                    <PotentialShowsMap /> 
             </div>
+            <hr className='DjPageBreak'/>
             <div className='addNewShowsContainer'>
-                <h1 className='header'>ADD NEW SHOW:</h1>
-                <form className='addNewShows' onSubmit={handleSubmit}>
-                    <label for='name'>Client Name:</label>
+                <h1 className='formIntroDJ'>ADD NEW SHOW:</h1>
+                <form className='addShowForm' onSubmit={handleSubmit}>
+                    {/* <label for='name'>Client Name:</label> */}
                     <input type='text'
                         placeholder='Name'
                         name='name'
                         id='name'
-                        className='formInput'
+                        className='formInputDJ'
                         value={name}
                         onChange={handleChange}
                     />
-                    <label for='phone'>Client Phone:</label>
+                    {/* <label for='phone'>Client Phone:</label> */}
                     <input type='tel'
                         placeholder='Phone Number: xxx-xxx-xxxx'
                         name='phone'
                         id='phone'
                         pattern='[0-9]'
-                        className='formInput'
+                        className='formInputDJ'
                         value={phone}
                         onChange={handleChange}
                     />
-                    <label for='email'>Client Email:</label>
+                    {/* <label for='email'>Client Email:</label> */}
                     <input type='email'
                         placeholder='E-mail'
                         name='email'
                         id='email'
-                        className='formInput'
+                        className='formInputDJ'
                         value={email}
                         onChange={handleChange}
                     />
-                    <label for='venue'>Venue:</label>
+                    {/* <label for='venue'>Venue:</label> */}
                     <input type='text'
                         placeholder='Venue Name'
                         name='venue'
                         id='venue'
-                        className='formInput'
+                        className='formInputDJ'
                         value={venue}
                         onChange={handleChange}
                     />
-                    <label for='location'>Location:</label>
+                    {/* <label for='location'>Location:</label> */}
                     <input type='text'
                         placeholder='Location of Show'
                         name='location'
                         id='location'
-                        className='formInput'
+                        className='formInputDJ'
                         value={location}
                         onChange={handleChange}
                     />
-                    <label for='time'>Time:</label>
+                    {/* <label for='time'>Time:</label> */}
                     <input type='text'
                         placeholder='Time (7:00pm-10:30pm)'
                         name='time'
                         id='time'
-                        className='formInputTime'
+                        className='formInputDJ'
                         value={time}
                         onChange={handleChange}
                      />
-                    <label for='date'>Date:</label>
+                    {/* <label for='date'>Date:</label> */}
                     <input type='date'
                         placeholder='Date of Show'
                         name='date'
                         id='date'
-                        className='formInputDate'
+                        className='formInputDJ'
                         value={date}
                         onChange={handleChange}
                     />
-                    <label for='type'>Type:</label>
+                    {/* <label for='type'>Type:</label> */}
                     <input type='text'
                         placeholder='Show Type'
                         name='type'
                         id='type'
-                        className='formInputDate'
+                        className='formInputDJ'
                         value={type}
                         onChange={handleChange}
                     />
-                    <label for='url'>Website Link:</label>
+                    {/* <label for='url'>Website Link:</label> */}
                     <input type='text'
                         placeholder='Url'
                         name='url'
                         id='url'
-                        className='formInputDate'
+                        className='formInputDJ'
                         value={url}
                         onChange={handleChange}
                     />
@@ -181,9 +182,21 @@ function DjHome() {
                     </button>
                 </form>
             </div>
+            <hr className='DjPageBreak'/>
             <div className='currentShowsContainer'>
-                <h1 className='header'>CURRENT SHOW LIST:</h1>
-                <ShowsList />
+                <h1 className='formIntroDJ'>CURRENT SHOW LIST:</h1>
+                {/* <ShowsList /> */}
+
+                {
+                    shows[0] ?
+                    <>
+                        {ShowsList}
+                    </>
+                    :
+                    <>
+                        <h3 className='noShows'>NO CURRENT SHOWS</h3>
+                    </>
+                }
             </div>
         </div>
     )

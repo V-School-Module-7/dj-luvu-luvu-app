@@ -9,6 +9,7 @@ function PotentialShowsMap() {
     }, [])
 
     const mappedPotentialShows = potentialShows.map(show => {
+        
         return <div className='potentialShowDiv' 
                     key={show._id}>
                     <p>{show.name}</p>
@@ -29,7 +30,16 @@ function PotentialShowsMap() {
 
     return(
         <div className='potentialShowsMap'>
-            {mappedPotentialShows}
+            {
+                potentialShows[0] ?
+                <>
+                    {mappedPotentialShows}
+                </>
+                :
+                <>
+                    <h3 className='noShows'>NO SHOWS NEED APPROVAL</h3>
+                </>
+            }
         </div>
     )
 }
