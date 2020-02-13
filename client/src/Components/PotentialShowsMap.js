@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { ShowContext } from '../Components/Provider'
+import { ShowContext } from './Provider'
 
 function PotentialShowsMap() {
     const { potentialShows, addShow, getPotentialShow, editPotentialShow, deletePotentialShow } = useContext(ShowContext)
@@ -14,6 +14,7 @@ function PotentialShowsMap() {
                     <p>{show.name}</p>
                     <p>{show.phone}</p>
                     <p>{show.email}</p>
+                    <p>{show.emailBody}</p>
                     <p>{show.venue}</p>
                     <p>{show.location}</p>
                     <p>{show.time}</p>

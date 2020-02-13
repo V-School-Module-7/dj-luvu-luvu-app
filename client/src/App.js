@@ -15,6 +15,8 @@ import Login from './AuthFolder/Login'
 import Home from './Components/Home';
 import BookingForm from './Components/BookingForm'
 import ContactForm from './Components/ContactForm'
+import DjHome from './Components/DjHome'
+import ProtectedRoute from './AuthFolder/ProtectedRoute'
 
 function App(props) {
   const { token } = useContext(ShowContext)
@@ -27,6 +29,7 @@ function App(props) {
         <Route exact path='/' component={Home}></Route>
         <Route path='/booking' component={BookingForm}></Route>
         <Route path='/contact' component={ContactForm}></Route>
+        <ProtectedRoute path='/djhome' component={DjHome}></ProtectedRoute>
       </Switch>
     </div>
   );
