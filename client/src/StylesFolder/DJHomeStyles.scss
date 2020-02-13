@@ -53,15 +53,30 @@
 }
 .potentialShowsContainer {
     margin: 0px 15px;
-    text-align: center;
+    // text-align: center;
     @media (min-width: 400px) {
         margin: 0px 30px;
     }
     @media (min-width: 600px) {
         margin: 0px 50px;
     }
-   
 }
+.potentialShowDiv {
+    margin-bottom: 50px;
+    background: $lightGrey;
+    padding: 15px;
+}
+.potentialShowsMap {
+    width: 500px;
+    margin: auto;
+
+    p {
+       text-align: left; 
+       font-family: $primaryMainFont;
+       font-size: 16px;
+    }
+}
+
 .currentShowsContainer {
     margin: 0px 15px;
     text-align: center;
@@ -85,4 +100,44 @@
     font-size: 25px;
     color: $grey;
     font-style: oblique;
+}
+.djButton {
+    margin: 10px 15px;
+    background-color: $grey;
+    color: white;
+    width: $halfformwidth;
+    padding: 10px 5px;
+    box-sizing: border-box;
+    font-family: $primaryMainFont;
+    &:hover {
+        background-color: $orange;
+    }
+    @media (min-width: 400px) {
+        width: $halfformwidthMedium;
+    }
+    @media (min-width: 600px) {
+        width: $halfformwidthXLarge;
+    }
+    @media (min-width: 1000px) {
+        width: $halfformwidthLarge;
+    }
+}
+// .showInfoDJ {
+//     p {
+//         text-align: left; 
+//         font-family: $primaryMainFont;
+//         font-size: 16px;
+//      }
+// }
+.UpcomingShowsDJ {
+    width: 500px;
+    margin: auto;
+    margin-bottom: 50px;
+    background: $lightGrey;
+    padding: 15px;
+    p {
+        text-align: left; 
+        font-family: $primaryMainFont;
+        font-size: 16px;
+     }
 }

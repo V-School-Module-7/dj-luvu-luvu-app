@@ -1,9 +1,14 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import ShowsList from './ShowsList'
 import PotentialShowsMap from './PotentialShowsMap'
 import { ShowContext } from './Provider'
 
 function DjHome() {
+
+    useEffect(() => {
+        getShows()
+    }, [])
+
     const { shows, setShows, addShow, getShows, potentialShows, setPotentialShows, getPotentialShow } = useContext(ShowContext)
     const [ name, setName ] = useState('')
     const [ phone, setPhone ] = useState('')
@@ -190,7 +195,7 @@ function DjHome() {
                 {
                     shows[0] ?
                     <>
-                        {ShowsList}
+                        <ShowsList type='DjShowList'/>
                     </>
                     :
                     <>
