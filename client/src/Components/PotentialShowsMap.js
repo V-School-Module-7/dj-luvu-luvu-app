@@ -22,7 +22,7 @@ function PotentialShowsMap() {
                     <p>{show.type}</p>
                     <p>{show.url}</p>
                     <button onClick={() => addShow(show)} >Approve Show</button>
-                    <button onClick={() => editPotentialShow(show._id)}>Edit Show</button>
+                    {/* <button onClick={() => editPotentialShow(show._id)}>Edit Show</button> */}
                     <button onClick={() => deletePotentialShow(show._id)}>Delete Show</button>
                 </div>
     })
