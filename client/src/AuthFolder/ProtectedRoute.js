@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { Context } from '..Provider';
+import { ShowContext } from '../Components/Provider';
 
 function ProtectedRoute(props) {
-    const { token } = useContext(Context)
+    const { token } = useContext(ShowContext)
     const { component: Component, ...rest } = props
 
     return(
         token ?
             <Route {...rest} component={Component} />
             :
-            <Redirect to='/login' />
+            <Redirect to='/luvaluvaonly' />
     )
 }
 

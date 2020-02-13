@@ -1,8 +1,31 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import ShowsList from './ShowsList'
 import PotentialShowsMap from './PotentialShowsMap'
+import { ShowContext } from './Provider'
 
 function DjHome() {
+    const { shows, setShows, addShow, getShows, potentialShows, setPotentialShows, getPotentialShow } = useContext(ShowContext)
+    const [ name, setName ] = useState('')
+    const [ phone, setPhone ] = useState('')
+    const [ email, setEmail ] = useState('')
+    const [ venue, setVenue ] = useState('')
+    const [ location, setLocation ] = useState('')
+    const [ time, setTime ] = useState('')
+    const [ date, setDate ] = useState(new Date())
+    const [ url, setUrl ] = useState('')
+    const [ type, setType ] = useState('')
+
+    const [ newShowInfo, setNewShowInfo ] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        venue: '',
+        location: '',
+        time: '',
+        date: '',
+        type: '',
+        url: ''
+})
 
     // need 
         //function on potential shows map to approve potential shows - test on Thursday
@@ -10,33 +33,56 @@ function DjHome() {
 
     const clearInputs = () => {
         setName('')
-        setEmail('')
         setPhone('')
-        setEmailbody('')
-        setEvents('')
+        setEmail('')
         setVenue('')
         setLocation('')
         setTime('')
-        setShowDate('')
-        // setShowPrice('')
+        setDate('')
+        setType('')
+        setUrl('')
     }
-  
-const { addShow } = useContext(ShowContext)
 
-const newShowFunction = () => {
-    console.log('newShowFunction is being called')
-    console.log(newShowInfo)
-    addShow(newShowInfo)
-        .then(() => {
-            clearInputs()
-        })
-        .catch(err => console.error(err.response.data.message))
-}
+    const newShowFunction = () => {
+        console.log('newShowFunction is being called')
+        addShow(newShowInfo)
+            .then(() => {
+                clearInputs()
+            })
+            .catch(err => console.error(err.response.data.message))
+    }
 
     const handleSubmit = e => {
         e.preventDefault();
         clearInputs();
         newShowFunction()
+    }
+
+    const handleChange = e => {
+        const { name, value } = e.target
+        setNewShowInfo(prevShow => ({
+            ...prevShow,
+            [name]: value
+        }))
+            if( name === 'name' ){
+                setName(value)
+            } else if ( name === 'phone' ){
+                setPhone(value)
+            } else if ( name === 'email' ){
+                setEmail(value)
+            } else if ( name === 'venue' ){
+                setVenue(value)
+            } else if ( name === 'location' ){
+                setLocation(value)
+            } else if ( name === 'time' ){
+                setTime(value)
+            } else if ( name === 'date' ){
+                setDate(value)
+            } else if ( name === 'type' ){
+                setType(value)
+            } else if ( name === 'url' ){
+                setUrl(value)
+            }
     }
 
     return (
@@ -62,7 +108,7 @@ const newShowFunction = () => {
                         placeholder='Phone Number: xxx-xxx-xxxx'
                         name='phone'
                         id='phone'
-                        pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
+                        pattern='[0-9]'
                         className='formInput'
                         value={phone}
                         onChange={handleChange}
@@ -104,12 +150,12 @@ const newShowFunction = () => {
                         onChange={handleChange}
                      />
                     <label for='date'>Date:</label>
-                    <input type='text'
+                    <input type='date'
                         placeholder='Date of Show'
                         name='date'
                         id='date'
                         className='formInputDate'
-                        value={events ? events : showDate}
+                        value={date}
                         onChange={handleChange}
                     />
                     <label for='type'>Type:</label>
@@ -127,7 +173,7 @@ const newShowFunction = () => {
                         name='url'
                         id='url'
                         className='formInputDate'
-                        value={type}
+                        value={url}
                         onChange={handleChange}
                     />
                     <button type='submit' className='formButton'>
