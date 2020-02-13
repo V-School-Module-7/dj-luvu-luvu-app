@@ -13,7 +13,7 @@ export default function Soundcloud() {
     return(
         <div className='soundcloud'>
                 <div className='songIframe'>
-                    <iframe width="400" height="380" scrolling="no" frameBorder="no" allow="autoplay" src={song ? song : 'https://www.mixcloud.com/widget/iframe/?feed=%2Fdjluvaluva%2Fcorporate-mix%2F'} title='Default Song'></iframe>
+                    <iframe scrolling="no" frameBorder="no" allow="autoplay" src={song ? song : 'https://www.mixcloud.com/widget/iframe/?feed=%2Fdjluvaluva%2Fcorporate-mix%2F'} title='Default Song'></iframe>
                 </div>
                 <div className='allSongsDiv'>
                     {/* one */}
