@@ -4,6 +4,7 @@ import bookingImage from '../Images/Luva-6cropped.jpg'
 import { Calendar } from 'react-calendar'
 import Booking from './Booking'
 import { ShowContext } from './Provider'
+import '../StylesFolder/Calendar.scss'
 
 export default function BookingForm() {
     const { shows, getShows } = useContext(ShowContext)
@@ -114,18 +115,20 @@ export default function BookingForm() {
         }))
             if( name === 'name' ){
                 setName(value)
-            } else if ( name === 'email' ){
-                setEmail(value)
             } else if ( name === 'phone' ){
                 setPhone(value)
-            } else if ( name === 'date' ){
-                setEvents(value)
+            } else if ( name === 'email' ){
+                setEmail(value)
             } else if ( name === 'venue' ){
                 setVenue(value)
             } else if ( name === 'location' ){
                 setLocation(value)
             } else if ( name === 'time' ){
                 setTime(value)
+            } else if ( name === 'date' ){
+                setEvents(value)
+            // } else if ( name === 'url' ){
+            //     setUrl(value)
             // } else if ( name === 'date' ){
             //     setShowDate(value)
             // } else if ( name === 'showPrice' ){

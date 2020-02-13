@@ -3,8 +3,8 @@ import { ShowContext } from './Provider'
 
 export default function Shows(props) {
 
-    const { day, setDay } = useState()
-    const { month, setMonth } = useState()
+    const [ day, setDay ] = useState()
+    const [ month, setMonth ] = useState()
 
     const handleDay = () => {
         const dateString = props.date.toString()
