@@ -42,11 +42,11 @@ const newShowFunction = () => {
     return (
         <div>
             <div className='potentialShowsContainer'>
-                <h1 className='header'>Potential Shows:</h1>
+                <h1 className='header'>POTENTIAL SHOWS:</h1>
                 <PotentialShowsMap />
             </div>
             <div className='addNewShowsContainer'>
-                <h1 className='header'>Add New Show:</h1>
+                <h1 className='header'>ADD NEW SHOW:</h1>
                 <form className='addNewShows' onSubmit={handleSubmit}>
                     <label for='name'>Client Name:</label>
                     <input type='text'
@@ -136,7 +136,7 @@ const newShowFunction = () => {
                 </form>
             </div>
             <div className='currentShowsContainer'>
-                <h1 className='header'>Current Show List:</h1>
+                <h1 className='header'>CURRENT SHOW LIST:</h1>
                 <ShowsList />
             </div>
         </div>
