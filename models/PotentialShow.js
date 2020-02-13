@@ -11,6 +11,7 @@ const potentialShowSchema = new Schema({
         type: String,
         required: true
     },
+    emailBody: String,
     venue: String,
     location: String,
     time: String,
