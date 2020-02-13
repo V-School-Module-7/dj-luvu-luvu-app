@@ -21,7 +21,7 @@ $animate: all 0.2s ease-in-out;
     top: 0px;
     font-family: $primaryHeaderFont;
     font-size: 15px;
-    color: $grey;
+    color: $grey !important;
     position: relative;
     text-decoration: none;
     line-height: 70px;
@@ -37,7 +37,7 @@ $animate: all 0.2s ease-in-out;
         padding: 0px 30px;
     }
     &:hover {
-        color: $white;
+        color: $white !important;
     }
     &:before {
         content: "";
@@ -70,7 +70,7 @@ a:hover {
     top: 0px;
     font-family: $primaryHeaderFont;
     font-size: 15px;
-    color: $grey;
+    color: $grey !important;
     text-decoration: none;
     line-height: 70px;
     position: relative;
@@ -86,7 +86,7 @@ a:hover {
         padding: 0px 30px;
     }
     &:hover {
-        color: $white;
+        color: $white !important;
     }
     &:before {
         content: "";
