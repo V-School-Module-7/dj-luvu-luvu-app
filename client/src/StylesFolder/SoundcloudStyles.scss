@@ -7,6 +7,9 @@
     width: 100%;
     height: 275px;
     background-color: #26292c;
+    grid-column: 1/2;
+    grid-row: 1/-1; 
+
         @media (min-width: 700px) {
             width: 90%;
             // height: 300px;
@@ -26,6 +29,10 @@
     overflow-y: scroll;
     display: grid;
     width: 313px;
+    grid-column: 2/3;
+    grid-row: 1/-1; 
+    background-color: $white;
+    border-left: 5px $orange solid;
     @media (min-width: 375px) {
         width: 368px;
     }
@@ -34,6 +41,10 @@
     }
     @media (min-width: 450px) {
         width: 99%;
+    }
+    @media (min-width: 1100px) {
+        background-color: $orange;
+
     }
 }
 .allSongsDiv::-webkit-scrollbar {
@@ -71,7 +82,7 @@
 .songSpacer {
     // height: 1px;
     // background-color: $orange;
-    border: 0.5px $orange solid;
+    border-bottom: 0.5px $black solid;
     width: 90%;
     margin: auto;
     @media (min-width: 700px) {
@@ -79,8 +90,19 @@
     }
 }
 .soundcloud {
-    border-top: none;
+    // border-top: $orange 5px solid;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3 (300px);
+    background-color: $white;
     @media (min-width: 1100px) {
-        border-top: $orange 5px solid;
+        // border-top: $orange 5px solid;
+        grid-column: 1/-1;
+        grid-row: 3/4; 
     }
+}
+.songTitle {
+    color: white;
+    font-family: $primaryHeaderFont;
+    font-weight: 400;
 }
