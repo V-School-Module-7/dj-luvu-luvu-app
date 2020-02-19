@@ -137,7 +137,7 @@ a:hover {
     margin-top: 50px;
     @media (min-width: 1100px) {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 3 (300px);
+        grid-template-rows: 4 (300px);
     }
 }
 .homeImage {
@@ -207,6 +207,7 @@ a:hover {
     position: relative;
     display: flex;
     border-top: $orange 5px solid;
+    // max-height: 400px;
 }
 .about {
     background-color: $orange;
@@ -294,4 +295,7 @@ a:hover {
     @media (min-width: 1400px) {
         padding: 20px 120px 30px 120px;
     }
+}
+.test {
+    margin-top: 100px;
 }

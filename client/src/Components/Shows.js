@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { ShowContext } from './Provider'
+import ShowListFiller from '../Images/instagram_image_8.jpg'
 
 export default function Shows(props) {
 
@@ -7,13 +8,14 @@ export default function Shows(props) {
         dateChange()
         handleDay()
         handleMonth()
+        getShows()
     }, [])
 
     const [ day, setDay ] = useState('')
     const [ month, setMonth ] = useState('')
     const [ shortDate, setShortDate ] = useState('')
 
-    const { deleteShow } = useContext(ShowContext)
+    const { deleteShow, shows, getShows } = useContext(ShowContext)
 
     const handleDay = () => {
         const dateString = props.date.toString()
@@ -63,9 +65,7 @@ export default function Shows(props) {
 
     return(
         <div className='showCard'>
-            { props.type === 'upcomingShows' ?
-                <>
-                    { props.name ?
+            { props.type === 'upcomingShows' ?  
                         <div className='upcomingShowsHome'>
                             <div className='showCalendarDiv'>
                                 <h3 className='showMonth'>{ month }</h3>
@@ -81,14 +81,7 @@ export default function Shows(props) {
                                     <button className='venueButton'>VENUE</button>
                                 </a>
                             </div>
-                        </div>
-                        :
-                        <div className='showEventFiller'>
-                            <img src='' />
-                        </div>
-                        
-                    }
-                </>
+                        </div>     
                 :
                 <div className='UpcomingShowsDJ'>
                     <div className='showCalendarDivDJ'>
@@ -106,7 +99,9 @@ export default function Shows(props) {
                         <a href={props.url}>
                             <button className='djButton'>Venue Website</button>
                         </a>
-                        <button className='djButton' onClick={() => deleteShow(props._id)} >Delete Show</button>                    
+                        {/* <button className='djButton' onClick={() => deleteShow(props._id)} >Delete Show</button>                     */}
+                        <button className='djButton' onClick={() => deleteShow(props.id)} >Delete Show</button>                    
+
                     </div>
                 </div>
             }

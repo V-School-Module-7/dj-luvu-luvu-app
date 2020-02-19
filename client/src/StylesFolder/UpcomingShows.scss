@@ -9,15 +9,11 @@
 
 }
 .upcomingShows {
-    // background-image: url('../Images/Luva-14.jpg');
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // background-size: cover;
     display: flex;
     overflow: hidden;
     justify-content: center;
     text-align: center;
-    background-color: $orange;
+    // background-color: $orange;
     min-height: 400px;
     height: 480px;
     width: 100%;
@@ -100,3 +96,18 @@
     margin-bottom: 20px;
     padding: 5px;
 }
+.showEventFiller {
+    background-size: cover;
+    background-image: url('../Images/instagram_image_8.jpg');
+    background-color: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 300px;
+    min-width: 400px;
+    max-height: 400px;
+    max-width: 100%,
+}
+// background-image: url('../Images/Luva-14.jpg');
+// background-position: center;
+// background-repeat: no-repeat;
+// background-size: cover;

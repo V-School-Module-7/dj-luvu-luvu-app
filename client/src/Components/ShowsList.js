@@ -12,6 +12,7 @@ function ShowsList(props) {
     const mappedShows = shows.map(show => {
         return(
         <Shows key={show._id}
+            id={show._id}
             name={show.name}
             phone={show.phone}
             email={show.email}
@@ -24,9 +25,19 @@ function ShowsList(props) {
         />
         )
     })
+    console.log(shows)
     return(
         <div className='showsList'>
-            {mappedShows}
+            { 
+                shows === '' ?
+                <div>
+                    {mappedShows}
+                </div>
+                :
+                <div className='showEventFiller'>
+                            {/* <p className='test'>test</p> */}
+                </div>
+            }
         </div>
     )
 }
