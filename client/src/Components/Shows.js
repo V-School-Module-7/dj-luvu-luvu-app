@@ -5,6 +5,8 @@ export default function Shows(props) {
 
     useEffect(() => {
         dateChange()
+        handleDay()
+        handleMonth()
     }, [])
 
     const [ day, setDay ] = useState('')
@@ -48,32 +50,45 @@ export default function Shows(props) {
             return setMonth('DEC')
         }
     }
+
+    console.log(month)
+    // console.log(day)
+
     const dateChange = () => {
         const dateString = props.date
         const shortDate = dateString.slice(0, 10)
         setShortDate(shortDate)
+        console.log(shortDate)
     }
 
     return(
-
         <div className='showCard'>
             { props.type === 'upcomingShows' ?
-                <div>
-                    <div className='showCalendarDiv'>
-                        <h3 className='showMonth'>{ month }</h3>
-                        <h3 className='showDay'>{ day }</h3>
-                    </div>
-                    <div className='venueInfoDiv'>
-                        <h2 className='showInfo'>{props.name}</h2>
-                        <h2 className='showInfo'>{props.venue}</h2>
-                        <h2 className='showInfo'>{props.location}</h2>
-                    </div>
-                    <div className='venueLinkDiv'>
-                        <a href={props.url}>
-                            <button>VENUE</button>
-                        </a>
-                    </div>
-                </div>
+                <>
+                    { props.name ?
+                        <div className='upcomingShowsHome'>
+                            <div className='showCalendarDiv'>
+                                <h3 className='showMonth'>{ month }</h3>
+                                <h3 className='showDay'>{ day }</h3>
+                            </div>
+                            <div className='venueInfoDiv'>
+                                <h2 className='showInfo'>{props.name}</h2>
+                                <h2 className='showInfo'>{props.venue}</h2>
+                                <h2 className='showInfo'>{props.location}</h2>
+                            </div>
+                            <div className='venueLinkDiv'>
+                                <a href={props.url}>
+                                    <button className='venueButton'>VENUE</button>
+                                </a>
+                            </div>
+                        </div>
+                        :
+                        <div className='showEventFiller'>
+                            <img src='' />
+                        </div>
+                        
+                    }
+                </>
                 :
                 <div className='UpcomingShowsDJ'>
                     <div className='showCalendarDivDJ'>
