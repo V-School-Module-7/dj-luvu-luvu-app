@@ -1,4 +1,6 @@
 @import 'GlobalStyles.scss';
+@import "image-gallery.scss";
+@import "carousel.css";
 
 $formwidth: 250px;
 $formwidthMedium: 300px;
@@ -146,7 +148,7 @@ $halfformwidthXLarge: 245px;
 
 }
 .formButton {
-    margin: 10px 0px;
+    margin: 10px 0px 25px 0px;
     background-color: $grey;
     color: white;
     width: $formwidth;
@@ -186,31 +188,55 @@ $halfformwidthXLarge: 245px;
         }
     }
 }
-.bookingImage {
-    margin-top: 28.5vh;
+.bookingCalendar {
+    margin-top: 130px;
     grid-column: 2/3;
+    grid-row: 1/2;
     height: 0;
     width: 0;
-    margin-left: 20%;
+    margin-left: 20%;    
+    margin-bottom: 30px;
     @media (min-width: 1000px) {
         height: auto;
         width: 100%;
-    }    
-    // margin-top: 4vh;
-    // background-image: url('../Images/Luva-6cropped.jpg');
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    // min-height: 400px;
-    // position: relative;
-    // height: 96vh;
-    // width: 100%;
-    // img {
-    //     height: 0;
-    //     width: 0;
-    //     @media (min-width: 1000px) {
-    //         height: auto;
-    //         width: 100%;
-    //     }
-    // }
+    }
+    @media (min-width: 1080px) {
+        margin-left: 20%;
+    }
+    @media (min-width: 1300px) {
+        margin-left: 15%;
+    }
+    @media (min-width: 1500px) {
+        margin-left: 0%;
+    }
+}
+.carouselContainer {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    width: 425px;
+    margin-bottom: 20px;
+    @media (min-width: 1080px) {
+        width: 475px;
+    }
+    @media (min-width: 1300px) {
+        width: 550px;
+    }
+    @media (min-width: 1500px) {
+        width: 700px;
+    }
+}
+.carouselImageDiv {
+    // width: 100px;
+    // height: 300px;
+}
+.carouselImage {
+    max-height: 300px;
+    object-fit: cover;
+    width: auto;
+    @media (min-width: 1300px) {
+        max-height: 350px;
+    }
+    @media (min-width: 1500px) {
+        max-height: 400px;
+    }
 }

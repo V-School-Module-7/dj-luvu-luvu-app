@@ -6,14 +6,21 @@
     background: white;
     border: 1px solid $grey;
     font-family: $primaryMainFont;
-    line-height: 2em;
+    line-height: 1em;
     @media (min-width: 1000px) {
         display: block;
         width: 425px;
     }
     @media (min-width: 1080px) {
-        width: 475px;
-    }
+      width: 475px;
+  }
+  @media (min-width: 1300px) {
+      width: 550px;    
+      line-height: 1.5em;
+  }
+  @media (min-width: 1500px) {
+      width: 700px;
+  }
 
     &__month-view {
         &__days {

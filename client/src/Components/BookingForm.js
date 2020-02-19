@@ -5,6 +5,7 @@ import { Calendar } from 'react-calendar'
 import Booking from './Booking'
 import { ShowContext } from './Provider'
 import '../StylesFolder/Calendar.scss'
+import CarouselComponent from './CarouselComponent'
 
 export default function BookingForm() {
     const { shows, getShows } = useContext(ShowContext)
@@ -247,7 +248,7 @@ return(
                 Submit
             </button>
         </form>
-        <div className='bookingImage'>
+        <div className='bookingCalendar'>
             <Calendar
                 onChange={dateChange}
                 value={events.date}
@@ -255,6 +256,9 @@ return(
                 calendarType="US"
             />
             {/* <Booking /> */}
+            <div className='carouselContainer'>
+                <CarouselComponent />
+            </div>
         </div>
     </div>
     )
