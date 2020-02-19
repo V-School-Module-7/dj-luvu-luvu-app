@@ -137,7 +137,7 @@ a:hover {
     margin-top: 50px;
     @media (min-width: 1100px) {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 3 (300px);
+        grid-template-rows: 4 (300px);
     }
 }
 .homeImage {
@@ -154,7 +154,8 @@ a:hover {
 .imageSquare {
     width: 50%;
 }
-.soundCloudContainer {
+
+.upcomingShowsContainer {
     display: flex;
     grid-column: 1/-1;
     grid-row: 2/3; 
@@ -163,7 +164,8 @@ a:hover {
         grid-row: 2/3; 
     }
 }
-.upcomingShowsContainer {
+.videoContainer {
+    position: relative;
     display: flex;
     grid-column: 1/-1;
     grid-row: 3/4; 
@@ -171,6 +173,44 @@ a:hover {
         grid-column: 2/3;
         grid-row: 2/3; 
     }
+}
+.soundCloudContainer {
+    display: flex;
+    grid-column: 1/-1;
+    grid-row: 2/3; 
+    border-top: $orange 5px solid;
+
+    @media (min-width: 1100px) {
+        grid-column: 1/-1;
+        grid-row: 3/4; 
+    }
+}
+.aboutContainer {
+    display: flex;
+    grid-column: 1/-1;
+    grid-row: 4/5;
+    @media (min-width: 1100px) {
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+}
+.socialContainer {
+    display: flex;
+    grid-column: 1/-1;
+    grid-row: 5/6;
+    @media (min-width: 1100px) {
+        grid-column: 2/3;
+        grid-row: 4/5;
+    }
+}
+.video {
+    position: relative;
+    display: flex;
+    border-top: $orange 5px solid;
+    // max-height: 400px;
+}
+.about {
+    background-color: $orange;
 }
 .quoteDiv {
     position: absolute;
@@ -180,6 +220,12 @@ a:hover {
     right: 0px;
     margin: auto;
     width: 80%;
+    grid-column: 1/-1;
+    grid-row: 3/4; 
+    @media (min-width: 1100px) {
+        grid-column: 2/3;
+        grid-row: 2/3; 
+    }
 }
 .quote {
     color: white;
@@ -227,27 +273,7 @@ a:hover {
         font-size: 60px;
     }
 }
-.aboutContainer {
-    display: flex;
-    grid-column: 1/-1;
-    grid-row: 4/5;
-    @media (min-width: 1100px) {
-        grid-column: 1/2;
-        grid-row: 3/4;
-    }
-}
-.socialContainer {
-    display: flex;
-    grid-column: 1/-1;
-    grid-row: 5/6;
-    @media (min-width: 1100px) {
-        grid-column: 2/3;
-        grid-row: 3/4;
-    }
-}
-.about {
-    background-color: $orange;
-}
+
 .aboutMe {
     font-family: $primaryMainFont;
     text-align: center;
@@ -269,4 +295,7 @@ a:hover {
     @media (min-width: 1400px) {
         padding: 20px 120px 30px 120px;
     }
+}
+.test {
+    margin-top: 100px;
 }

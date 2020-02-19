@@ -9,21 +9,18 @@
 
 }
 .upcomingShows {
-    // background-image: url('../Images/Luva-14.jpg');
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // background-size: cover;
     display: flex;
     overflow: hidden;
     justify-content: center;
     text-align: center;
-    background-color: $grey;
+    // background-color: $orange;
     min-height: 400px;
     height: 480px;
-    max-width: 100%;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0px auto;
+    padding: 50px 10px;
     position: relative;
-    border-top: $orange 5px solid;
+    // border-top: $orange 5px solid;
     @media (min-width: 501px) {
         height: 500px;
     }
@@ -34,3 +31,83 @@
         height: 780px;
     }
 }
+.showCard {
+    margin: 30px auto;
+}
+.upcomingShowsHome {
+    grid-template-columns: 100px 300px 100px;
+    display: grid;
+    background-color: $white;
+    padding: 5px 20px;
+}
+.showCalendarDiv {
+    margin: 20px 0px;
+    grid-column: 1/2;
+    // border: .5px $grey solid;
+    box-shadow: 2px 5px 7px $grey;
+    height: 100px;
+}
+.venueInfoDiv {
+    grid-column: 2/3;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.venueLinkDiv {
+    grid-column: 3/4;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.showInfo {
+    font-family: $primaryMainFont;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.showMonth {
+    font-family: $primaryHeaderFont;
+    background-color: black;
+    color: $white;
+}
+.showDay {
+    font-family: $primaryHeaderFont;
+}
+.venueButton {
+    display: block;
+    margin: 10px 0px;
+    background-color: $grey;
+    color: white;
+    width: 100%;
+    padding: 10px 5px;
+    box-sizing: border-box;
+    font-family: $primaryMainFont;
+    &:hover {
+        background-color: $orange;
+    }
+}
+.showMonthDJ {
+    font-family: $primaryHeaderFont;
+    background-color: black;
+    color: $white;
+    padding: 5px;
+}
+.showDayDJ {
+    font-family: $primaryHeaderFont;
+    // border: .5px $grey solid;
+    box-shadow: 2px 3px 5px $grey;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+.showEventFiller {
+    background-size: cover;
+    background-image: url('../Images/instagram_image_8.jpg');
+    background-color: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 300px;
+    min-width: 400px;
+    max-height: 400px;
+    max-width: 100%,
+}
+// background-image: url('../Images/Luva-14.jpg');
+// background-position: center;
+// background-repeat: no-repeat;
+// background-size: cover;

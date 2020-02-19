@@ -227,10 +227,11 @@ return(
                     value={location}
                     onChange={handleChange}
             />
-            <input type='text'
-                    placeholder='Venue Website'
+            <input type='url'
+                    placeholder='Venue Website: https://www.example.com'
                     name='url'
                     className='formInput'
+                    pattern='https://www.*' size='30'
                     //required='required'
                     value={url}
                     onChange={handleChange}
