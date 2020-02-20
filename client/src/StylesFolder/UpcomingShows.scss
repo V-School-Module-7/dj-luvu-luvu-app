@@ -20,6 +20,15 @@
     margin: 0px auto;
     padding: 50px 10px;
     position: relative;
+    background-size: cover;
+    background-image: url('../Images/instagram_image_8.jpg');
+    background-color: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100%;
+    min-width: 100%;
+    max-height: 500px;
+    max-width: 100%;
     // border-top: $orange 5px solid;
     @media (min-width: 501px) {
         height: 500px;
@@ -96,17 +105,17 @@
     margin-bottom: 20px;
     padding: 5px;
 }
-.showEventFiller {
-    background-size: cover;
-    background-image: url('../Images/instagram_image_8.jpg');
-    background-color: none;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 300px;
-    min-width: 400px;
-    max-height: 400px;
-    max-width: 100%,
-}
+// .showEventFiller {
+//     background-size: cover;
+//     background-image: url('../Images/instagram_image_8.jpg');
+//     background-color: none;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     min-height: 500px;
+//     min-width: 400px;
+//     max-height: 700px;
+//     max-width: 100%,
+// }
 // background-image: url('../Images/Luva-14.jpg');
 // background-position: center;
 // background-repeat: no-repeat;

@@ -20,7 +20,8 @@ const showSchema = new Schema({
     },
     type: String,
     // price: Number,
-    url: String
+    url: String,
+    hidden: Boolean
 })
 
 module.exports = mongoose.model('Show', showSchema)

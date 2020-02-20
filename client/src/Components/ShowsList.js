@@ -22,6 +22,7 @@ function ShowsList(props) {
             date={show.date}
             type={props.type}
             url={show.url}
+            hidden={show.hidden}
         />
         )
     })
@@ -29,8 +30,8 @@ function ShowsList(props) {
     return(
         <div className='showsList'>
             { 
-                shows === '' ?
-                <div>
+                shows ?
+                <div className='mapShows'>
                     {mappedShows}
                 </div>
                 :

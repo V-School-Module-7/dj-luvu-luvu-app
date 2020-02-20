@@ -29,11 +29,10 @@ $animate: all 0.2s ease-in-out;
     padding: 0px 5px;
     justify-self: flex-end;
     @media (min-width: 500px) {
-        font-size: 18px;
+        font-size: 18px !important;
         padding: 0px 10px;
     }
     @media (min-width: 700px) {
-        font-size: 18px;
         padding: 0px 30px;
     }
     &:hover {
@@ -61,7 +60,6 @@ $animate: all 0.2s ease-in-out;
         -webkit-transform: scaleX(1);
         transform: scaleX(1);
       }
-    
 }
 a:hover {
     text-decoration: none !important;
@@ -117,17 +115,10 @@ a:hover {
     position: absolute;
     left: 20px;
     top: 20px;
-
     @media (min-width: 500px) {
         height: 45px;
         top: 12px;
     }
-    // @media (min-width: 700px) {
-    // }
-    // @media (min-width: 850px) {
-    // }
-    // @media (min-width: 1000px) {
-    // }
 }
 .homeContainer {
     display: grid;
@@ -147,14 +138,10 @@ a:hover {
     grid-row: 1/2;
     display: block;
     background-color: $grey;
-    // @media (min-width: 1100px) {
-    //     border-bottom: $orange 5px solid;
-    // }
 }
 .imageSquare {
     width: 50%;
 }
-
 .upcomingShowsContainer {
     display: flex;
     grid-column: 1/-1;
@@ -179,7 +166,6 @@ a:hover {
     grid-column: 1/-1;
     grid-row: 2/3; 
     border-top: $orange 5px solid;
-
     @media (min-width: 1100px) {
         grid-column: 1/-1;
         grid-row: 3/4; 
@@ -273,7 +259,6 @@ a:hover {
         font-size: 60px;
     }
 }
-
 .aboutMe {
     font-family: $primaryMainFont;
     text-align: center;
@@ -296,6 +281,56 @@ a:hover {
         padding: 20px 120px 30px 120px;
     }
 }
-.test {
-    margin-top: 100px;
+// .test {
+//     margin-top: 100px;
+// }
+/////////////////////////////////// dropdown
+
+.bookingbutton {
+    border: none !important;
+    margin: 0;
+}
+.navlinkcolor {
+    background-color: $orange !important;
+    padding: 5px 15px;
+    color: #b8b8b8;
+    border-radius: 0;
+    margin: 0;
+    font-family: 'Unica One';
+    font-size: 15px !important;
+    @media (min-width: 500px) {
+        font-size: 18px !important;
+    }
+}
+.navlinkcolor:hover {
+    // background-color: $orange;
+    color: $white !important;
+}
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+.dropdown>.dropdown-toggle:active {
+    pointer-events: none;
+}
+.dropdown-menu {
+    padding: 0 !important;
+    margin: 0 !important;
+    min-width: 0px !important;
+    border-radius: 0 !important;
+}
+.dropdown {
+    width: 100%;
+    display: inherit;
+    position: relative;
+}
+.dropdown-item {
+    padding: 5px 15px !important;
+    background-color: $orange;
+}
+.btn {
+    display: inherit !important;
+}
+.dropdownMain {
+    display: flex !important;
+
 }
