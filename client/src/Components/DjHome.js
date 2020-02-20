@@ -10,18 +10,6 @@ function DjHome() {
     }, [])
 
     const { shows, setShows, addShow, getShows, potentialShows, setPotentialShows, getPotentialShow } = useContext(ShowContext)
-    const [ name, setName ] = useState('')
-    const [ phone, setPhone ] = useState('')
-    const [ email, setEmail ] = useState('')
-    const [ venue, setVenue ] = useState('')
-    const [ location, setLocation ] = useState('')
-    const [ time, setTime ] = useState('')
-    const [ date, setDate ] = useState(new Date())
-    const [ url, setUrl ] = useState('')
-    const [ type, setType ] = useState('')
-
-    const [ hidden, setHidden ] = useState(Boolean)
-
     const [ newShowInfo, setNewShowInfo ] = useState({
         name: '',
         phone: '',
@@ -31,7 +19,7 @@ function DjHome() {
         time: '',
         date: '',
         type: '',
-        url: '',
+        url: 'https://www.',
         hidden: false
 })
 
@@ -40,15 +28,18 @@ function DjHome() {
         //instagram key field
 
     const clearInputs = () => {
-        setName('')
-        setPhone('')
-        setEmail('')
-        setVenue('')
-        setLocation('')
-        setTime('')
-        setDate('')
-        setType('')
-        setUrl('')
+        setNewShowInfo({
+            name: '',
+            phone: '',
+            email: '',
+            venue: '',
+            location: '',
+            time: '',
+            date: '',
+            type: '',
+            url: 'https://www.',
+            hidden: false
+        })
     }
 
     const newShowFunction = () => {
@@ -67,46 +58,13 @@ function DjHome() {
     }
 
     const handleChange = e => {
-        const { name, value } = e.target
+        let value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
+        const { name } = e.target
         setNewShowInfo(prevShow => ({
             ...prevShow,
-            [name]: value
-        }))
-            if( name === 'name' ){
-                setName(value)
-            } else if ( name === 'phone' ){
-                setPhone(value)
-            } else if ( name === 'email' ){
-                setEmail(value)
-            } else if ( name === 'venue' ){
-                setVenue(value)
-            } else if ( name === 'location' ){
-                setLocation(value)
-            } else if ( name === 'time' ){
-                setTime(value)
-            } else if ( name === 'date' ){
-                setDate(value)
-            } else if ( name === 'type' ){
-                setType(value)
-            } else if ( name === 'url' ){
-                setUrl(value)
-            } else if ( name === 'hidden' ){
-                setHidden(prev => {
-                    return !prev
-                })
-            }
-    }
-
-    const handleCheckbox = e => {
-        setHidden(prev => {
-            return !prev
-        })
-        setNewShowInfo(prevShow => ({
-            ...prevShow,
-            hidden: hidden
+            [name]: value,
         }))
     }
-    console.log(hidden)
 
     return (
         <div className='DjHomeContainer'>
@@ -124,7 +82,7 @@ function DjHome() {
                         name='name'
                         id='name'
                         className='formInputDJ'
-                        value={name}
+                        value={newShowInfo.name}
                         onChange={handleChange}
                     />
                     {/* <label for='phone'>Client Phone:</label> */}
@@ -134,7 +92,7 @@ function DjHome() {
                         id='phone'
                         pattern='[0-9]'
                         className='formInputDJ'
-                        value={phone}
+                        value={newShowInfo.phone}
                         onChange={handleChange}
                     />
                     {/* <label for='email'>Client Email:</label> */}
@@ -143,7 +101,7 @@ function DjHome() {
                         name='email'
                         id='email'
                         className='formInputDJ'
-                        value={email}
+                        value={newShowInfo.email}
                         onChange={handleChange}
                     />
                     {/* <label for='venue'>Venue:</label> */}
@@ -152,7 +110,7 @@ function DjHome() {
                         name='venue'
                         id='venue'
                         className='formInputDJ'
-                        value={venue}
+                        value={newShowInfo.venue}
                         onChange={handleChange}
                     />
                     {/* <label for='location'>Location:</label> */}
@@ -161,7 +119,7 @@ function DjHome() {
                         name='location'
                         id='location'
                         className='formInputDJ'
-                        value={location}
+                        value={newShowInfo.location}
                         onChange={handleChange}
                     />
                     {/* <label for='time'>Time:</label> */}
@@ -170,7 +128,7 @@ function DjHome() {
                         name='time'
                         id='time'
                         className='formInputDJ'
-                        value={time}
+                        value={newShowInfo.time}
                         onChange={handleChange}
                      />
                     {/* <label for='date'>Date:</label> */}
@@ -179,7 +137,7 @@ function DjHome() {
                         name='date'
                         id='date'
                         className='formInputDJ'
-                        value={date}
+                        value={newShowInfo.date}
                         onChange={handleChange}
                     />
                     {/* <label for='type'>Type:</label> */}
@@ -188,21 +146,22 @@ function DjHome() {
                         name='type'
                         id='type'
                         className='formInputDJ'
-                        value={type}
+                        value={newShowInfo.type}
                         onChange={handleChange}
                     />
                     {/* <label for='url'>Website Link:</label> */}
                     <input type='text'
-                        placeholder='Venue Website: https://www.example.com'
+                        placeholder='URL must start with: https://www.'
                         name='url'
                         id='url'
                         className='formInputDJ'
                         pattern='https://www.*' size='30'
-                        value={url}
+                        title='URL must start with: https://www.'
+                        value={newShowInfo.url}
                         onChange={handleChange}
                     />
                     <div className='dateBlockDiv'>
-                        <input type='checkbox' id='dateBlock' name='hidden' onChange={handleCheckbox}/>
+                        <input type='checkbox' name='hidden' checked={newShowInfo.hidden} id='dateBlock' onChange={handleChange}/>
                         <label for='dateBlock' className='dateBlock'>BLOCK OFF DATE — HIDE FROM UPCOMING SHOWS</label> 
                     </div>
                     <button type='submit' className='formButton'>
