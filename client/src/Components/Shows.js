@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { ShowContext } from './Provider'
-import ShowListFiller from '../Images/instagram_image_8.jpg'
 
 export default function Shows(props) {
 

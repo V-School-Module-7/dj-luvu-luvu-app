@@ -194,7 +194,14 @@ a:hover {
     display: flex;
     border-top: $orange 5px solid;
     // max-height: 400px;
+    &:focus {
+        outline: none; 
+    } 
 }
+video:focus {
+    outline: none; 
+}
+
 .about {
     background-color: $orange;
 }
@@ -281,17 +288,14 @@ a:hover {
         padding: 20px 120px 30px 120px;
     }
 }
-// .test {
-//     margin-top: 100px;
-// }
-/////////////////////////////////// dropdown
 
+/////////////////////////////////////////// dropdown
 .bookingbutton {
     border: none !important;
     margin: 0;
 }
 .navlinkcolor {
-    background-color: $orange !important;
+    background-color: $white !important;
     padding: 5px 15px;
     color: #b8b8b8;
     border-radius: 0;
@@ -303,8 +307,7 @@ a:hover {
     }
 }
 .navlinkcolor:hover {
-    // background-color: $orange;
-    color: $white !important;
+    background-color: $orange !important;
 }
 .dropdown:hover>.dropdown-menu {
     display: block;
@@ -317,23 +320,22 @@ a:hover {
     margin: 0 !important;
     min-width: 0px !important;
     border-radius: 0 !important;
+    border: 2px $black solid !important;
 }
 .dropdown {
-    width: 100%;
-    // display: inherit;
+    width: auto;
     position: relative;
 }
 .dropdown-item {
     padding: 5px 15px !important;
     background-color: $orange;
+    &:focus {
+        outline: none; 
+    } 
 }
 .btn {
     display: inherit !important;
 }
 .dropdownMain {
     display: flex !important;
-}
-.dropdownMain dropdown {
-    display: inherit !important;
-    width: 100px;
 }

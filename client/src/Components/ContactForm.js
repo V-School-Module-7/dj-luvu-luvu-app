@@ -9,7 +9,6 @@ export default function ContactForm() {
     const [ phone, setPhone ] = useState('')
     const [ emailBody, setEmailbody ] = useState('')
 
-    
     const inputs = {
         fullName,
         email,
