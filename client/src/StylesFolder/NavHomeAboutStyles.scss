@@ -320,7 +320,7 @@ a:hover {
 }
 .dropdown {
     width: 100%;
-    display: inherit;
+    // display: inherit;
     position: relative;
 }
 .dropdown-item {
@@ -332,5 +332,8 @@ a:hover {
 }
 .dropdownMain {
     display: flex !important;
-
+}
+.dropdownMain dropdown {
+    display: inherit !important;
+    width: 100px;
 }
