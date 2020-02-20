@@ -13,7 +13,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Components/Navbar'
 import Login from './AuthFolder/Login'
 import Home from './Components/Home';
-import BookingForm from './Components/BookingForm'
+import BookingFormCorporate from './Components/BookingFormCorporate'
+import BookingFormPrivate from './Components/BookingFormPrivate'
 import ContactForm from './Components/ContactForm'
 import DjHome from './Components/DjHome'
 import ProtectedRoute from './AuthFolder/ProtectedRoute'
@@ -27,7 +28,9 @@ function App(props) {
       <Switch>
         <Route path='/luvaluvaonly' render={() => token ? <Redirect to='/djhome'/> : <Login/> } />
         <Route exact path='/' component={Home}></Route>
-        <Route path='/booking' component={BookingForm}></Route>
+        <Route path='/bookingCorporate' component={BookingFormCorporate}></Route>
+        <Route path='/bookingPrivate' component={BookingFormPrivate}></Route>
+
         <Route path='/contact' component={ContactForm}></Route>
         <ProtectedRoute path='/djhome' component={DjHome}></ProtectedRoute>
       </Switch>

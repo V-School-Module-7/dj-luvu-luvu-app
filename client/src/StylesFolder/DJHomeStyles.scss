@@ -209,3 +209,19 @@ ul {
     font-family: $primaryMainFont;
     margin: 0px 10px;
 }
+.djLogout {
+    margin-top: 40px;
+    right: 20px;
+    position: absolute;
+    background-color: $grey;
+    color: white;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    font-family: $primaryMainFont;
+    &:hover {
+        background-color: $orange;
+    }
+    .button {
+        color: none;
+    }
+}

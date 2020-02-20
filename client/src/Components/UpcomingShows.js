@@ -3,7 +3,6 @@ import React, { useState, useContext, useEffect } from 'react'
 import ShowsList from './ShowsList'
 import { ShowContext } from './Provider'
 
-
 export default function UpcomingShows() {   
 
     const { shows, getShows } = useContext(ShowContext)

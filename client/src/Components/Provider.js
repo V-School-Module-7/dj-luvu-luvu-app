@@ -58,6 +58,7 @@ function ContextProvider(props) {
                 return res
             })
     }
+
     
 // CRUD for potential shows for Dan to approve or edit
     const getPotentialShow = () => {
@@ -117,12 +118,12 @@ function ContextProvider(props) {
             .then(response => {
                 const { token, user } = response.data
                 localStorage.setItem('token', token)
-                localStorage.setitem('user', JSON.stringify(user))
+                localStorage.setItem('user', JSON.stringify(user))
                 setUserState(prev => ({
                     ...prev, user, token
                 }))
                 return response
-            })
+            }) .catch(err => err)
     }
     const logout = () => {
         localStorage.removeItem('user')
