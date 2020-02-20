@@ -53,7 +53,7 @@ export default function Shows(props) {
         }
     }
 
-    console.log(month)
+    // console.log(month)
     // console.log(day)
 
     const dateChange = () => {

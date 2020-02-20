@@ -26,7 +26,7 @@ function ShowsList(props) {
         />
         )
     })
-    console.log(shows)
+    // console.log(shows)
     return(
         <div className='showsList'>
             { 
