@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 // import SCPlaceholder from '../Images/Luva-14.jpg'
 import ShowsList from './ShowsList'
 import { ShowContext } from './Provider'
@@ -6,15 +6,15 @@ import { ShowContext } from './Provider'
 
 export default function UpcomingShows() {   
 
+    const { shows, getShows } = useContext(ShowContext)
     useEffect(() => {
         getShows()
-
     }, [])
 
-    const { shows, getShows } = useContext(ShowContext)
-    console.log(shows)
+    // let showsMap = shows.map((show) => show.hidden)
+
     return(
-        <div className={ shows[0] ? 
+        <div className={ shows.some((show) => !show.hidden) ? 
             'upcomingShowsColor'
             :
             'upcomingShows'}>

@@ -70,7 +70,15 @@ function DjHome() {
         <div className='DjHomeContainer'>
             <div className='potentialShowsContainer'>
                 <h1 className='formIntroDJ'>POTENTIAL SHOWS:</h1>
-                    <PotentialShowsMap /> 
+                <PotentialShowsMap /> 
+                <ul>
+                    <li className='note'>Potential shows must be approved before they will show on the home page.</li>
+                    <li className='note'>Date of a show will not be grayed out on the calendar until it's approved.</li>
+                    <li className='note'>Once a potential show has been approved, you can see it in the shows list below.</li>
+                    <li className='note'>After it's approved you will want to delete it from the potential shows list.</li>
+                    <li className='note'>Approving a show does NOT alert the client that their show has been approved.</li>
+                    <li className='note'>To let the client know the show is approved you have to contact them separately.</li>
+                </ul>
             </div>
             <hr className='DjPageBreak'/>
             <div className='addNewShowsContainer'>
@@ -90,7 +98,7 @@ function DjHome() {
                         placeholder='Phone Number: xxx-xxx-xxxx'
                         name='phone'
                         id='phone'
-                        pattern='[0-9]'
+                        //pattern='[0-9]'
                         className='formInputDJ'
                         value={newShowInfo.phone}
                         onChange={handleChange}
@@ -162,7 +170,13 @@ function DjHome() {
                     />
                     <div className='dateBlockDiv'>
                         <input type='checkbox' name='hidden' checked={newShowInfo.hidden} id='dateBlock' onChange={handleChange}/>
-                        <label for='dateBlock' className='dateBlock'>BLOCK OFF DATE — HIDE FROM UPCOMING SHOWS</label> 
+                        <label for='dateBlock' className='dateBlock'>BLOCK OFF DATE & HIDE FROM UPCOMING SHOWS</label> 
+                        <div className='notesList'>
+                            <ul>
+                                <li className='note'>Checking this box will grey out the chosen date from the calendar, but it will not show this date on your upcoming shows on the homepage.</li>
+                                <li className='note'>If you want to block out days on your calendar for a vacation or your birthday, this is how you could do that.</li>
+                            </ul>
+                        </div>
                     </div>
                     <button type='submit' className='formButton'>
                         Submit
