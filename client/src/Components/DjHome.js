@@ -20,6 +20,8 @@ function DjHome() {
     const [ url, setUrl ] = useState('')
     const [ type, setType ] = useState('')
 
+    const [ hidden, setHidden ] = useState(Boolean)
+
     const [ newShowInfo, setNewShowInfo ] = useState({
         name: '',
         phone: '',
@@ -29,7 +31,8 @@ function DjHome() {
         time: '',
         date: '',
         type: '',
-        url: ''
+        url: '',
+        hidden: false
 })
 
     // need 
@@ -87,8 +90,23 @@ function DjHome() {
                 setType(value)
             } else if ( name === 'url' ){
                 setUrl(value)
+            } else if ( name === 'hidden' ){
+                setHidden(prev => {
+                    return !prev
+                })
             }
     }
+
+    const handleCheckbox = e => {
+        setHidden(prev => {
+            return !prev
+        })
+        setNewShowInfo(prevShow => ({
+            ...prevShow,
+            hidden: hidden
+        }))
+    }
+    console.log(hidden)
 
     return (
         <div className='DjHomeContainer'>
@@ -175,13 +193,18 @@ function DjHome() {
                     />
                     {/* <label for='url'>Website Link:</label> */}
                     <input type='text'
-                        placeholder='Url'
+                        placeholder='Venue Website: https://www.example.com'
                         name='url'
                         id='url'
                         className='formInputDJ'
+                        pattern='https://www.*' size='30'
                         value={url}
                         onChange={handleChange}
                     />
+                    <div className='dateBlockDiv'>
+                        <input type='checkbox' id='dateBlock' name='hidden' onChange={handleCheckbox}/>
+                        <label for='dateBlock' className='dateBlock'>BLOCK OFF DATE — HIDE FROM UPCOMING SHOWS</label> 
+                    </div>
                     <button type='submit' className='formButton'>
                         Submit
                     </button>
@@ -195,7 +218,7 @@ function DjHome() {
                 {
                     shows[0] ?
                     <>
-                        <ShowsList type='DjShowList'/>
+                        <ShowsList type='UpcomingShowsDJ'/>
                     </>
                     :
                     <>

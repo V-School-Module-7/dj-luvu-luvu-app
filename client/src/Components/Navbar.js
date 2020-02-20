@@ -3,6 +3,10 @@ import { Link, withRouter } from 'react-router-dom'
 import logoDanOrange from '../Images/DJ-Luva-Luva_Dan-orange.png'
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll'
 
+import DropdownButton from 'react-bootstrap/DropdownButton'
+import Dropdown from 'react-bootstrap/Dropdown'
+
+
 function Navbar(props) {
     const path = props.history.location.pathname
 
@@ -21,19 +25,20 @@ function Navbar(props) {
                     <img src={logoDanOrange} alt='DJ Luva Luva Logo' className='navbarLogo' />
                 </Link>
             }
-            <Link to='/booking' className='navLinks1'>BOOKING</Link>
-
-            {/* <div class='container'>
-                <nav class='dropdown '>
-                    <button class='btn navnewcolor navLinks1' data-toggle='collapse' data-target='#navbarCollapse' className='bookingbutton'>
+            {/* <Link to='/booking' className='navLinks1'>BOOKING</Link> */}
+{/* ///////////////////////////////////////////////////////////////////////////////////////// */}
+            
+                <Dropdown className='dropdownMain'>
+                    <button className='btn navLinks1' data-toggle='collapse' data-target='#navbarCollapse'>
                         BOOK ME
                     </button>
-                    <div class='dropdown-menu' aria-labelledby="dropdownMenuButton">
-                        <a href='#' class='dropdown-item navlinkcolor'>CORPORATE EVENT</a>
-                        <a href='#' class='dropdown-item navlinkcolor'>PRIVATE EVENT</a>
+                    <div className='dropdown-menu' aria-labelledby="dropdownMenuButton">
+                        <Link to='/booking' className='dropdown-item navlinkcolor'>CORPORATE EVENT</Link>
+                        <Link to='/booking' className='dropdown-item navlinkcolor'>PRIVATE EVENT</Link>
                     </div>
-                </nav>
-            </div> */}
+                </Dropdown>
+            
+{/* ///////////////////////////////////////////////////////////////////////////////////////// */}
 
             { path === '/' ?
                 <ScrollLink

@@ -65,8 +65,13 @@ export default function Shows(props) {
 
     return(
         <div className='showCard'>
-            { props.type === 'upcomingShows' ?
-                        <div className='upcomingShowsHome'>
+            { props.type === 'upcomingShows' ?  
+                        <>
+                        {   props.hidden === true ? 
+                            <>
+                            </>
+                            :
+                            <div className='upcomingShowsHome'>
                             <div className='showCalendarDiv'>
                                 <h3 className='showMonth'>{ month }</h3>
                                 <h3 className='showDay'>{ day }</h3>
@@ -82,6 +87,8 @@ export default function Shows(props) {
                                 </a>
                             </div>
                         </div>     
+                        }
+                        </> 
                 :
                 <div className='UpcomingShowsDJ'>
                     <div className='showCalendarDivDJ'>
