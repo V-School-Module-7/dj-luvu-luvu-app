@@ -10,8 +10,7 @@ function PotentialShowsMap() {
 
     const { potentialShows, addShow, getPotentialShow, editPotentialShow, deletePotentialShow } = useContext(ShowContext)
     const [ shortDate, setShortDate ] = useState('')
-
-    
+ 
     const mappedPotentialShows = potentialShows.map(show => {
         return <div className='potentialShowDiv' 
                     key={show._id}>
@@ -30,7 +29,6 @@ function PotentialShowsMap() {
                     <button onClick={() => deletePotentialShow(show._id)} className='djButton'>Delete Show</button>
                 </div>
     })
-    
 
     return(
         <div className='potentialShowsMap'>

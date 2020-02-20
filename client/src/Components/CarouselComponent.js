@@ -9,7 +9,7 @@ import imageFive from '../Images/Corporate/IMG_6259b.jpg'
 
 function CarouselComponent() {
     return (
-        <Carousel showThumbs={false}>
+        <Carousel showThumbs={false} infiniteLoop={true} swipeable={true} useKeyboardArrows={true} >
             <div className='carouselImageDiv'>
                 <video className='carouselImage' src={videoOne} controls autoPlay></video>
             </div>

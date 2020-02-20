@@ -34,7 +34,7 @@ function Login(props) {
 
             })
             .catch(err => {
-                console.log(err)
+                console.dir(err)
                 setErrorMessage(err.response.data.message)
             })
             clearInputs()

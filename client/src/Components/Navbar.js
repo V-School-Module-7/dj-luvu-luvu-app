@@ -3,7 +3,6 @@ import { Link, withRouter } from 'react-router-dom'
 import logoDanOrange from '../Images/DJ-Luva-Luva_Dan-orange.png'
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll'
 
-import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
 
 
@@ -33,8 +32,8 @@ function Navbar(props) {
                         BOOK ME
                     </button>
                     <div className='dropdown-menu' aria-labelledby="dropdownMenuButton">
-                        <Link to='/booking' className='dropdown-item navlinkcolor'>CORPORATE EVENT</Link>
-                        <Link to='/booking' className='dropdown-item navlinkcolor'>PRIVATE EVENT</Link>
+                        <Link to='/bookingCorporate' className='dropdown-item navlinkcolor'>CORPORATE EVENT</Link>
+                        <Link to='/bookingPrivate' className='dropdown-item navlinkcolor'>PRIVATE EVENT</Link>
                     </div>
                 </Dropdown>
             

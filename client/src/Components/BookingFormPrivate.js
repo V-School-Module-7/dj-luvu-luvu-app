@@ -7,7 +7,7 @@ import { ShowContext } from './Provider'
 import '../StylesFolder/Calendar.scss'
 import CarouselComponent from './CarouselComponent'
 
-export default function BookingForm() {
+export default function BookingFormPrivate() {
     const { shows, getShows } = useContext(ShowContext)
     const [ name, setName ] = useState('')
     const [ email, setEmail ] = useState('')
@@ -15,7 +15,7 @@ export default function BookingForm() {
     const [ venue, setVenue ] = useState('')
     const [ location, setLocation ] = useState('')
     const [ time, setTime ] = useState('')
-    const [ url, setUrl ] = useState('')
+    const [ url, setUrl ] = useState('https://www.')
     const [ emailBody, setEmailbody ] = useState('')
     const [ newDate, setDate ] = useState(new Date())
 
@@ -65,7 +65,7 @@ export default function BookingForm() {
         setLocation('')
         setTime('')
         setShowDate('')
-        setUrl('')
+        setUrl('https://www.')
         // setShowPrice('')
 
         setNewPotentialShowInfo({
@@ -78,7 +78,7 @@ export default function BookingForm() {
             time: '',
             date: '',
             type: '',
-            url: ''
+            url: 'https://www.'
         })
     }
     const [ newPotentialShowInfo, setNewPotentialShowInfo ] = useState({
@@ -91,7 +91,7 @@ export default function BookingForm() {
             time: '',
             date: '',
             type: '',
-            url: ''
+            url: 'https://www.'
     })
     const { addPotentialShow } = useContext(ShowContext)
     
@@ -228,7 +228,7 @@ return(
                     onChange={handleChange}
             />
             <input type='url'
-                    placeholder='Venue Website: https://www.example.com'
+                    placeholder='Venue Website must start with: https://www.'
                     name='url'
                     className='formInput'
                     pattern='https://www.*' size='30'
@@ -248,7 +248,7 @@ return(
                 Submit
             </button>
         </form>
-        <div className='bookingCalendar'>
+        <div className='bookingCalendarPrivate'>
             <Calendar
                 onChange={dateChange}
                 value={events.date}
@@ -256,9 +256,9 @@ return(
                 calendarType="US"
             />
             {/* <Booking /> */}
-            <div className='carouselContainer'>
+            {/* <div className='carouselContainer'>
                 <CarouselComponent />
-            </div>
+            </div> */}
         </div>
     </div>
     )

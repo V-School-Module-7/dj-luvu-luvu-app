@@ -1,5 +1,5 @@
-import React, { useState, useContext, useEffect } from 'react'
-import { Calendar } from 'react-calendar'
+import React, { useContext, useEffect } from 'react'
+// import { Calendar } from 'react-calendar'
 import { ShowContext } from './Provider'
 
 function Booking(props) {
