@@ -52,6 +52,7 @@
     }
 }
 .potentialShowsContainer {
+    display: grid;
     margin: 0px 15px;
     // text-align: center;
     @media (min-width: 400px) {
@@ -59,6 +60,14 @@
     }
     @media (min-width: 600px) {
         margin: 0px 50px;
+    }
+}
+ul {
+    text-align: left;
+    justify-self: center;
+    .note {
+        color: $orange;
+        font-style: italic;
     }
 }
 .potentialShowDiv {
@@ -178,7 +187,23 @@
     }
 }
 .dateBlockDiv {
+    // display: grid;
     margin: 20px auto;
+    .note {
+        text-align: left;
+        color: $orange;
+        font-style: italic;
+    }
+}
+.notesList {
+    margin: 20px 0 0 0;
+    display: grid;
+    .note {
+        justify-self: center;
+        text-align: left;
+        color: $orange;
+        font-style: italic;
+    }
 }
 .dateBlock {
     font-family: $primaryMainFont;
