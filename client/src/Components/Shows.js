@@ -65,7 +65,7 @@ export default function Shows(props) {
 
     return(
         <div className='showCard'>
-            { props.type === 'upcomingShows' ?  
+            { props.type === 'upcomingShows' ?
                         <div className='upcomingShowsHome'>
                             <div className='showCalendarDiv'>
                                 <h3 className='showMonth'>{ month }</h3>

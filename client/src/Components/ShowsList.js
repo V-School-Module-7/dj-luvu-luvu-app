@@ -29,7 +29,7 @@ function ShowsList(props) {
     return(
         <div className='showsList'>
             { 
-                shows === '' ?
+                shows ?
                 <div>
                     {mappedShows}
                 </div>
