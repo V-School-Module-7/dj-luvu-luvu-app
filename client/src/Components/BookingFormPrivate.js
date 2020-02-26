@@ -7,6 +7,9 @@ import { ShowContext } from './Provider'
 import '../StylesFolder/Calendar.scss'
 import CarouselComponent from './CarouselComponent'
 
+import Modal from 'react-bootstrap/Modal'
+
+
 export default function BookingFormPrivate() {
     const { shows, getShows } = useContext(ShowContext)
     const [ name, setName ] = useState('')
@@ -21,6 +24,7 @@ export default function BookingFormPrivate() {
 
     const [ events, setEvents ] = useState('')
     const [ showDate, setShowDate ] = useState('')
+    const [ openModal, setOpenModal ] = useState('')
     // const [ showPrice, setShowPrice ] = useState('')
 
     useEffect(() => {
@@ -43,13 +47,35 @@ export default function BookingFormPrivate() {
     const sendMessage = () => {
         console.log(inputs)
         axios
-            .post('/sendBooking', inputs)
+            .post('/sendBookingPrivate', inputs)
             .then(res => {
                 if (res.data.status === 'success') {
-                    alert("Message sent, DJ Luva Luva will get back to you as soon as possible regarding your event.")
+                    alert("A message about your private event has been sent, DJ Luva Luva will get back to you as soon as possible.")
                 } else if (res.data.status === 'fail') {
                     alert("Message failed to send, please try again.")
                 }
+                // if (res.data.status === 'success') {
+                //     return (
+                //     <Modal.Dialog  show={openModal}>
+                //         <Modal className='modal fade' id='myModal'>
+                //             <Modal.Header className='modal-header'>
+                //                 <h5 className='modal-title'>Private Booking Email Sent</h5>
+                //                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                //                     <span aria-hidden="true">&times;</span>
+                //                 </button>
+                //             </Modal.Header>
+                //             <Modal.Body className='modal-body'>
+                //                 <p>A message about your private event has been sent, DJ Luva Luva will get back to you as soon as possible. </p>
+                //             </Modal.Body>
+                //             <Modal.Footer className='modal-footer'>
+                //                 <button className='btn btn-primary' data-dismiss='modal'>Close</button>
+                //             </Modal.Footer>
+                //         </Modal>
+                //     </Modal.Dialog>)
+                // } else if (res.data.status === 'fail') {
+                
+                // }
+        
             })
             .catch(error => {
                 console.error(error)

@@ -43,10 +43,10 @@ export default function BookingFormCorporate() {
     const sendMessage = () => {
         console.log(inputs)
         axios
-            .post('/sendBooking', inputs)
+            .post('/sendBookingCorporate', inputs)
             .then(res => {
                 if (res.data.status === 'success') {
-                    alert("Message sent, DJ Luva Luva will get back to you as soon as possible regarding your event.")
+                    alert("A message about your corporate event has been sent, DJ Luva Luva will get back to you as soon as possible.")
                 } else if (res.data.status === 'fail') {
                     alert("Message failed to send, please try again.")
                 }

@@ -4,13 +4,13 @@ import axios from 'axios'
 
 export default function ContactForm() {
 
-    const [ fullName, setFullname ] = useState('')
+    const [ name, setName ] = useState('')
     const [ email, setEmail ] = useState('')
     const [ phone, setPhone ] = useState('')
     const [ emailBody, setEmailbody ] = useState('')
 
     const inputs = {
-        fullName,
+        name,
         email,
         phone,
         emailBody,
@@ -31,7 +31,7 @@ export default function ContactForm() {
             })
     }
     const clearInputs = () => {
-        setFullname('')
+        setName('')
         setEmail('')
         setPhone('')
         setEmailbody('')
@@ -43,8 +43,8 @@ export default function ContactForm() {
     }
     const handleChange = e => {
         const { name, value } = e.target
-            if( name === 'fullName' ){
-                setFullname(value)
+            if( name === 'name' ){
+                setName(value)
             } else if ( name === 'email' ){
                 setEmail(value)
             } else if ( name === 'phone' ){
@@ -62,10 +62,10 @@ return(
             <h3 className='formIntro'>PLEASE FILL OUT <br/> TO CONTACT ME</h3>
             <input type='text'
                     placeholder='Full Name'
-                    name='fullName'
+                    name='name'
                     className='formInput'
                     required='required'
-                    value={fullName}
+                    value={name}
                     onChange={handleChange}
             />
             <input type='email'

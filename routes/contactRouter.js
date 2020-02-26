@@ -28,7 +28,7 @@ contactRouter.post('/', (req, res, next) => {
     const mail = {
         from: `${req.body.name} <${req.body.email}>`,
         to: `djluvaluvaemail@gmail.com`,
-        subject: `NEW MESSAGE via DJ Luva Luva Contact Form`,
+        subject: `NEW MESSAGE via DJ Luva Luva Website`,
         text: `
         From: ${req.body.name}
         Email: ${req.body.email}
