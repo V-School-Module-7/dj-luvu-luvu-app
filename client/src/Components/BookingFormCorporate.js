@@ -1,8 +1,8 @@
 import React, { useState, useContext, useEffect } from 'react'
 import axios from 'axios'
-import bookingImage from '../Images/Luva-6cropped.jpg'
+// import bookingImage from '../Images/Luva-6cropped.jpg'
 import { Calendar } from 'react-calendar'
-import Booking from './Booking'
+// import Booking from './Booking'
 import { ShowContext } from './Provider'
 import '../StylesFolder/Calendar.scss'
 import CarouselComponent from './CarouselComponent'
@@ -18,6 +18,7 @@ export default function BookingFormCorporate() {
     const [ url, setUrl ] = useState('https://www.')
     const [ emailBody, setEmailbody ] = useState('')
     const [ newDate, setDate ] = useState(new Date())
+    const [ type, setType ] = useState('Corporate')
 
     const [ events, setEvents ] = useState('')
     const [ showDate, setShowDate ] = useState('')
@@ -37,13 +38,14 @@ export default function BookingFormCorporate() {
         location,
         time,
         showDate,
-        url
+        url, 
+        type
         // showPrice
     }
     const sendMessage = () => {
         console.log(inputs)
         axios
-            .post('/sendBookingCorporate', inputs)
+            .post('/sendBooking', inputs)
             .then(res => {
                 if (res.data.status === 'success') {
                     alert("A message about your corporate event has been sent, DJ Luva Luva will get back to you as soon as possible.")
@@ -66,6 +68,7 @@ export default function BookingFormCorporate() {
         setTime('')
         setShowDate('')
         setUrl('https://www.')
+        setType('Corporate')
         // setShowPrice('')
 
         setNewPotentialShowInfo({
@@ -77,7 +80,7 @@ export default function BookingFormCorporate() {
             location: '',
             time: '',
             date: '',
-            type: '',
+            type: 'Corporate',
             url: 'https://www.'
         })
     }
@@ -90,7 +93,7 @@ export default function BookingFormCorporate() {
             location: '',
             time: '',
             date: '',
-            type: '',
+            type: 'Corporate',
             url: 'https://www.'
     })
     const { addPotentialShow } = useContext(ShowContext)
@@ -168,7 +171,7 @@ return(
     <div className='bookingContainer'>
         <form className='bookingForm' onSubmit={handleSubmit}>
             {/* <h3 className='formIntro'>Please fill out the form below to contact me!</h3> */}
-            <h3 className='formIntro'>PLEASE FILL OUT FORM TO<br/>REQUEST TO BOOK AN EVENT</h3>
+            <h3 className='formIntro'>PLEASE FILL OUT FORM TO<br/>REQUEST A CORPORATE EVENT</h3>
             <input type='text'
                     placeholder='Full Name'
                     name='name'
@@ -236,6 +239,8 @@ return(
                     value={url}
                     onChange={handleChange}
             />
+            <input type='hidden' id='Corporate' name='type' value='Corporate' />
+
             <textarea type='text'
                     placeholder='Please Fill Out With Any Other Helpful Info Regarding the Potential Show'
                     name='emailBody'

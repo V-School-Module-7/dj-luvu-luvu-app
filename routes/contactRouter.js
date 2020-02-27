@@ -28,13 +28,19 @@ contactRouter.post('/', (req, res, next) => {
     const mail = {
         from: `${req.body.name} <${req.body.email}>`,
         to: `djluvaluvaemail@gmail.com`,
-        subject: `NEW MESSAGE via DJ Luva Luva Website`,
+        subject: `New ${req.body.type} inquiry via DJ Luva Luva Website`,
         text: `
         From: ${req.body.name}
         Email: ${req.body.email}
         Phone: ${req.body.phone}
+        Show Type: ${req.body.type}
         Message:
-        ${req.body.emailBody} ${req.body.venue ? `\n\tVenue Name: ${req.body.venue}` : ''} ${req.body.location ? `\n\tLocation of Show: ${req.body.location}` : ''} ${req.body.events ? `\n\tDate: ${req.body.events}` : ''} ${req.body.time ? `\n\tTime: ${req.body.time}` : ''}`
+        ${req.body.emailBody}
+        ${req.body.venue ? `Venue Name: ${req.body.venue}` : ''} 
+        ${req.body.location ? `Location of Show: ${req.body.location}` : ''} 
+        ${req.body.events ? `Date: ${req.body.events}` : ''} 
+        ${req.body.time ? `Time: ${req.body.time}` : ''}
+        `
     }
     transporter.sendMail(mail, (error, data) => {
         if (error) {

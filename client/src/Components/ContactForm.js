@@ -8,12 +8,14 @@ export default function ContactForm() {
     const [ email, setEmail ] = useState('')
     const [ phone, setPhone ] = useState('')
     const [ emailBody, setEmailbody ] = useState('')
+    const [ type, setType ] = useState('Contact')
 
     const inputs = {
         name,
         email,
         phone,
         emailBody,
+        type
     }
     const sendMessage = () => {
         console.log(inputs)
@@ -35,6 +37,7 @@ export default function ContactForm() {
         setEmail('')
         setPhone('')
         setEmailbody('')
+        setType('Contact')
     }
     const handleSubmit = e => {
         e.preventDefault();
@@ -85,6 +88,8 @@ return(
                     value={phone}
                     onChange={handleChange}
             />
+            <input type='hidden' id='Contact' name='type' value='Contact' />
+
             <textarea type='text'
                     placeholder='Please Fill Out With Contact Info'
                     name='emailBody'

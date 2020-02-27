@@ -1,14 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react'
 import axios from 'axios'
-import bookingImage from '../Images/Luva-6cropped.jpg'
+// import bookingImage from '../Images/Luva-6cropped.jpg'
 import { Calendar } from 'react-calendar'
-import Booking from './Booking'
+// import Booking from './Booking'
 import { ShowContext } from './Provider'
 import '../StylesFolder/Calendar.scss'
-import CarouselComponent from './CarouselComponent'
-
-import Modal from 'react-bootstrap/Modal'
-
+// import CarouselComponent from './CarouselComponent'
+// import Modal from 'react-bootstrap/Modal'
 
 export default function BookingFormPrivate() {
     const { shows, getShows } = useContext(ShowContext)
@@ -21,10 +19,11 @@ export default function BookingFormPrivate() {
     const [ url, setUrl ] = useState('https://www.')
     const [ emailBody, setEmailbody ] = useState('')
     const [ newDate, setDate ] = useState(new Date())
+    const [ type, setType ] = useState('Private')
 
     const [ events, setEvents ] = useState('')
     const [ showDate, setShowDate ] = useState('')
-    const [ openModal, setOpenModal ] = useState('')
+    // const [ openModal, setOpenModal ] = useState('')
     // const [ showPrice, setShowPrice ] = useState('')
 
     useEffect(() => {
@@ -41,13 +40,14 @@ export default function BookingFormPrivate() {
         location,
         time,
         showDate,
-        url
+        url,
+        type
         // showPrice
     }
     const sendMessage = () => {
         console.log(inputs)
         axios
-            .post('/sendBookingPrivate', inputs)
+            .post('/sendBooking', inputs)
             .then(res => {
                 if (res.data.status === 'success') {
                     alert("A message about your private event has been sent, DJ Luva Luva will get back to you as soon as possible.")
@@ -92,6 +92,7 @@ export default function BookingFormPrivate() {
         setTime('')
         setShowDate('')
         setUrl('https://www.')
+        setType('Private')
         // setShowPrice('')
 
         setNewPotentialShowInfo({
@@ -103,7 +104,7 @@ export default function BookingFormPrivate() {
             location: '',
             time: '',
             date: '',
-            type: '',
+            type: 'Private',
             url: 'https://www.'
         })
     }
@@ -116,7 +117,7 @@ export default function BookingFormPrivate() {
             location: '',
             time: '',
             date: '',
-            type: '',
+            type: 'Private',
             url: 'https://www.'
     })
     const { addPotentialShow } = useContext(ShowContext)
@@ -194,7 +195,7 @@ return(
     <div className='bookingContainer'>
         <form className='bookingForm' onSubmit={handleSubmit}>
             {/* <h3 className='formIntro'>Please fill out the form below to contact me!</h3> */}
-            <h3 className='formIntro'>PLEASE FILL OUT FORM TO<br/>REQUEST TO BOOK AN EVENT</h3>
+            <h3 className='formIntro'>PLEASE FILL OUT FORM TO<br/>REQUEST A PRIVATE EVENT</h3>
             <input type='text'
                     placeholder='Full Name'
                     name='name'
@@ -262,6 +263,8 @@ return(
                     value={url}
                     onChange={handleChange}
             />
+            <input type='hidden' id='Private' name='type' value='Private' />
+
             <textarea type='text'
                     placeholder='Please Fill Out With Any Other Helpful Info Regarding the Potential Show'
                     name='emailBody'

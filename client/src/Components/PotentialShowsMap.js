@@ -22,7 +22,7 @@ function PotentialShowsMap() {
                     <p><b>Location:</b> {show.location}</p>
                     <p><b>Show Time:</b> {show.time}</p>
                     <p><b>Show Date:</b> {show.date.slice(0, 10)}</p>
-                    <p>{show.type}</p>
+                    <p><b>Show Type:</b> {show.type}</p>
                     <p><b>Venue Link:</b> <a href={'http://'+show.url} target="_blank" rel="noopener noreferrer" >{show.url}</a></p>
                     <button onClick={() => addShow(show)} className='djButton'>Approve Show</button>
                     {/* <button onClick={() => editPotentialShow(show._id)}>Edit Show</button> */}
