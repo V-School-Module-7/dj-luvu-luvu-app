@@ -17,7 +17,7 @@ export default function BookingFormCorporate() {
     const [ time, setTime ] = useState('')
     const [ url, setUrl ] = useState('https://www.')
     const [ emailBody, setEmailbody ] = useState('')
-    const [ newDate, setDate ] = useState(new Date())
+    // const [ newDate, setDate ] = useState(new Date())
     const [ type, setType ] = useState('Corporate')
 
     const [ events, setEvents ] = useState('')
@@ -111,7 +111,6 @@ export default function BookingFormCorporate() {
     const handleSubmit = e => {
         e.preventDefault();
         sendMessage();
-        clearInputs();
         newPotentialShowFunction()
     }
     const handleChange = e => {
@@ -152,7 +151,11 @@ export default function BookingFormCorporate() {
         const shortDate = dateString.slice(0, 15)
         setEvents(shortDate)
         console.log(shortDate)
-        setDate(date)
+        // setDate(date)
+        setNewPotentialShowInfo(prevPotentialShow => ({
+            ...prevPotentialShow,
+            date:shortDate
+        }))
     }
 
     // const alterDate = (date) => {
@@ -165,12 +168,9 @@ export default function BookingFormCorporate() {
         return result.includes(new Date(data.date).toISOString())
     }
 
-    // console.log(setNewPotentialShowInfo)
-
 return(
     <div className='bookingContainer'>
         <form className='bookingForm' onSubmit={handleSubmit}>
-            {/* <h3 className='formIntro'>Please fill out the form below to contact me!</h3> */}
             <h3 className='formIntro'>PLEASE FILL OUT FORM TO<br/>REQUEST A CORPORATE EVENT</h3>
             <input type='text'
                     placeholder='Full Name'
@@ -239,8 +239,6 @@ return(
                     value={url}
                     onChange={handleChange}
             />
-            <input type='hidden' id='Corporate' name='type' value='Corporate' />
-
             <textarea type='text'
                     placeholder='Please Fill Out With Any Other Helpful Info Regarding the Potential Show'
                     name='emailBody'

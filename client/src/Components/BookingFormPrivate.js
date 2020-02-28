@@ -6,7 +6,8 @@ import { Calendar } from 'react-calendar'
 import { ShowContext } from './Provider'
 import '../StylesFolder/Calendar.scss'
 // import CarouselComponent from './CarouselComponent'
-// import Modal from 'react-bootstrap/Modal'
+import Modal from 'react-bootstrap/Modal'
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function BookingFormPrivate() {
     const { shows, getShows } = useContext(ShowContext)
@@ -18,7 +19,7 @@ export default function BookingFormPrivate() {
     const [ time, setTime ] = useState('')
     const [ url, setUrl ] = useState('https://www.')
     const [ emailBody, setEmailbody ] = useState('')
-    const [ newDate, setDate ] = useState(new Date())
+    // const [ newDate, setDate ] = useState(new Date())
     const [ type, setType ] = useState('Private')
 
     const [ events, setEvents ] = useState('')
@@ -42,40 +43,39 @@ export default function BookingFormPrivate() {
         showDate,
         url,
         type
-        // showPrice
     }
+
+    const [showModal, setShowModal] = useState(false);
+    const handleShow = () => setShowModal(true);
+    const handleClose = () => setShowModal(false);
+
     const sendMessage = () => {
         console.log(inputs)
         axios
             .post('/sendBooking', inputs)
             .then(res => {
                 if (res.data.status === 'success') {
-                    alert("A message about your private event has been sent, DJ Luva Luva will get back to you as soon as possible.")
+                    return (
+                        <Modal.Dialog show={handleShow} onHide={handleClose}>
+                            <Modal className='modal fade' id='myModal'>
+                                <Modal.Header className='modal-header'>
+                                    <h5 className='modal-title'>Private Booking Email Sent</h5>
+                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </Modal.Header>
+                                <Modal.Body className='modal-body'>
+                                    <p>A message about your private event has been sent, DJ Luva Luva will get back to you as soon as possible. </p>
+                                </Modal.Body>
+                                <Modal.Footer className='modal-footer'>
+                                    <button className='btn btn-primary' data-dismiss='modal' onClick={handleClose}>Close</button>
+                                </Modal.Footer>
+                            </Modal>
+                        </Modal.Dialog>
+                    )
                 } else if (res.data.status === 'fail') {
                     alert("Message failed to send, please try again.")
-                }
-                // if (res.data.status === 'success') {
-                //     return (
-                //     <Modal.Dialog  show={openModal}>
-                //         <Modal className='modal fade' id='myModal'>
-                //             <Modal.Header className='modal-header'>
-                //                 <h5 className='modal-title'>Private Booking Email Sent</h5>
-                //                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                //                     <span aria-hidden="true">&times;</span>
-                //                 </button>
-                //             </Modal.Header>
-                //             <Modal.Body className='modal-body'>
-                //                 <p>A message about your private event has been sent, DJ Luva Luva will get back to you as soon as possible. </p>
-                //             </Modal.Body>
-                //             <Modal.Footer className='modal-footer'>
-                //                 <button className='btn btn-primary' data-dismiss='modal'>Close</button>
-                //             </Modal.Footer>
-                //         </Modal>
-                //     </Modal.Dialog>)
-                // } else if (res.data.status === 'fail') {
-                
-                // }
-        
+                }        
             })
             .catch(error => {
                 console.error(error)
@@ -93,7 +93,6 @@ export default function BookingFormPrivate() {
         setShowDate('')
         setUrl('https://www.')
         setType('Private')
-        // setShowPrice('')
 
         setNewPotentialShowInfo({
             name: '',
@@ -135,10 +134,11 @@ export default function BookingFormPrivate() {
     const handleSubmit = e => {
         e.preventDefault();
         sendMessage();
-        clearInputs();
-        newPotentialShowFunction()
+        newPotentialShowFunction();
+        // handleShow();
     }
     const handleChange = e => {
+        console.log(newPotentialShowInfo)
         const { name, value } = e.target
         setNewPotentialShowInfo(prevPotentialShow => ({
             ...prevPotentialShow,
@@ -172,24 +172,29 @@ export default function BookingFormPrivate() {
     }
 
     const dateChange = (date) => {
+        console.log(newPotentialShowInfo)
         const dateString = date.toString()
         const shortDate = dateString.slice(0, 15)
         setEvents(shortDate)
         console.log(shortDate)
-        setDate(date)
+        // setDate(date)
+        setNewPotentialShowInfo(prevPotentialShow => ({
+            ...prevPotentialShow,
+            date:shortDate
+        }))
     }
 
     // const alterDate = (date) => {
     //     const shortDate = date.slice(0, 14)
     //     return shortDate
     // }
+
     const result = shows && shows.map(dates => (dates.date))
-    console.log(result)
+    // console.log(result)
     const checkDateDisable = (data) => {
+        // console.log(result.includes(new Date(data.date).toISOString()))
         return result.includes(new Date(data.date).toISOString())
     }
-
-    // console.log(setNewPotentialShowInfo)
 
 return(
     <div className='bookingContainer'>
@@ -263,8 +268,6 @@ return(
                     value={url}
                     onChange={handleChange}
             />
-            <input type='hidden' id='Private' name='type' value='Private' />
-
             <textarea type='text'
                     placeholder='Please Fill Out With Any Other Helpful Info Regarding the Potential Show'
                     name='emailBody'
