@@ -41,10 +41,10 @@ function Login(props) {
     }
 
     return(
-        <div className='loginForm'>
+        <div className='loginSignupForm'>
             <form onSubmit={handleSubmit} className='form'>
-                <img src={logoOrange} className='formLogo' alt='logo' />
-                <h3 className='loginHeader'>LOG IN:</h3>
+                <img src={logoOrange} className='formLogo' alt='DJ Luva Luva Logo' />
+                <h3 className='formHeader'>LOG IN:</h3>
                 <div className='inputs'>
                     <input 
                         onChange={handleChange}
@@ -52,7 +52,7 @@ function Login(props) {
                         name='username'
                         type='text'
                         placeholder='Username'
-                        className='loginFormInput'
+                        className='loginSignupFormInput'
                         />
                     <input
                         onChange={handleChange}
@@ -60,9 +60,9 @@ function Login(props) {
                         name='password'
                         type='password'
                         placeholder='Password'
-                        className='loginFormInput'
+                        className='loginSignupFormInput'
                         />
-                    <button type='submit' className='loginButton'>Log In</button>
+                    <button type='submit' className='formButton'>Log In</button>
                 </div>
             </form>
             {

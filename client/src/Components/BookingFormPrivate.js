@@ -55,8 +55,9 @@ export default function BookingFormPrivate() {
             .post('/sendBooking', inputs)
             .then(res => {
                 if (res.data.status === 'success') {
+                    // alert("A message about your corporate event has been sent, DJ Luva Luva will get back to you as soon as possible.")
                     return (
-                        <Modal.Dialog show={handleShow} onHide={handleClose}>
+                        <Modal.Dialog show={showModal} onHide={handleClose}>
                             <Modal className='modal fade' id='myModal'>
                                 <Modal.Header className='modal-header'>
                                     <h5 className='modal-title'>Private Booking Email Sent</h5>
@@ -276,7 +277,7 @@ return(
                     value={emailBody}
                     onChange={handleChange}
             />
-            <button type='submit' className='formButton'>
+            <button type='submit' className='formButton' onClick={handleShow}>
                 Submit
             </button>
         </form>
