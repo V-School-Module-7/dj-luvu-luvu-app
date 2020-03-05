@@ -11,7 +11,7 @@ function DjHome() {
         getShows()
     }, [])
 
-    const { shows, setShows, addShow, getShows, potentialShows, setPotentialShows, getPotentialShow, logout } = useContext(ShowContext)
+    const { shows, setShows, addShowDan, getShows, potentialShows, setPotentialShows, getPotentialShow, logout } = useContext(ShowContext)
     const [ newShowInfo, setNewShowInfo ] = useState({
         name: '',
         phone: '',
@@ -42,7 +42,7 @@ function DjHome() {
 
     const newShowFunction = () => {
         console.log('newShowFunction is being called')
-        addShow(newShowInfo)
+        addShowDan(newShowInfo)
             .then(() => {
                 clearInputs()
             })

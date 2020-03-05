@@ -6,6 +6,8 @@ import { Calendar } from 'react-calendar'
 import { ShowContext } from './Provider'
 import '../StylesFolder/Calendar.scss'
 import CarouselComponent from './CarouselComponent'
+import MyModal from './MyModal'
+
 
 export default function BookingFormCorporate() {
     const { shows, getShows } = useContext(ShowContext)
@@ -40,15 +42,20 @@ export default function BookingFormCorporate() {
         showDate,
         url, 
         type
-        // showPrice
     }
+
+    // STATE FOR MODAL
+    const [showModal, setShowModal] = useState(false);
+    const handleShow = () => setShowModal(true);
+    const handleClose = () => setShowModal(false);
+
     const sendMessage = () => {
         console.log(inputs)
         axios
             .post('/sendBooking', inputs)
             .then(res => {
                 if (res.data.status === 'success') {
-                    alert("A message about your corporate event has been sent, DJ Luva Luva will get back to you as soon as possible.")
+                    handleShow()
                 } else if (res.data.status === 'fail') {
                     alert("Message failed to send, please try again.")
                 }
@@ -170,6 +177,10 @@ export default function BookingFormCorporate() {
 
 return(
     <div className='bookingContainer'>
+    <MyModal showModal={showModal} handleClose={handleClose} >
+            <h5>Corporate Booking Email Sent</h5> 
+            <p>A message about your corporate event has been sent, DJ Luva Luva will get back to you as soon as possible. </p>
+        </MyModal>
         <form className='bookingForm' onSubmit={handleSubmit}>
             <h3 className='formIntro'>PLEASE FILL OUT FORM TO<br/>REQUEST A CORPORATE EVENT</h3>
             <input type='text'

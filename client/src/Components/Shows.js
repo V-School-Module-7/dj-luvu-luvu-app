@@ -51,16 +51,24 @@ export default function Shows(props) {
             return setMonth('DEC')
         }
     }
-
-    // console.log(month)
-    // console.log(day)
+    
 
     const dateChange = () => {
         const dateString = props.date
         const shortDate = dateString.slice(0, 10)
         setShortDate(shortDate)
-        console.log(shortDate)
+        // console.log(shortDate)
     }
+    console.log(props)
+    // console.log(month)
+    // console.log(day)
+
+    const getTodayDate = () => {
+       const currentDate = new Date()
+       return currentDate
+       //if currentDate > date then hide from list
+    }
+    console.log(getTodayDate())
 
     return(
         <div className='showCard'>
@@ -76,12 +84,12 @@ export default function Shows(props) {
                                 <h3 className='showDay'>{ day }</h3>
                             </div>
                             <div className='venueInfoDiv'>
-                                <h2 className='showInfo'>{props.name}</h2>
-                                <h2 className='showInfo'>{props.venue}</h2>
-                                <h2 className='showInfo'>{props.location}</h2>
+                                <h2 className='showInfo'>{ props.name }</h2>
+                                <h2 className='showInfo'>{ props.venue }</h2>
+                                <h2 className='showInfo'>{ props.location }</h2>
                             </div>
                             <div className='venueLinkDiv'>
-                                <a href={props.url}>
+                                <a href={ props.url }>
                                     <button className='venueButton'>VENUE</button>
                                 </a>
                             </div>
@@ -95,10 +103,10 @@ export default function Shows(props) {
                         <h3 className='showDayDJ'>{ day }</h3>
                     </div>
                     <div className='venueInfoDivDJ'>
-                        <p className='showInfoDJ'><b>Client Name:</b> {props.name}</p>
-                        <p className='showInfoDJ'><b>Venue:</b> {props.venue}</p>
-                        <p className='showInfoDJ'><b>Location:</b> {props.location}</p>
-                        <p className='showInfoDJ'><b>Date:</b> {shortDate}</p>
+                        <p className='showInfoDJ'><b>Client Name:</b> { props.name }</p>
+                        <p className='showInfoDJ'><b>Venue:</b> { props.venue }</p>
+                        <p className='showInfoDJ'><b>Location:</b> { props.location }</p>
+                        <p className='showInfoDJ'><b>Date:</b> { shortDate }</p>
 
                     </div>
                     <div className='venueLinkDivDJ'>

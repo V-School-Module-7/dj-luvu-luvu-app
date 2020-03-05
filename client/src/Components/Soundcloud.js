@@ -12,7 +12,7 @@ export default function Soundcloud() {
         setSong(source)
     }
 
-    console.log(song)
+    // console.log(song)
     return(
         <div className='soundcloud'>
                 <div className='songIframe'>
@@ -20,7 +20,6 @@ export default function Soundcloud() {
                 </div>
                 <div className='allSongsDiv'>
                     {/* one */}
-                    {/* <hr className='songSpacer' /> */}
                     <div className='songDiv' onClick={() => handleChange("https://www.mixcloud.com/widget/iframe/?feed=%2Fdjluvaluva%2Fcorporate-mix%2F")}>
                         <img src="https://i1.sndcdn.com/artworks-000560087532-6vh1ah-t500x500.jpg" alt="Song 4"/>
                         <div className='songTitle'>CORPORATE MIX</div>

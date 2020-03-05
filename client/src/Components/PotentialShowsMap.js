@@ -1,5 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { ShowContext } from './Provider'
+import MyModal from './MyModal'
+
 
 function PotentialShowsMap() {
 
@@ -10,6 +12,11 @@ function PotentialShowsMap() {
 
     const { potentialShows, addShow, getPotentialShow, editPotentialShow, deletePotentialShow } = useContext(ShowContext)
     const [ shortDate, setShortDate ] = useState('')
+
+    // STATE FOR MODAL
+    const [showModal, setShowModal] = useState(false);
+    const handleShow = () => setShowModal(true);
+    const handleClose = () => setShowModal(false);
  
     const mappedPotentialShows = potentialShows.map(show => {
         return <div className='potentialShowDiv' 
@@ -25,6 +32,10 @@ function PotentialShowsMap() {
                     <p><b>Show Type:</b> {show.type}</p>
                     <p><b>Venue Link:</b> <a href={'http://'+show.url} target="_blank" rel="noopener noreferrer" >{show.url}</a></p>
                     <button onClick={() => addShow(show)} className='djButton'>Approve Show</button>
+                    <MyModal showModal={showModal} handleClose={handleClose} >
+                        <h5>Show has been approved</h5> 
+                        <p>This show has been added to the shows list. Please delete it from the Potential Show list</p>
+                    </MyModal>
                     {/* <button onClick={() => editPotentialShow(show._id)}>Edit Show</button> */}
                     <button onClick={() => deletePotentialShow(show._id)} className='djButton'>Delete Show</button>
                 </div>

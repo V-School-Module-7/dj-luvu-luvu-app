@@ -4,7 +4,7 @@ const Show = require('../models/Show')
 
 showRouter.route('/')
     .get((req, res, next) => {
-        Show.find((err, show) => {
+        Show.find({date: {$gt: new Date().toISOString()}}, (err, show) => {
             if(err) {
                 res.status(500)
                 return next(err)

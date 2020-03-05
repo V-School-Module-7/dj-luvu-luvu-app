@@ -19,6 +19,7 @@ function ContextProvider(props) {
     const [ shows, setShows ] = useState([])
     const [ potentialShows, setPotentialShows ] = useState([])
 
+
 // CRUD for new shows for Dan to enter
     const getShows = () => {
         return showAxios.get('/api/schedule')
@@ -27,7 +28,24 @@ function ContextProvider(props) {
                 return res
             })
     }
+
+     // STATE FOR MODAL
+     const [showModal, setShowModal] = useState(false);
+     const handleShow = () => setShowModal(true);
+     const handleClose = () => setShowModal(false);
+
     const addShow = (newShow) => {
+        // alert("This show has been added to the shows list. Please delete it from the Potential Show list")
+        handleShow()
+        return showAxios.post('/api/schedule', newShow)
+            .then(res => {
+                getShows()
+                return res
+            })
+    }
+    const addShowDan = (newShow) => {
+        // alert("This show has been added to the Current Shows list. If the BLOCK OFF DATE box was checked then it will not show on the main homepage.")
+        handleShow()
         return showAxios.post('/api/schedule', newShow)
             .then(res => {
                 getShows()
@@ -142,6 +160,7 @@ function ContextProvider(props) {
                 shows,
                 getShows,
                 addShow,
+                addShowDan,
                 editShow,
                 deleteShow,
                 signup,

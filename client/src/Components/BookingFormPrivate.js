@@ -6,8 +6,8 @@ import { Calendar } from 'react-calendar'
 import { ShowContext } from './Provider'
 import '../StylesFolder/Calendar.scss'
 // import CarouselComponent from './CarouselComponent'
-import Modal from 'react-bootstrap/Modal'
-import "bootstrap/dist/css/bootstrap.min.css";
+import MyModal from './MyModal'
+
 
 export default function BookingFormPrivate() {
     const { shows, getShows } = useContext(ShowContext)
@@ -44,7 +44,7 @@ export default function BookingFormPrivate() {
         url,
         type
     }
-
+    // STATE FOR MODAL
     const [showModal, setShowModal] = useState(false);
     const handleShow = () => setShowModal(true);
     const handleClose = () => setShowModal(false);
@@ -55,25 +55,7 @@ export default function BookingFormPrivate() {
             .post('/sendBooking', inputs)
             .then(res => {
                 if (res.data.status === 'success') {
-                    // alert("A message about your corporate event has been sent, DJ Luva Luva will get back to you as soon as possible.")
-                    return (
-                        <Modal.Dialog show={showModal} onHide={handleClose}>
-                            <Modal className='modal fade' id='myModal'>
-                                <Modal.Header className='modal-header'>
-                                    <h5 className='modal-title'>Private Booking Email Sent</h5>
-                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </Modal.Header>
-                                <Modal.Body className='modal-body'>
-                                    <p>A message about your private event has been sent, DJ Luva Luva will get back to you as soon as possible. </p>
-                                </Modal.Body>
-                                <Modal.Footer className='modal-footer'>
-                                    <button className='btn btn-primary' data-dismiss='modal' onClick={handleClose}>Close</button>
-                                </Modal.Footer>
-                            </Modal>
-                        </Modal.Dialog>
-                    )
+                    handleShow()
                 } else if (res.data.status === 'fail') {
                     alert("Message failed to send, please try again.")
                 }        
@@ -136,7 +118,6 @@ export default function BookingFormPrivate() {
         e.preventDefault();
         sendMessage();
         newPotentialShowFunction();
-        // handleShow();
     }
     const handleChange = e => {
         console.log(newPotentialShowInfo)
@@ -199,8 +180,11 @@ export default function BookingFormPrivate() {
 
 return(
     <div className='bookingContainer'>
+        <MyModal showModal={showModal} handleClose={handleClose} >
+            <h5>Private Booking Email Sent</h5> 
+            <p>A message about your private event has been sent, DJ Luva Luva will get back to you as soon as possible. </p>
+        </MyModal>
         <form className='bookingForm' onSubmit={handleSubmit}>
-            {/* <h3 className='formIntro'>Please fill out the form below to contact me!</h3> */}
             <h3 className='formIntro'>PLEASE FILL OUT FORM TO<br/>REQUEST A PRIVATE EVENT</h3>
             <input type='text'
                     placeholder='Full Name'
@@ -277,7 +261,7 @@ return(
                     value={emailBody}
                     onChange={handleChange}
             />
-            <button type='submit' className='formButton' onClick={handleShow}>
+            <button type='submit' className='formButton'>
                 Submit
             </button>
         </form>
