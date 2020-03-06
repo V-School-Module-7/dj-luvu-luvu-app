@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Button from 'react-bootstrap/Button'
 
 
-export default function MyModal(props){
+export default function ModalDan(props){
     const { handleClose, showModal } = props
     return(
         <Modal show={showModal} onHide={handleClose}>
@@ -17,9 +17,9 @@ export default function MyModal(props){
                 </button>
                 <div>{props.children}</div>
             </Modal.Body>
-            <Modal.Footer className='modal-footer'>
-                <Button className='btn btn-primary btnDJ' data-dismiss='modal' onClick={handleClose}>Close</Button>
-            </Modal.Footer>
+            {/* <Modal.Footer className='modal-footer'>
+                <Button className='btn btn-primary' data-dismiss='modal' onClick={handleClose}>Close</Button>
+            </Modal.Footer> */}
         </Modal>
     )
 }

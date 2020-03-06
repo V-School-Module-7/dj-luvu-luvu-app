@@ -7,9 +7,14 @@ function ShowsList(props) {
 
     useEffect(() => {
         getShows()
+        
     }, [])
 
-    const mappedShows = shows.map(show => {
+    const mappedShows = (shows.sort(function compare(a, b){
+        let dateA = new Date(a.date);
+        let dateB = new Date(b.date)
+            return dateA - dateB;
+        }).map(show => {
         return(
         <Shows key={show._id}
             id={show._id}
@@ -25,8 +30,8 @@ function ShowsList(props) {
             hidden={show.hidden}
         />
         )
-    })
-    // console.log(shows)
+    }))
+
     return(
         <div className='showsList'>
             { 

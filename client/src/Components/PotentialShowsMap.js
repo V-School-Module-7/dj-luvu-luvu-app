@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { ShowContext } from './Provider'
-import MyModal from './MyModal'
+import ModalDan from './ModalDan'
 
 
 function PotentialShowsMap() {
@@ -31,11 +31,24 @@ function PotentialShowsMap() {
                     <p><b>Show Date:</b> {show.date.slice(0, 10)}</p>
                     <p><b>Show Type:</b> {show.type}</p>
                     <p><b>Venue Link:</b> <a href={'http://'+show.url} target="_blank" rel="noopener noreferrer" >{show.url}</a></p>
-                    <button onClick={() => addShow(show)} className='djButton'>Approve Show</button>
-                    <MyModal showModal={showModal} handleClose={handleClose} >
-                        <h5>Show has been approved</h5> 
-                        <p>This show has been added to the shows list. Please delete it from the Potential Show list</p>
-                    </MyModal>
+                    <button 
+                        onClick={() => {
+                            addShow(show)
+                            handleShow()
+                        }} 
+                        className='djButton'>
+                            Approve Show
+                    </button>
+                    <ModalDan showModal={showModal} handleClose={handleClose} >
+                        <h5 className='modalHead'>Show has been approved</h5> 
+                        <p className='modalBody'>This show has been added to the shows list. Please delete it from the Potential Show list by clicking delete below.</p>
+                        <button onClick={() => {
+                                deletePotentialShow(show._id)
+                                handleClose()
+                            }} className='djButtonModal'>
+                                Delete Show
+                        </button>
+                    </ModalDan>
                     {/* <button onClick={() => editPotentialShow(show._id)}>Edit Show</button> */}
                     <button onClick={() => deletePotentialShow(show._id)} className='djButton'>Delete Show</button>
                 </div>

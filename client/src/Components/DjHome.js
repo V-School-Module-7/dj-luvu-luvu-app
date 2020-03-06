@@ -3,6 +3,7 @@ import ShowsList from './ShowsList'
 import PotentialShowsMap from './PotentialShowsMap'
 import { ShowContext } from './Provider'
 import { Link } from 'react-router-dom';
+import MyModal from './MyModal'
 
 
 function DjHome() {
@@ -64,6 +65,11 @@ function DjHome() {
         }))
     }
 
+        // STATE FOR MODAL
+        const [showModal, setShowModal] = useState(false);
+        const handleShow = () => setShowModal(true);
+        const handleClose = () => setShowModal(false);
+    
     return (
         <div>
             <div  className='djTools'>
@@ -85,6 +91,10 @@ function DjHome() {
                 </div>
                 <hr className='DjPageBreak'/>
                 <div className='addNewShowsContainer'>
+                    <MyModal showModal={showModal} handleClose={handleClose} >
+                        <h5 className='modalHead'>SHOW ADDED</h5> 
+                        <p className='modalBody'>This show has been added to your current show list below. </p>
+                    </MyModal>
                     <h1 className='formIntroDJ'>ADD NEW SHOW:</h1>
                     <form className='addShowForm' onSubmit={handleSubmit}>
                         {/* <label for='name'>Client Name:</label> */}
@@ -181,7 +191,7 @@ function DjHome() {
                                 </ul>
                             </div>
                         </div>
-                        <button type='submit' className='formButtonAdd'>
+                        <button type='submit' className='formButtonAdd' onClick={handleShow}>
                             Submit
                         </button>
                     </form>

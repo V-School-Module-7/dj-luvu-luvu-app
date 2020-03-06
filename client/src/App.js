@@ -7,6 +7,7 @@ import './StylesFolder/NavHomeAboutStyles.scss';
 import './StylesFolder/ContactForm.scss';
 import './StylesFolder/UpcomingShows.scss';
 import './StylesFolder/DJHomeStyles.scss';
+import './StylesFolder/ModalStyles.scss';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 

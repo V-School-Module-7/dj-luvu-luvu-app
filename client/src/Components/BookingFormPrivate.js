@@ -24,7 +24,6 @@ export default function BookingFormPrivate() {
 
     const [ events, setEvents ] = useState('')
     const [ showDate, setShowDate ] = useState('')
-    // const [ openModal, setOpenModal ] = useState('')
     // const [ showPrice, setShowPrice ] = useState('')
 
     useEffect(() => {
@@ -106,7 +105,7 @@ export default function BookingFormPrivate() {
     
     const newPotentialShowFunction = () => {
         console.log('newPotentialShowFunction is being called')
-        console.log(newPotentialShowInfo)
+        // console.log(newPotentialShowInfo)
         // e.preventDefault()
         addPotentialShow(newPotentialShowInfo)
             .then(() => {
@@ -120,7 +119,7 @@ export default function BookingFormPrivate() {
         newPotentialShowFunction();
     }
     const handleChange = e => {
-        console.log(newPotentialShowInfo)
+        // console.log(newPotentialShowInfo)
         const { name, value } = e.target
         setNewPotentialShowInfo(prevPotentialShow => ({
             ...prevPotentialShow,
@@ -154,11 +153,11 @@ export default function BookingFormPrivate() {
     }
 
     const dateChange = (date) => {
-        console.log(newPotentialShowInfo)
+        // console.log(newPotentialShowInfo)
         const dateString = date.toString()
         const shortDate = dateString.slice(0, 15)
         setEvents(shortDate)
-        console.log(shortDate)
+        // console.log(shortDate)
         // setDate(date)
         setNewPotentialShowInfo(prevPotentialShow => ({
             ...prevPotentialShow,
@@ -181,8 +180,8 @@ export default function BookingFormPrivate() {
 return(
     <div className='bookingContainer'>
         <MyModal showModal={showModal} handleClose={handleClose} >
-            <h5>Private Booking Email Sent</h5> 
-            <p>A message about your private event has been sent, DJ Luva Luva will get back to you as soon as possible. </p>
+            <h5 className='modalHead'>Private Booking Email Sent</h5> 
+            <p className='modalBody'>A message about your private event has been sent, DJ Luva Luva will get back to you as soon as possible. </p>
         </MyModal>
         <form className='bookingForm' onSubmit={handleSubmit}>
             <h3 className='formIntro'>PLEASE FILL OUT FORM TO<br/>REQUEST A PRIVATE EVENT</h3>

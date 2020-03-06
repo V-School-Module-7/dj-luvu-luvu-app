@@ -178,8 +178,8 @@ export default function BookingFormCorporate() {
 return(
     <div className='bookingContainer'>
     <MyModal showModal={showModal} handleClose={handleClose} >
-            <h5>Corporate Booking Email Sent</h5> 
-            <p>A message about your corporate event has been sent, DJ Luva Luva will get back to you as soon as possible. </p>
+            <h5 className='modalHead'>Corporate Booking Email Sent</h5> 
+            <p className='modalBody'>A message about your corporate event has been sent, DJ Luva Luva will get back to you as soon as possible. </p>
         </MyModal>
         <form className='bookingForm' onSubmit={handleSubmit}>
             <h3 className='formIntro'>PLEASE FILL OUT FORM TO<br/>REQUEST A CORPORATE EVENT</h3>

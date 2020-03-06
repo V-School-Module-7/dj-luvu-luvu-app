@@ -130,6 +130,29 @@ ul {
         width: $halfformwidthLarge;
     }
 }
+.djButtonModal {
+    display: block;
+    margin:  30px auto 5px;
+    text-align: center;
+    background-color: $grey;
+    color: white;
+    width: $halfformwidth;
+    padding: 10px 5px;
+    box-sizing: border-box;
+    font-family: $primaryMainFont;
+    &:hover {
+        background-color: $orange;
+    }
+    @media (min-width: 400px) {
+        width: $halfformwidthMedium;
+    }
+    @media (min-width: 600px) {
+        width: $halfformwidthXLarge;
+    }
+    @media (min-width: 1000px) {
+        width: $halfformwidthLarge;
+    }
+}
 
 // .showInfoDJ {
 //     p {
