@@ -28,17 +28,14 @@ function App(props) {
     <div className='app'>
       <Navbar />
       <Switch>
+        <Route exact path='/' component={Home}></Route>
         <Route path='/luvaluvaonly' render={() => token ? <Redirect to='/djhome'/> : <Login/> } />
         {/* <Route path='/signup' render={() => token ? <Redirect to='/signup'/> : <Login/> } /> */}
-        <Route exact path='/' component={Home}></Route>
+        {/* <ProtectedRoute path='/signup' component={Signup}></ProtectedRoute> */}
         <Route path='/bookingCorporate' component={BookingFormCorporate}></Route>
         <Route path='/bookingPrivate' component={BookingFormPrivate}></Route>
-
         <Route path='/contact' component={ContactForm}></Route>
         <ProtectedRoute path='/djhome' component={DjHome}></ProtectedRoute>
-        <ProtectedRoute path='/signup' component={Signup}></ProtectedRoute>
-        {/* <Route path='/login' component={Login}></Route> */}
-
       </Switch>
     </div>
   );
