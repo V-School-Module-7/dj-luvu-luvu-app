@@ -27,7 +27,7 @@ app.use((err, res) => {
     return res.send({ message: err.message })
 });
 
-mongoose.connect('mongodb://localhost:27017/dj-luva-luva',
+mongoose.connect((process.env.MONGODB_URI || 'mongodb://localhost:27017/dj-luva-luva',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
