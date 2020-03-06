@@ -1,0 +1,25 @@
+@import 'GlobalStyles.scss';
+
+.modal.content {
+    margin-top: 100px;
+}
+.btnDJ {
+    background-color: $orange !important;
+    text-align: center;
+    color: white;
+    border-radius: 0 !important;
+    border: 0 !important;
+    margin: auto;
+    width: 64
+    px;
+    padding: 10px 5px;
+    box-sizing: border-box;
+    font-family: $primaryMainFont;
+}
+.modalHead {
+    font-family: $primaryHeaderFont;
+    text-transform: uppercase;
+}
+.modalBody {
+    font-family: $primaryMainFont;
+}

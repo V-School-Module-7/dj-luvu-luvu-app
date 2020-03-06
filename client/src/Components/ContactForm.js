@@ -1,27 +1,34 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-// import contactImage from '../Images/Luva-5cropped.jpg'
+import MyModal from './MyModal'
 
 export default function ContactForm() {
 
-    const [ fullName, setFullname ] = useState('')
+    const [ name, setName ] = useState('')
     const [ email, setEmail ] = useState('')
     const [ phone, setPhone ] = useState('')
     const [ emailBody, setEmailbody ] = useState('')
+    const [ type, setType ] = useState('Contact')
 
     const inputs = {
-        fullName,
+        name,
         email,
         phone,
         emailBody,
+        type
     }
+
+    const [showModal, setShowModal] = useState(false);
+    const handleShow = () => setShowModal(true);
+    const handleClose = () => setShowModal(false);
+
     const sendMessage = () => {
         console.log(inputs)
         axios
             .post('/send', inputs)
             .then(res => {
                 if (res.data.status === 'success') {
-                    alert("Message sent, DJ Luva Luva will get back to you as soon as possible.")
+                    handleShow()
                 } else if (res.data.status === 'fail') {
                     alert("Message failed to send, please try again.")
                 }
@@ -31,10 +38,11 @@ export default function ContactForm() {
             })
     }
     const clearInputs = () => {
-        setFullname('')
+        setName('')
         setEmail('')
         setPhone('')
         setEmailbody('')
+        setType('Contact')
     }
     const handleSubmit = e => {
         e.preventDefault();
@@ -43,8 +51,8 @@ export default function ContactForm() {
     }
     const handleChange = e => {
         const { name, value } = e.target
-            if( name === 'fullName' ){
-                setFullname(value)
+            if( name === 'name' ){
+                setName(value)
             } else if ( name === 'email' ){
                 setEmail(value)
             } else if ( name === 'phone' ){
@@ -57,15 +65,18 @@ export default function ContactForm() {
 
 return(
     <div className='contactContainer'>
+    <MyModal showModal={showModal} handleClose={handleClose} >
+            <h5 className='modalHead'>Contact Email Sent</h5> 
+            <p className='modalBody'>Message sent, DJ Luva Luva will get back to you as soon as possible. </p>
+        </MyModal>
         <form className='contactForm' onSubmit={handleSubmit}>
-            {/* <h3 className='formIntro'>Please fill out the form below to contact me!</h3> */}
-            <h3 className='formIntro'>PLEASE FILL OUT <br/> TO CONTACT ME</h3>
+                        <h3 className='formIntro'>PLEASE FILL OUT <br/> TO CONTACT ME</h3>
             <input type='text'
                     placeholder='Full Name'
-                    name='fullName'
+                    name='name'
                     className='formInput'
                     required='required'
-                    value={fullName}
+                    value={name}
                     onChange={handleChange}
             />
             <input type='email'
@@ -85,6 +96,8 @@ return(
                     value={phone}
                     onChange={handleChange}
             />
+            <input type='hidden' id='Contact' name='type' value='Contact' />
+
             <textarea type='text'
                     placeholder='Please Fill Out With Contact Info'
                     name='emailBody'

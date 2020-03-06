@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 // import SCPlaceholder from '../Images/Luva-14.jpg'
 import ShowsList from './ShowsList'
 import { ShowContext } from './Provider'

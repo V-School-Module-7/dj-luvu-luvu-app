@@ -1,11 +1,13 @@
 import React, { useState, useContext, useEffect } from 'react'
 import axios from 'axios'
-import bookingImage from '../Images/Luva-6cropped.jpg'
+// import bookingImage from '../Images/Luva-6cropped.jpg'
 import { Calendar } from 'react-calendar'
-import Booking from './Booking'
+// import Booking from './Booking'
 import { ShowContext } from './Provider'
 import '../StylesFolder/Calendar.scss'
 import CarouselComponent from './CarouselComponent'
+import MyModal from './MyModal'
+
 
 export default function BookingFormCorporate() {
     const { shows, getShows } = useContext(ShowContext)
@@ -17,7 +19,8 @@ export default function BookingFormCorporate() {
     const [ time, setTime ] = useState('')
     const [ url, setUrl ] = useState('https://www.')
     const [ emailBody, setEmailbody ] = useState('')
-    const [ newDate, setDate ] = useState(new Date())
+    // const [ newDate, setDate ] = useState(new Date())
+    const [ type, setType ] = useState('Corporate')
 
     const [ events, setEvents ] = useState('')
     const [ showDate, setShowDate ] = useState('')
@@ -37,16 +40,22 @@ export default function BookingFormCorporate() {
         location,
         time,
         showDate,
-        url
-        // showPrice
+        url, 
+        type
     }
+
+    // STATE FOR MODAL
+    const [showModal, setShowModal] = useState(false);
+    const handleShow = () => setShowModal(true);
+    const handleClose = () => setShowModal(false);
+
     const sendMessage = () => {
         console.log(inputs)
         axios
             .post('/sendBooking', inputs)
             .then(res => {
                 if (res.data.status === 'success') {
-                    alert("Message sent, DJ Luva Luva will get back to you as soon as possible regarding your event.")
+                    handleShow()
                 } else if (res.data.status === 'fail') {
                     alert("Message failed to send, please try again.")
                 }
@@ -66,6 +75,7 @@ export default function BookingFormCorporate() {
         setTime('')
         setShowDate('')
         setUrl('https://www.')
+        setType('Corporate')
         // setShowPrice('')
 
         setNewPotentialShowInfo({
@@ -77,7 +87,7 @@ export default function BookingFormCorporate() {
             location: '',
             time: '',
             date: '',
-            type: '',
+            type: 'Corporate',
             url: 'https://www.'
         })
     }
@@ -90,7 +100,7 @@ export default function BookingFormCorporate() {
             location: '',
             time: '',
             date: '',
-            type: '',
+            type: 'Corporate',
             url: 'https://www.'
     })
     const { addPotentialShow } = useContext(ShowContext)
@@ -108,7 +118,6 @@ export default function BookingFormCorporate() {
     const handleSubmit = e => {
         e.preventDefault();
         sendMessage();
-        clearInputs();
         newPotentialShowFunction()
     }
     const handleChange = e => {
@@ -149,7 +158,11 @@ export default function BookingFormCorporate() {
         const shortDate = dateString.slice(0, 15)
         setEvents(shortDate)
         console.log(shortDate)
-        setDate(date)
+        // setDate(date)
+        setNewPotentialShowInfo(prevPotentialShow => ({
+            ...prevPotentialShow,
+            date:shortDate
+        }))
     }
 
     // const alterDate = (date) => {
@@ -162,13 +175,14 @@ export default function BookingFormCorporate() {
         return result.includes(new Date(data.date).toISOString())
     }
 
-    // console.log(setNewPotentialShowInfo)
-
 return(
     <div className='bookingContainer'>
+    <MyModal showModal={showModal} handleClose={handleClose} >
+            <h5 className='modalHead'>Corporate Booking Email Sent</h5> 
+            <p className='modalBody'>A message about your corporate event has been sent, DJ Luva Luva will get back to you as soon as possible. </p>
+        </MyModal>
         <form className='bookingForm' onSubmit={handleSubmit}>
-            {/* <h3 className='formIntro'>Please fill out the form below to contact me!</h3> */}
-            <h3 className='formIntro'>PLEASE FILL OUT FORM TO<br/>REQUEST TO BOOK AN EVENT</h3>
+            <h3 className='formIntro'>PLEASE FILL OUT FORM TO<br/>REQUEST A CORPORATE EVENT</h3>
             <input type='text'
                     placeholder='Full Name'
                     name='name'

@@ -2,6 +2,9 @@ import React, { useState, useContext, useEffect } from 'react'
 import ShowsList from './ShowsList'
 import PotentialShowsMap from './PotentialShowsMap'
 import { ShowContext } from './Provider'
+import { Link } from 'react-router-dom';
+import MyModal from './MyModal'
+
 
 function DjHome() {
 
@@ -9,7 +12,7 @@ function DjHome() {
         getShows()
     }, [])
 
-    const { shows, setShows, addShow, getShows, potentialShows, setPotentialShows, getPotentialShow, logout } = useContext(ShowContext)
+    const { shows, setShows, addShowDan, getShows, potentialShows, setPotentialShows, getPotentialShow, logout } = useContext(ShowContext)
     const [ newShowInfo, setNewShowInfo ] = useState({
         name: '',
         phone: '',
@@ -40,7 +43,7 @@ function DjHome() {
 
     const newShowFunction = () => {
         console.log('newShowFunction is being called')
-        addShow(newShowInfo)
+        addShowDan(newShowInfo)
             .then(() => {
                 clearInputs()
             })
@@ -62,26 +65,36 @@ function DjHome() {
         }))
     }
 
+        // STATE FOR MODAL
+        const [showModal, setShowModal] = useState(false);
+        const handleShow = () => setShowModal(true);
+        const handleClose = () => setShowModal(false);
+    
     return (
         <div>
-            <div>
-                <button  className='djLogout' onClick={() => logout()}>Log Out</button>
+            <div  className='djTools'>
+                <button className='djToolButtonLogout' onClick={() => logout()}>Log Out</button>
+                {/* <Link to='/signup' className='signUpLink'><button className='djToolButtonNew'>New Account</button></Link> */}
             </div>
             <div className='DjHomeContainer'>
                 <div className='potentialShowsContainer'>
                     <h1 className='formIntroDJ'>POTENTIAL SHOWS:</h1>
                     <PotentialShowsMap /> 
                     <ul>
-                        <li className='note'>Potential shows must be approved before they will show on the home page.</li>
-                        <li className='note'>Date of a show will not be grayed out on the calendar until it's approved.</li>
-                        <li className='note'>Once a potential show has been approved, you can see it in the shows list below.</li>
-                        <li className='note'>After it's approved you will want to delete it from the potential shows list.</li>
-                        <li className='note'>Approving a show does NOT alert the client that their show has been approved.</li>
-                        <li className='note'>To let the client know the show is approved you have to contact them separately.</li>
+                        <li className='note'>Potential shows MUST be approved before they will show on the home page.</li>
+                        <li className='note'>Date of a show will not be grayed out on the calendar until it has been approved.</li>
+                        <li className='note'>Once a potential show has been approved it will show in the current shows list below.</li>
+                        <li className='note'>After a show has been approved you will need to delete it from the potential shows list.</li>
+                        <li className='note'>Approving a show DOES NOT alert the client that their show has been approved.</li>
+                        <li className='note'>To let the client know the show is approved you will need to contact them separately.</li>
                     </ul>
                 </div>
                 <hr className='DjPageBreak'/>
                 <div className='addNewShowsContainer'>
+                    <MyModal showModal={showModal} handleClose={handleClose} >
+                        <h5 className='modalHead'>SHOW ADDED</h5> 
+                        <p className='modalBody'>This show has been added to your current show list below. </p>
+                    </MyModal>
                     <h1 className='formIntroDJ'>ADD NEW SHOW:</h1>
                     <form className='addShowForm' onSubmit={handleSubmit}>
                         {/* <label for='name'>Client Name:</label> */}
@@ -173,12 +186,12 @@ function DjHome() {
                             <label for='dateBlock' className='dateBlock'>BLOCK OFF DATE & HIDE FROM UPCOMING SHOWS</label> 
                             <div className='notesList'>
                                 <ul>
-                                    <li className='note'>Checking this box will grey out the chosen date from the calendar, but it will not show this date on your upcoming shows on the homepage.</li>
-                                    <li className='note'>If you want to block out days on your calendar for a vacation or your birthday, this is how you could do that.</li>
+                                    <li className='note'>Checking this box will grey out the chosen date from the calendar, but it will not list this show date on your upcoming shows on the homepage.</li>
+                                    <li className='note'>This is how you can block out days on your calendar for a vacation or your birthday.</li>
                                 </ul>
                             </div>
                         </div>
-                        <button type='submit' className='formButton'>
+                        <button type='submit' className='formButtonAdd' onClick={handleShow}>
                             Submit
                         </button>
                     </form>

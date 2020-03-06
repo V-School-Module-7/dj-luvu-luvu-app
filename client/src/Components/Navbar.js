@@ -32,8 +32,8 @@ function Navbar(props) {
                         BOOK ME
                     </button>
                     <div className='dropdown-menu' aria-labelledby="dropdownMenuButton">
-                        <Link to='/bookingCorporate' className='dropdown-item navlinkcolor'>CORPORATE EVENT</Link>
-                        <Link to='/bookingPrivate' className='dropdown-item navlinkcolor'>PRIVATE EVENT</Link>
+                        <Link to='/bookingCorporate' className='dropdown-item navlinkcolor'>CORPORATE</Link>
+                        <Link to='/bookingPrivate' className='dropdown-item navlinkcolor'>PRIVATE</Link>
                     </div>
                 </Dropdown>
             

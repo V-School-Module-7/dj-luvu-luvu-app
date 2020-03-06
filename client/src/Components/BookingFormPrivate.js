@@ -1,11 +1,13 @@
 import React, { useState, useContext, useEffect } from 'react'
 import axios from 'axios'
-import bookingImage from '../Images/Luva-6cropped.jpg'
+// import bookingImage from '../Images/Luva-6cropped.jpg'
 import { Calendar } from 'react-calendar'
-import Booking from './Booking'
+// import Booking from './Booking'
 import { ShowContext } from './Provider'
 import '../StylesFolder/Calendar.scss'
-import CarouselComponent from './CarouselComponent'
+// import CarouselComponent from './CarouselComponent'
+import MyModal from './MyModal'
+
 
 export default function BookingFormPrivate() {
     const { shows, getShows } = useContext(ShowContext)
@@ -17,7 +19,8 @@ export default function BookingFormPrivate() {
     const [ time, setTime ] = useState('')
     const [ url, setUrl ] = useState('https://www.')
     const [ emailBody, setEmailbody ] = useState('')
-    const [ newDate, setDate ] = useState(new Date())
+    // const [ newDate, setDate ] = useState(new Date())
+    const [ type, setType ] = useState('Private')
 
     const [ events, setEvents ] = useState('')
     const [ showDate, setShowDate ] = useState('')
@@ -37,19 +40,24 @@ export default function BookingFormPrivate() {
         location,
         time,
         showDate,
-        url
-        // showPrice
+        url,
+        type
     }
+    // STATE FOR MODAL
+    const [showModal, setShowModal] = useState(false);
+    const handleShow = () => setShowModal(true);
+    const handleClose = () => setShowModal(false);
+
     const sendMessage = () => {
         console.log(inputs)
         axios
             .post('/sendBooking', inputs)
             .then(res => {
                 if (res.data.status === 'success') {
-                    alert("Message sent, DJ Luva Luva will get back to you as soon as possible regarding your event.")
+                    handleShow()
                 } else if (res.data.status === 'fail') {
                     alert("Message failed to send, please try again.")
-                }
+                }        
             })
             .catch(error => {
                 console.error(error)
@@ -66,7 +74,7 @@ export default function BookingFormPrivate() {
         setTime('')
         setShowDate('')
         setUrl('https://www.')
-        // setShowPrice('')
+        setType('Private')
 
         setNewPotentialShowInfo({
             name: '',
@@ -77,7 +85,7 @@ export default function BookingFormPrivate() {
             location: '',
             time: '',
             date: '',
-            type: '',
+            type: 'Private',
             url: 'https://www.'
         })
     }
@@ -90,14 +98,14 @@ export default function BookingFormPrivate() {
             location: '',
             time: '',
             date: '',
-            type: '',
+            type: 'Private',
             url: 'https://www.'
     })
     const { addPotentialShow } = useContext(ShowContext)
     
     const newPotentialShowFunction = () => {
         console.log('newPotentialShowFunction is being called')
-        console.log(newPotentialShowInfo)
+        // console.log(newPotentialShowInfo)
         // e.preventDefault()
         addPotentialShow(newPotentialShowInfo)
             .then(() => {
@@ -108,10 +116,10 @@ export default function BookingFormPrivate() {
     const handleSubmit = e => {
         e.preventDefault();
         sendMessage();
-        clearInputs();
-        newPotentialShowFunction()
+        newPotentialShowFunction();
     }
     const handleChange = e => {
+        // console.log(newPotentialShowInfo)
         const { name, value } = e.target
         setNewPotentialShowInfo(prevPotentialShow => ({
             ...prevPotentialShow,
@@ -145,30 +153,38 @@ export default function BookingFormPrivate() {
     }
 
     const dateChange = (date) => {
+        // console.log(newPotentialShowInfo)
         const dateString = date.toString()
         const shortDate = dateString.slice(0, 15)
         setEvents(shortDate)
-        console.log(shortDate)
-        setDate(date)
+        // console.log(shortDate)
+        // setDate(date)
+        setNewPotentialShowInfo(prevPotentialShow => ({
+            ...prevPotentialShow,
+            date:shortDate
+        }))
     }
 
     // const alterDate = (date) => {
     //     const shortDate = date.slice(0, 14)
     //     return shortDate
     // }
+
     const result = shows && shows.map(dates => (dates.date))
-    console.log(result)
+    // console.log(result)
     const checkDateDisable = (data) => {
+        // console.log(result.includes(new Date(data.date).toISOString()))
         return result.includes(new Date(data.date).toISOString())
     }
 
-    // console.log(setNewPotentialShowInfo)
-
 return(
     <div className='bookingContainer'>
+        <MyModal showModal={showModal} handleClose={handleClose} >
+            <h5 className='modalHead'>Private Booking Email Sent</h5> 
+            <p className='modalBody'>A message about your private event has been sent, DJ Luva Luva will get back to you as soon as possible. </p>
+        </MyModal>
         <form className='bookingForm' onSubmit={handleSubmit}>
-            {/* <h3 className='formIntro'>Please fill out the form below to contact me!</h3> */}
-            <h3 className='formIntro'>PLEASE FILL OUT FORM TO<br/>REQUEST TO BOOK AN EVENT</h3>
+            <h3 className='formIntro'>PLEASE FILL OUT FORM TO<br/>REQUEST A PRIVATE EVENT</h3>
             <input type='text'
                     placeholder='Full Name'
                     name='name'
