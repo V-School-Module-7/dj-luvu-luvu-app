@@ -38,7 +38,7 @@ mongoose.connect((process.env.MONGODB_URI || 'mongodb://localhost:27017/dj-luva-
         if(err) throw err;
         console.log('Connected to the database');
     }
-);
+));
 
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/dj-luva-luva")
 
