@@ -27,7 +27,7 @@ app.use((err, res) => {
     return res.send({ message: err.message })
 });
 
-mongoose.connect((process.env.MONGODB_URI || 'mongodb://localhost:27017/dj-luva-luva',
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/dj-luva-luva',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -38,7 +38,7 @@ mongoose.connect((process.env.MONGODB_URI || 'mongodb://localhost:27017/dj-luva-
         if(err) throw err;
         console.log('Connected to the database');
     }
-));
+);
 
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/dj-luva-luva")
 
