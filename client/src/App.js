@@ -37,6 +37,7 @@ function App(props) {
         <Route path='/contact' component={ContactForm}></Route>
         <ProtectedRoute path='/djhome' component={DjHome}></ProtectedRoute>
         <ProtectedRoute path='/signup' component={Signup}></ProtectedRoute>
+        <Route path='/login' component={Login}></Route>
 
       </Switch>
     </div>
