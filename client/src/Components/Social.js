@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import '../StylesFolder/SocialStyles.scss'
 import instaLogoB from '../Images/SocialLogos-IGb.png'
 import fBB from '../Images/SocialLogos-FBb.png'
@@ -26,6 +27,9 @@ function Social() {
                 <a className='instaFour' target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/djluvaluva/"> </a>
                 <a className='instaFive' target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/djluvaluva/"> </a>
                 <a className='instaSix' target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/djluvaluva/"> </a>
+            </div>
+            <div className='loginLink'>
+                <Link to='/luvaluvaonly' className='djLogin'>DJ LOGIN</Link>
             </div>
         </div>
     )
