@@ -34,7 +34,6 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/dj-luva-l
 
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/dj-luva-luva")
 
-
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
