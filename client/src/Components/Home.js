@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from 'react'
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import Soundcloud from './Soundcloud'
 import UpcomingShows from './UpcomingShows'
 import About from './About'
@@ -28,6 +28,7 @@ function Home(props) {
             <Soundcloud className='soundCloudContainer' id='soundcloud'/>
             <About className='aboutContainer' id='about'/>
             <Social className='socialContainer' id='social'/>
+            
         </div>
     )
 }
