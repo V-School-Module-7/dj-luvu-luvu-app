@@ -27,6 +27,9 @@ function Social() {
                 <a className='instaFive' target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/djluvaluva/"> </a>
                 <a className='instaSix' target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/djluvaluva/"> </a>
             </div>
+            <div className='loginLink'>
+                <Link to='/luvaluvaonly' className='djLogin'>DJ LOGIN</Link>
+            </div>
         </div>
     )
 }

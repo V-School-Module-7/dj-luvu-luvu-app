@@ -339,3 +339,13 @@ video:focus {
 .dropdownMain {
     display: flex !important;
 }
+.loginLink {
+    position: relative;
+}
+.djLogin {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    font-family: $primaryHeaderFont;
+    color: $grey
+}

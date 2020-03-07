@@ -19,14 +19,6 @@ app.use('/api/potential', require('./routes/potentialShow'), expressJwt({ secret
 app.use('/api/schedule', require('./routes/show'), expressJwt({ secret: process.env.SECRET }))
 app.use(express.static(path.join(__dirname, "client", "build")))
 
-app.use((err, res) => {
-    console.error(err);
-    if(err.name === 'UnauthorizedError') {
-        res.status(err.status)
-    }
-    return res.send({ message: err.message })
-});
-
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/dj-luva-luva',
     {
         useNewUrlParser: true,
@@ -45,6 +37,14 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/dj-luva-l
 
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
+
+app.use((err, req, res, next) => {
+    console.error(err);
+    if(err.name === 'UnauthorizedError') {
+        res.status(err.status)
+    }
+    return res.send({ message: err.message })
 });
 
 app.listen(PORT, () => {
