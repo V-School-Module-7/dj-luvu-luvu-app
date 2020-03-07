@@ -15,7 +15,11 @@
     text-align: center;
     min-height: 400px;
     // height: 480px;
-    width: 100%;
+    // min-height: 100%;
+    max-height: 500px;
+    // width: 100%;
+    min-width: 100%;
+    max-width: 100%;
     margin: 0px auto;
     padding: 50px 10px;
     position: relative;
@@ -24,10 +28,7 @@
     background-color: none;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 100%;
-    min-width: 100%;
-    max-height: 500px;
-    max-width: 100%;
+  
     border-top: $orange 5px solid;
     @media (min-width: 501px) {
         height: 500px;

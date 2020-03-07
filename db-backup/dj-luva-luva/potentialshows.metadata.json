@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"dj-luva-luva.potentialshows"}],"uuid":"f093a2fc8cef4500b607f22fc70a3745"}

@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import '../StylesFolder/SocialStyles.scss'
 import instaLogoB from '../Images/SocialLogos-IGb.png'
 import fBB from '../Images/SocialLogos-FBb.png'

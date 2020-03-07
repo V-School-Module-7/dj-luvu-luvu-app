@@ -19,7 +19,8 @@ app.use('/api/potential', require('./routes/potentialShow'), expressJwt({ secret
 app.use('/api/schedule', require('./routes/show'), expressJwt({ secret: process.env.SECRET }))
 app.use(express.static(path.join(__dirname, "client", "build")))
 
-mongoose.connect('mongodb://localhost:27017/dj-luva-luva',
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/dj-luva-luva',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
