@@ -5,6 +5,7 @@
     text-align: center;
     iframe {
     width: 100%;
+    min-width: 50%;
     height: 275px;
     background-color: #26292c;
     grid-column: 1/2;
@@ -102,7 +103,7 @@
     }
 }
 .songTitle {
-    color: white;
+    color: #666;
     font-family: $primaryHeaderFont;
     font-weight: 400;
 }
