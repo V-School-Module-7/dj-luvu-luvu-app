@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700|Unica+One&display=swap');
 
-$primaryHeaderFont: 'Unica One';
-$primaryMainFont: 'Source Sans Pro';
+$primaryHeaderFont: 'Unica One', sans-serif;
+$primaryMainFont: 'Source Sans Pro', sans-serif;
 
 $orange: #FF9533;
 $white: whitesmoke;
 $grey: #b8b8b8;
+$medgrey: #dedede;
 $black: #08090a;
 
 $lightGrey: whitesmoke;

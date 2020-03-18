@@ -7,33 +7,46 @@ $formwidthMedium: 300px;
 $formwidthLarge: 400px;
 $formwidthXLarge: 500px;
 
+$formwidthPlus: 275px;
+$formwidthMediumPlus: 325px;
+$formwidthLargePlus: 425px;
+$formwidthXLargePlus: 525px;
+
 $halfformwidth: 120px;
-$halfformwidthMedium: 145px;
-$halfformwidthLarge: 195px;
-$halfformwidthXLarge: 245px;
+$halfformwidthMedium: 140px;
+$halfformwidthLarge: 190px;
+$halfformwidthXLarge: 240px;
 
 .contactContainer {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
+    margin-top: 60px;
     @media (min-width: 1000px) {
         grid-template-columns: 1fr 1fr;  
     }
 }
 .contactForm {
     margin: 60px 35px 0px 35px;
-    width: $formwidth;
+    width: $formwidthPlus;
     text-align: center;
     grid-column: 1/-1;
+    height: 480px;
+    background-color: white;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    border: 4px $medgrey solid;
+    border-top: 6px solid $orange;
+    border-bottom: 6px solid $orange;
     @media (min-width: 400px) {
-        width: $formwidthMedium;
+        width: $formwidthMediumPlus;
         margin: 60px 50px 0px 50px;
     }
     @media (min-width: 600px) {
-        width: $formwidthXLarge;
+        width: $formwidthXLargePlus;
     }
     @media (min-width: 1000px) {
-        width: $formwidthLarge;
+        width: $formwidthLargePlus;
         grid-column: 1/2;
     }
 }
@@ -44,31 +57,39 @@ input {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
+    margin-top: 60px;
     @media (min-width: 1000px) {
         grid-template-columns: 1fr 1fr;  
     }
 }
 .bookingForm {
     margin: 60px 35px 0px 35px;
-    width: $formwidth;
+    width: $formwidthPlus;
+    height: 670px;
     text-align: center;
     grid-column: 1/-1;
+    background-color: white;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    border: 4px $medgrey solid;
+    border-top: 6px solid $orange;
+    border-bottom: 6px solid $orange;
     @media (min-width: 400px) {
-        width: $formwidthMedium;
+        width: $formwidthMediumPlus;
         margin: 60px 50px 0px 50px;
     }
     @media (min-width: 600px) {
-        width: $formwidthXLarge;
+        width: $formwidthXLargePlus;
     }
     @media (min-width: 1000px) {
-        width: $formwidthLarge;
+        width: $formwidthLargePlus;
         grid-column: 1/2;
     }
 }
 .formIntro {
     font-family: $primaryHeaderFont;
     color: $orange;
-    margin: 70px 10px 25px 10px;
+    margin: 20px 10px 25px 10px;
 }
 .formInput {
     display: block;
@@ -196,7 +217,7 @@ input {
     grid-row: 2/3;
     margin-bottom: 30px;
     @media (min-width: 1000px) {
-        margin-top: 130px;
+        margin-top: 60px;
         grid-column: 2/3;
         grid-row: 1/2;
         height: auto;
