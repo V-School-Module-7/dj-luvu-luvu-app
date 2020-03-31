@@ -22,91 +22,97 @@
         }
     }
 }
-.instaImages {
-    grid-column: 1/-1;
-    grid-row: 3/4;
-    justify-items: center;
-    display: grid;
-    margin: 20px 20px 30px 20px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, fr);
-    grid-gap: 20px 10px;
-    @media (min-width: 700px) {
-        grid-gap: 30px 20px;
+#instagram-feed {
+    padding: 25px;
+}
 
-    }
-    a {
-        // grid-gap: 20px;
-        display: inline-block;
-        height: 100px;
-        width: 100px;
-        @media (min-width: 500px) {
-            height: 140px;
-            width: 140px;
-        }
-        @media (min-width: 700px) {
-            height: 160px;
-            width: 160px;
-        }
-        @media (min-width: 1300px) {
-            height: 190px;
-            width: 190px;
-        }
-        @media (min-width: 1550px) {
-            height: 220px;
-            width: 220px;
-        }
-        img {
-            height: 100px;
-            width: auto;
-        }
-    }
-}
-.instaOne {
-    grid-column: 1/2;
-    grid-row: 1/2;
-    background-image: url('../Images/instagram_image_8.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.instaTwo {
-    grid-column: 2/3;
-    grid-row: 1/2;
-    background-image: url('../Images/instagram_image_9.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.instaThree {
-    grid-column: 3/4;
-    grid-row: 1/2;
-    background-image: url('../Images/Insta1.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.instaFour {
-    grid-column: 1/2;
-    grid-row: 2/3;
-    background-image: url('../Images/Insta2.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.instaFive {
-    grid-column: 2/3;
-    grid-row: 2/3;
-    background-image: url('../Images/Insta3.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.instaSix {
-    grid-column: 3/4;
-    grid-row: 2/3;
-    background-image: url('../Images/Insta4.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+// STYLING FOR HARDCODED INSTAGRAM LAYOUT
+
+// .instaImages {
+//     grid-column: 1/-1;
+//     grid-row: 3/4;
+//     justify-items: center;
+//     display: grid;
+//     margin: 20px 20px 30px 20px;
+//     grid-template-columns: repeat(3, 1fr);
+//     grid-template-rows: repeat(2, fr);
+//     grid-gap: 20px 10px;
+//     @media (min-width: 700px) {
+//         grid-gap: 30px 20px;
+
+//     }
+//     a {
+//         // grid-gap: 20px;
+//         display: inline-block;
+//         height: 100px;
+//         width: 100px;
+//         @media (min-width: 500px) {
+//             height: 140px;
+//             width: 140px;
+//         }
+//         @media (min-width: 700px) {
+//             height: 160px;
+//             width: 160px;
+//         }
+//         @media (min-width: 1300px) {
+//             height: 190px;
+//             width: 190px;
+//         }
+//         @media (min-width: 1550px) {
+//             height: 220px;
+//             width: 220px;
+//         }
+//         img {
+//             height: 100px;
+//             width: auto;
+//         }
+//     }
+// }
+// .instaOne {
+//     grid-column: 1/2;
+//     grid-row: 1/2;
+//     background-image: url('../Images/instagram_image_8.jpg');
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
+// .instaTwo {
+//     grid-column: 2/3;
+//     grid-row: 1/2;
+//     background-image: url('../Images/instagram_image_9.jpg');
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
+// .instaThree {
+//     grid-column: 3/4;
+//     grid-row: 1/2;
+//     background-image: url('../Images/Insta1.jpg');
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
+// .instaFour {
+//     grid-column: 1/2;
+//     grid-row: 2/3;
+//     background-image: url('../Images/Insta2.jpg');
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
+// .instaFive {
+//     grid-column: 2/3;
+//     grid-row: 2/3;
+//     background-image: url('../Images/Insta3.jpg');
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
+// .instaSix {
+//     grid-column: 3/4;
+//     grid-row: 2/3;
+//     background-image: url('../Images/Insta4.jpg');
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }

@@ -7,7 +7,7 @@ import { ShowContext } from './Provider'
 import '../StylesFolder/Calendar.scss'
 import CarouselComponent from './CarouselComponent'
 import MyModal from './MyModal'
-
+import MaskedInput from 'react-text-mask'
 
 export default function BookingFormCorporate() {
     const { shows, getShows } = useContext(ShowContext)
@@ -199,10 +199,22 @@ return(
                     value={email}
                     onChange={handleChange}
             />
-            <input type='tel'
+            {/* <input type='tel'
                     placeholder='Phone Number: xxx-xxx-xxxx'
                     name='phone'
                     pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
+                    className='formInput'
+                    //required='required'
+                    value={phone}
+                    onChange={handleChange}
+            /> */}
+            <MaskedInput
+                    mask={['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+                    type='tel'
+                    placeholder='Phone Number: (xxx)xxx-xxxx'
+                    name='phone'
+                    guide={false}
+                    pattern='([0-9]{3})[0-9]{3}-[0-9]{4}'
                     className='formInput'
                     //required='required'
                     value={phone}
