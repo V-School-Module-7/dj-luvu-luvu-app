@@ -21,7 +21,7 @@
   "homepage": "https://github.com/V-School-Module-7/dj-luvu-luvu-app#readme",
   "dependencies": {
     "axios": "^0.19.1",
-    "bcrypt": "^3.0.7",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.4.1",
     "dotenv": "^8.2.0",
