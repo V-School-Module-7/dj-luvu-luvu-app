@@ -15,8 +15,8 @@ app.use("/sendBooking", require("./routes/contactRouter"));
 
 // app.use('/api', require('./routes/auth'))
 app.use('/auth', require('./routes/auth'))
-app.use('/api/potential', require('./routes/potentialShow'), expressJwt({ secret: process.env.SECRET, algorithms: ['RS256'] }))
-app.use('/api/schedule', require('./routes/show'), expressJwt({ secret: process.env.SECRET, algorithms: ['RS256'] }))
+app.use('/api/potential', require('./routes/potentialShow'), expressJwt({ secret: process.env.SECRET, algorithms: ['HS256'] }))
+app.use('/api/schedule', require('./routes/show'), expressJwt({ secret: process.env.SECRET, algorithms: ['HS256'] }))
 app.use(express.static(path.join(__dirname, "client", "build")))
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/dj-luva-luva',
@@ -31,8 +31,6 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/dj-luva-l
         console.log('Connected to the database');
     }
 );
-
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/dj-luva-luva")
 
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
