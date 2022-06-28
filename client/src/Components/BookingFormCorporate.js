@@ -211,7 +211,7 @@ return(
             <MaskedInput
                     mask={[/[1-9]/, /\d/, /\d/,/\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]}
                     type='tel'
-                    placeholder='Phone Number: (xxx)xxx-xxxx'
+                    placeholder='Phone Number'
                     name='phone'
                     guide={false}
                     pattern='[0-9]{3}[0-9]{3}[0-9]{4}'
