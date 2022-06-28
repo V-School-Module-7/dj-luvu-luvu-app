@@ -98,12 +98,12 @@ return(
                     onChange={handleChange}
             /> */}
             <MaskedInput
-                    mask={['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+                    mask={[/[1-9]/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]}
                     type='tel'
                     placeholder='Phone Number: (xxx)xxx-xxxx'
                     name='phone'
                     guide={false}
-                    pattern='([0-9]{3})[0-9]{3}-[0-9]{4}'
+                    pattern='([0-9]{3})[0-9]{3}[0-9]{4}'
                     className='formInput'
                     //required='required'
                     value={phone}
