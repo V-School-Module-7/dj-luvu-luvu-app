@@ -8,8 +8,8 @@ const transport = {
     port: 587,
     secure: false,
     auth: {
-        user: process.env.EMAIL,
-        pass: process.env.PASSWORD
+        user: process.env.NEW_EMAIL,
+        pass: process.env.EMAIL_PASS
     }
 }
 
