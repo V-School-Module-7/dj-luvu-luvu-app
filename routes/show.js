@@ -1,7 +1,6 @@
 const express = require('express')
 const showRouter = express.Router()
 const Show = require('../models/Show')
-console.log("test");
 
 showRouter.route('/')
     .get((req, res, next) => {
